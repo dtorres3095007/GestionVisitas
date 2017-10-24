@@ -1,0 +1,82 @@
+tipos identificacion=1
+tipos de ingreso=2
+departamentos=3
+tipos estado visita=4
+tipos estado visita:{
+terminada:VisiTer
+en espera: VisiEsp
+En curso: VisiCur
+Reservada: VisiRe
+Cancelada: VisiCancel
+
+}
+
+
+tipos de sanciones=5
+tipos de cargos=6
+tipos personas =7
+tipo persona :{
+visitante: codigo de la tabla "tblvisitante"
+visitado: codigo de la tabla "tblvisitado"
+}
+tipos de usuarios=8
+tipo usuario:{
+secretaria:SecreUser
+Administrador:Admin
+Visitado:VisitadoUser
+Recepcionista=UserRep
+
+}
+correos=9
+tipos estado evento=10
+tipos de estado evento:{
+Evento registrado: EveReg
+Evento cancelado: EveCan
+Evento en cuerso: EveCur
+EVento terminado: EveTer
+
+}
+
+modulos=11{
+como codigo se guarda el nombre del archivo que se cargara en el menu
+
+
+}
+
+
+Parametros Generales=12{
+Codigo: LimVisita
+Valor: Solo datos Numericos mayores a 0
+Este parametro indica la duracion de la visita,  este parametro no se puede borrar, en dado caso se borre este valor parametro el sistema por defecto toma el limite de 1 hora
+
+
+codigo:Notifica
+Valor: si o no
+Este parametro es el encargado de determinar si se notifica o no en el modulo de visitas, este parametro no se puede borrar, en dado caso se borre este valor parametro el sistema por defecto no muestra las notificaciones
+
+codigo:Guar_EV_Dia
+valor:fecha
+este parametro es el encargado de guardar los eventos que estan en siru en el software,si el valor es igual a la fecha de hoy quiere decir que no se han guardado los eventos, si es un dia despues ya estan guardados
+
+codigo:Int_Elda
+valor: 1-->si - 0-->no
+este valor es el encargado de definir el tipo de logeo, es decir, si se logea por el directorio activo o directamente en el software, solo puede tomar valor 1 que hace referencia a si o el 0 que hace referencia al no, en dado caso que no exista 
+el sistema toma por defecta el NO
+
+
+}
+Rutas=13{
+Codigo:Ruta de la carpeta apartir del archivo parametro que se encuentra en la carpeta model
+
+}
+empresa=14{
+Nombre:Universidad de la costa
+codigo:cuc
+
+Nombre: Corporacion Latino americana
+codigo:cul
+
+}
+
+tipos participantes:15
+crear un usuario como administrador con id de 0 el cual sera el administrador

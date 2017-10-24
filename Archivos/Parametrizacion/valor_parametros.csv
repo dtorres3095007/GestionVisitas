@@ -1,0 +1,62 @@
+id;id_aux;idParametro;valor;valorx;estado;valory
+1;tblvisitante;7;Visitantes;Ninguna;1;"NULL
+"
+42;tblvisitado;7; Visitado;Ninguna;1;"NULL
+"
+47;VisiEsp;4;En espera;Ninguna;1;"NULL
+"
+48;VisiTer;4;Terminada;Ninguna;1;"NULL
+"
+53;Admin;8;Administrador;Este Usuarios es quien administra el sistema;1;"NULL
+"
+54;SecreUser;8;Secretaria;Ninguna;1;"NULL
+"
+55;VisitadoUser;8;Visitado;Este perfil es para los trabajadores de la universidad;1;"NULL
+"
+56;VisiRe;4;Reservada;Visitas que se reservan;1;"NULL
+"
+57;VisiCur;4;En Curso;Las Visitas que ya iniciaron;1;"NULL
+"
+58;VisiCancel;4;Cancelada;Las Visitas que ya no seran efectuadas ;1;"NULL
+"
+59;UserRep;8;Recepcionista;Este usuario es la encarga de administrar las visitas;1;"NULL
+"
+60;********;9;usuario@cuc.edu.co;Este correo es el que le notifica a los visitados que tienen una visita;1;"NULL
+"
+61;EveTer;10;Terminado;Ninguna;1;"NULL
+"
+62;EveCur;10;En curso;Ninguna;1;"NULL
+"
+67;Usuarios;11;Modulo Usuarios;En este modulo se realizan todas las actividades referente a los usuarios;1;"glyphicon glyphicon-user
+"
+68;Visitantes;11;Modulo Visitantes;En este modulo se realizan todas las actividades referente a los visitantes;1;"glyphicon glyphicon-user
+"
+69;Parametros;11;Modulo Genericas;En este modulo se realizan todas las actividades referente a los genÃ©ricas del sistema;1;"glyphicon glyphicon-refresh
+"
+70;Visita;11;Modulo Visitas;En este modulo se realizan todas las actividades referente a las visitas;1;"glyphicon glyphicon-list-alt
+"
+71;Visitados;11;Modulo Visitados;En este modulo se realizan todas las actividades referente a los visitados;1;"glyphicon glyphicon-user
+"
+72;ReservaVisita;11;Modulo Reserva;En este modulo se realizan todas las actividades referente a la reserva de visitas;1;"glyphicon glyphicon-edit
+"
+73;ReportesVisitas;11;Modulo Reportes Visitas;En este modulo se realizan todas las actividades referente a los reportes de las visitas;1;"glyphicon glyphicon-tasks
+"
+74;LimVisita;12;1;Este Parametro delimita el limite de duracion de las visitas registradas;1;"NULL
+"
+77;EveReg;10;Registrado;Ninguna;1;"NULL
+"
+78;Actividades_Perfil;11;Actividades por perfil;En este modulo se asignan las actividades y los permisos que tendran cada tipo de usuario;1;"glyphicon glyphicon-th
+"
+79;Eventos;11;Modulo Eventos;En este Modulo se administran todos los eventos;1;"glyphicon glyphicon-calendar
+"
+80;Personalizar_Menu;11;Personalizar Menu;En este modulo se personaliza los icono del menu;1;"glyphicon glyphicon-pencil
+"
+89;Notifica;12;no;Este parametro es el encargado de determinar si se notifica o no en el modulo de visitas;1;"NULL
+"
+129;My_Perfil;11;Modulo Personal;En este modulo el usuario puede administrar sus datos;1;glyphicon glyphicon-wrench
+131;../Imagenes;13;Imagenes;En esta carpeta se guardan las imagenes que maneja el software;1;NULL
+132;../estilos;13;Archivos CSS y JS;En esta carpeta se manejan los archivos CSS y JS;1;NULL
+133;../modulos;13;Archivos Visuales;En esta ruta se guardan aquellos arquivos PHP  que tienen la parte visual(formularios);1;NULL
+135;Manejo_Versiones;11;Administrar Archivos;NInguna;1;glyphicon glyphicon-download
+139;Guar_EV_Dia;12;28/04/2017;Este parametro es el encargado de guardar los eventos del dia de SIRU, formato fecha dd/mm/aaaa fecha de hoy;1;NULL
+145;Int_Elda;12;si;Este parametro es el que determina si se logea en el sistema con el elda o directamente con el software;1;NULL

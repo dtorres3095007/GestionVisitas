@@ -1,0 +1,17 @@
+nombre;descripcion;estado;id
+Tipos de Identificacion;En este Parametro se Guardan los diferentes tipos de indentificacion que existan;1;1
+Tipos de Ingreso;En este parametro se manejan los tipos de ingresos a la institucion;1;2
+Departamentos;En este parametro se guardan los diferentes areas que existan en la institucion;1;3
+Tipos de Estado;En este parametro se guardan lso estados que manejaran las visitas;1;4
+Sanciones;En este parametro se guardan los tipos de sanciones que existan;1;5
+Cargos;En este parametro se manejan los cargos que existan en la institucion ;1;6
+Tipos de Personas;En este parametro se registran los categorias de cada personas;1;7
+Tipos de Usuarios;En este parametro se guardan cada uno de los usuarios que maneje el sistema;1;8
+Correos;Ninguna;1;9
+Tipo de estado Eventos;Ninguna;1;10
+Modulos;En este parametro se registran todos los modulos que maneja el sistema;1;11
+"
+Parametros Generales";En este parametro se define la duracion que tendran las visitas registradas;1;12
+Rutas;En este parametro se registran las rutas de cada una de las carpetas del software;1;13
+Empresas;Niguna;1;14
+Tipos Participantes;Ninguna;1;15

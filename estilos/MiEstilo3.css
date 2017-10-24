@@ -1,0 +1,1128 @@
+*{margin: 0; padding: 0;}
+
+body{
+    width: 100%;
+    height: 100%;
+
+
+}
+
+.contenido{
+    widows: 100%;
+    height:600px;;
+
+}
+#MensajeEje{
+    height: 10px;
+   
+}
+section{
+    text-align: center;
+
+}
+.Open,.MenusAlterno,.menuresposi,.contraseñas,#Modificar-Contra,.RegistrarParticipante,.confirmarAct,.opcioenstablaacividades,.alertas,.tablavisitas,.tablausuSanciones,#txTAcompanantes,.nomostrar{
+    display: none
+}
+
+.tagregar{
+    width: 70%;
+
+}
+.tagregar td{
+    padding: 5px;
+}
+.modal-header{
+    text-align: center;
+
+}
+
+.menu span img{
+    width: 5%;
+
+}
+.menu table{
+    padding-top: 30px;
+    border: 1px hidden;
+
+}
+.menu table th{
+    font-family: serif;
+    color: #990000;  
+    border-bottom:   1px solid  #cccccc ;
+    border-top:   1px solid  #cccccc ;
+    padding: 4px;
+
+}
+.menu table td{
+    font-family: serif;
+    font-size: 100%;  
+    border-bottom:   1px solid #cccccc ;
+    padding: 4px;
+
+
+}
+.menu table tr td span{
+    padding-left: 10px;
+}
+.menu table tr td .icono{
+    padding-left: 5px;
+
+}
+.profile-img-card {
+
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+/*
+ * Form styles
+ */
+.profile-name-card {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0 0;
+    min-height: 1em;
+}.usuario h4{
+    text-align: center;
+}
+.menu .usuario{
+    float: left;
+    width: 100%;
+
+    text-align: center;
+}
+.este{
+
+    margin-top:50px;
+}
+.usuario{
+
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    background-color: white;
+
+}
+.usuario2{
+    width: 100%;
+
+    background-color: white;
+
+}
+.header{
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f6f6f6+47,ededed+100;White+3D+%231 */
+    background: rgb(255,255,255); /* Old browsers */
+    background: -moz-linear-gradient(left,  rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 ); /* IE6-9 */
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 2000px;
+}
+
+.header .logo{
+    width: 90%;
+    float: left;
+
+
+}
+.header .alertas{
+    width: 10%; float: left;
+    text-align: center;
+    padding-top: 5px;
+}
+.header .logo img{
+
+    width: 300px;
+
+}
+.menutitle{
+    text-align: center;
+    color: white;
+}
+.inicio .salir p,.menutitle a{
+
+    font-weight: 100;
+    color: white;
+    font-size: 20px;
+}
+.menutitle a{
+    text-decoration: none;
+    padding-left: 2px; 
+}
+.menutitle b{
+    color: white;
+
+}
+.inicio {
+    text-align: center;
+}
+.inicio img{
+    width: 40%;
+    padding-top: 5%;
+
+
+
+}
+
+.footer{
+    width: 100%;
+    background-color: #990000;
+    height: 300px;
+}
+.footer h5{
+    color: white;
+    padding-left: 10px;
+}
+.contenid2 table{
+    width: 100%;
+}
+.ttitulo{
+
+    z-index: 100;
+
+}
+.ttitulo td{
+    color: #990000;
+    font-weight: bold;
+
+
+}
+.contenid2 div{
+    margin-top: 10px;
+    padding: 20px;
+}
+.contenid2{
+    padding: 30px;
+}
+
+
+.opciones{
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f6f6f6+47,ededed+100;White+3D+%231 */
+    background: rgb(255,255,255); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+    height: 30px;
+    width: 100%;  
+}
+
+
+.logo-cuc{
+    height: 160px;
+    width: 160px;
+    float: left;
+    margin-top: 0;
+}
+
+h1{
+    font-family: fantasy;
+    color: rgb(171, 39, 59)!important;
+}
+
+.oculto,#tablaParticipantesmodal,#tablaParticipanteeventosmodal,.confirmar,.tablausuevennto,.completarvisitanteDatos{
+    display:none;
+}
+
+.transparente{
+    background: rgba(156, 155, 155, 0.5);
+}
+
+.fondo{
+    background-image: url("../image/cuc.jpg");
+    background-size: 100%;
+    /*background-repeat: no-repeat;*/
+}
+
+.error,error1,.error1{
+
+    color: rgb(171, 39, 59)!important;
+    display: none;
+    text-align: center;
+
+}
+.row{
+    width: 70%;
+    margin:  0 auto;
+}
+.row input,select,.label{
+    margin-top: 10px;
+}
+
+.container h4,#headermodal h4{
+    color: white;
+    font-family: serif;
+    font-size: 30px;
+}
+#headermodal{
+    background-color: #990000;
+}
+#footermodal{
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f6f6f6+47,ededed+100;White+3D+%231 */
+    background: rgb(255,255,255); /* Old browsers */
+    background: -moz-linear-gradient(left,  rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 ); /* IE6-9 */
+    background-repeat: no-repeat;
+
+}
+#myModal,#ValorParmetro,#InfoVisitado,#InfoVisitante,#InfoVisitantep,#ModalMensaje,#ModalConfirmacionEliminar,#ModificarVisitante,#AsignarPerfil,#ModalReporte,#Modaldetallevisita,#modalModificar{
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f6f6f6+47,ededed+100;White+3D+%231 */
+    /* background: rgb(255,255,255); /* Old browsers */
+    /* background: -moz-linear-gradient(left,  rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%); /* FF3.6-15 */
+    /* background: -webkit-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    /* background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    /* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 ); /* IE6-9 */
+
+}
+.salir,.menutitle {
+    height: 30px;
+    background-color: #990000;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    width:100%;}
+.usuario .salir{
+    width:500px;
+
+}
+.OpcionesPrincipal {
+    width: 100%;
+    text-align: right;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.1+0,0+100;Neutral+Density */
+    background: -moz-linear-gradient(top,  rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+
+}
+.OpcionesPrincipal a{
+    text-decoration: none;
+    color: black;
+    padding-left: 3px;
+    font-weight: bold;
+
+
+}
+.OpcionesPrincipal span{
+    cursor: pointer;
+    padding-top: 10px;
+    margin-right: 3%;
+    color: #990000;
+
+}
+
+.salir span{
+
+    padding-top: 5px;
+
+
+}.salir span a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-family: serif;
+    padding-top: 10px;
+}.salir span{
+    color: white;
+
+    width: 100px;
+    float: left;
+}
+
+.menu a{
+    text-decoration: none;
+    color: black;
+}
+.opciones button{
+
+    color: #990000;
+    text-decoration: none;
+}.opciones button:hover{
+    color:black;   
+}
+.opciones a:hover{
+    color:black;   
+}
+.opciones div{
+    width: 45%;
+    float: left;
+    text-align: left;
+}
+.opciones h5{
+    color: #990000;
+    font-weight: bold;
+}.opciones a{
+    text-decoration: none;
+    color: #990000;
+}
+.opciones{
+    width: 100%;
+}
+h1,p,h2,h3,h4,h5,h6,li,td,a,label{
+    font-family: serif;
+}
+
+label{
+    font-size: 15px;
+}
+
+
+.fotoVisitante img,.fotoVisitado img{
+    width: 130px;
+    height: 150px;
+    margin-top: 30px;
+    margin-left: 30px;
+    display: block;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+#datosvisi img{
+    width: 130px;
+    height: 150px;
+    margin-top: 30px;
+
+    display: block;
+
+
+}
+.filaprincipal {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f6f6f6+47,ededed+100;White+3D+%231 */
+    background: #ffffff; /* Old browsers */
+    background: -moz-linear-gradient(top,  #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+    border: 1px solid #cccccc;
+
+
+}
+#tablaParticipantesVisita,#tablavisitantesSanciones,#tablaVisitantesVisitaMostrar,#tablaVisitantesVisitaMostrar2,#tablaVisitantesVisita,#tablaVisitadosVisita,#tablaParticipantesDepartamentos,.NuevoPartDepart,#tablaDepar,#tablaParticipantesDepar,#btnRecargar2,#btnRecargar,.completarvisitanteDatos,.chec,.chec2,#perfilesUsuariot,.NuevoPartEv,.opcioenstabla td,.sancionesVisitante td , .tablaactividades td,#TablaActividadesmenu td,#tablaperfilesusuairos td,#tablaeventosmodulo,#tablaeventos td,#tablaParticipantes td,#tablaParticipantesevento td,#tablaparametros td,#tablavisitantes td,#tablavisitado td,#tablausuarios td,.salir a,#tablavisitas td,#tablamisvisitas td,#tablavalorparametros{
+    cursor: pointer;
+}
+
+
+.container{
+    width: 100%;
+    margin: 0 auto;
+}
+.tablausu,#modulovisita,.tablausuevennto,.tablausup,.tablausuDeparta,.tablausuSanciones{
+    overflow-x: auto;
+    padding-top:   30px;
+
+    text-align: center;
+    width: 100%;
+
+
+}
+
+
+
+
+
+tbody td{
+    border: 1px solid #cccccc;
+}
+
+
+
+textArea{
+    max-width:400px;
+    max-height: 300px;
+
+}input{
+    margin-bottom: 10px;
+}
+#error,#error1,.error1{
+    color: #990000;
+    font-size: 15px; 
+
+}.modulo{
+    font-size: 50px;
+    color: #990000;
+    text-align: right;
+}
+
+.para,.valor{
+    padding-top: 20px;
+    width:40%;
+
+    margin-left: 30px;
+    float: left;
+    overflow: hidden;
+
+
+}
+
+.para .tablauser,.valor .tablauser{
+    height: 500px;
+    overflow-y: auto;
+}
+
+
+.spara{
+
+    margin: 0 auto;
+}.rowvisita{
+    padding-top: 30px;
+    width: 700px;
+    margin: 0 auto;
+}
+.rowvisita select,.rowvisita textArea,.acompanantes{
+    margin-top:  5px;
+
+}.rowvisita textArea{
+    width: 800px;
+}
+.viistantesd{
+    width: 100%;
+
+
+}
+.viistantesd div{
+
+    float: left;
+}.viistantesd .identi{
+    width: 70%;
+
+}.viistantesd .busc{
+    width: 30%;
+
+}
+.horas{
+    width: 100%;
+}.horas div{
+    float: left;
+    width: 50%;
+}
+.modalcrearevento .modal-body {
+    width: 70%;
+    margin: 0 auto;
+
+}
+.botones{
+    text-align: left;
+}
+.botones input {
+    width: 80px;
+    text-align: center;
+    padding-left: 10px;
+    color: white;
+}
+#foterpanel{
+    background-color: #990000;
+    height: 40px;
+}
+#foterpanelb,#foterpanelb1{height: 60px;background: rgb(255,255,255); /* Old browsers */
+                           background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%); /* FF3.6-15 */
+                           background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* Chrome10-25,Safari5.1-6 */
+                           background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                           filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+}
+#foterpanels{
+    height: 60px;
+    background-color: #ffffff;
+}
+#tpanel h3{
+    color: #990000;
+}
+.confirmarvisitaparti,#panelvisita,#panelmuestrovisita,#panelvisitado,#participantesDeparta,#tablaVisitanteVisitaModal,.confirmarSancion{
+    display: none;
+}
+.izquivisitante,.derevisitante,.izquivisitado,.derevisitado,.derevisita,.izquivisita{
+    width: 50%;
+    float: left;
+
+
+} #izquivisitante,#derevisitante,#derevisitado,#izquivisitado,#derevisita,#izquivisita{
+    width:100%;   
+    color: #990000;
+}#panelmuestrovisita {
+    width: 100%;;
+}
+#panelmuestrovisita {
+    text-align: left;
+}#datosvisi td{
+    text-align: left;
+
+
+}
+.primero2{
+    color: #990000;
+    text-align: right;
+    width: 200px;text-align: right;
+
+}
+.primero,.primero1{
+    color: #990000;
+    text-align: right;
+    width: 100px;text-align: right;
+
+}.primero1{
+    text-align: center;
+
+}
+
+.identi,.busc{
+    padding-top: 10px;
+}
+.bmenu .pagina{
+    max-width: 400px;
+    min-width: 250px;
+
+}.bmenu .pagina .usuario{
+    max-width: 400px;  min-width: 250px;
+}
+#datosvisi td{
+    width: 200px;
+
+}
+#datosvisi .fotoVisitante,#datosvisi .fotoVisitado{
+    width: 100px;
+
+}
+.fotoVisitante img,.fotoVisitado img{
+    margin: 0px;padding: 0px;
+
+
+} #InfoVisitante .modal-dialog,#ModalReporte .modal-dialog{
+    float: left;
+    padding: 30px;
+    width: 100%;
+
+}
+#participantesDepartamentoInfo .modal-dialog{
+
+    padding: 30px;
+    width: 70%;
+
+}
+#reservavisita .modal-dialog table{
+    margin: 0 auto;
+}
+.visitasAnteriores{
+    width: 100%;
+
+    overflow-x: auto;
+    padding-top:   30px;
+
+    -webkit-overflow-scrolling-color: touch;
+
+}
+.tablaVisitanteInfo{
+    width: 100%;
+
+    overflow-x: auto;
+
+    padding-top:   30px;
+
+    -webkit-overflow-scrolling-color: touch; 
+}
+.tipo{
+    width: 100%;
+}.select{
+    width: 90%;
+}.chec{
+    padding-top: 10px;
+    width: 10%;
+
+}
+#apellidovisi,#nombrevisi,#cbxlistadovisitantes,#sinsesion{
+    display: none;
+}
+.bmenu td:hover{
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f6f6f6+47,ededed+100;White+3D+%231 */
+    background: rgb(255,255,255); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+
+} 
+#InfoVisitantep .primero{
+    width:100px;
+    font-weight: bold;
+}
+#InfoVisitantep .fotoVisitante,#InfoVisitante .fotoVisitante,#InfoVisitado .fotoVisitado,#Infopersona .fotoVisitante,#datosvisi2 .fotoVisitado{
+    padding-top: 90px;
+    padding-left: 30px;
+    background: rgb(255,255,255); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+    border-bottom-left-radius: 100px;
+
+}
+#InfoVisitantep img,#InfoVisitante img,#InfoVisitado img,#Infopersona img,#datosvisi2 img{
+    border-bottom-right-radius: 100px;
+    border-top-right-radius: 100px;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+
+}
+
+
+#InfoVisitantep .row2,#InfoVisitado .row2,#ModalReporte .row2{
+    width: 100%;
+    overflow-x: auto;
+}
+#txtplacavisitante,#ubicacion,#txtNombreVisitado,#cbxtipoIdentificacionVisitado,#txtIdentificacionvisitado{
+    display: none; 
+}
+.plc{
+    text-align: left;
+    width: 100%;
+}
+.datosvisitado{
+    width: 100%;
+}
+.pri{
+    width: 90%;
+}
+.chec2{
+    padding-top: 10px;
+    width: 10%;
+}
+.canvas,.canvasmodi,.videomodi,.canvas2,.canvas3,.RegistrarParticipanteDepa,.canvasf,.RegistrarParticipantevisita{
+    display: none;
+
+
+}
+#canvas,#video,#canvas2,#canvas3,#video2,#video3,#canvasmodi,#videomodi,.imagenactual,#videof,#canvasf,#videov,#canvasv{
+    width: 100%;
+
+
+}.imagenactual img{
+    width: 50%;
+
+}
+
+#ModalMe p,#ModalEliminar p,.Mensaje p{
+    font-weight: bold;
+    font-size: 15px;
+
+}
+#salirEliminar,#divplacamodi,.div_id_aux,#datosvisi2,#tablaParticipanteDepartamento,.confirmarVisita{
+    display: none;
+}
+#agregar,#modificar,#eliminar,#ampliar{
+    color: #990000;
+
+}
+.buscarusuario{
+    width: 100%;
+
+}
+.caja{
+    width:70%;float: left;
+}.boto{
+    padding-top: 10px;
+    width: 30%;
+    float: left;
+
+
+}
+.tituloOpciones h4{
+    text-align: center;
+}
+#miinfo{
+    color: white;
+}
+#registrovisita,#reservavisita{
+    display: none;
+}
+#ModalReporte  .exportar{
+    width:100%;
+    padding-left: 17%;
+
+}
+#ModalReporte  .exportar div{
+    width:40px;
+    float: left; 
+
+
+}
+#AsignarPerfil .row{
+    width: 100%;
+
+}
+#AsignarPerfil select{
+    width: 500px;;
+    text-align: center;
+}
+.alertas{
+
+}
+@-webkit-keyframes tiembla{
+    0%  { -webkit-transform:rotateZ(-5deg); }
+    50% { -webkit-transform:rotateZ( 0deg) scale(.8); }
+    100%{ -webkit-transform:rotateZ( 5deg); }
+}
+.visimodi{
+    display: none;
+}
+
+li{
+    color: #990000;
+
+}.import{
+    padding-top: 100%;
+}
+.opciones
+{
+    position: fixed;
+    z-index: 100;
+}
+#cusuarios{
+    padding-top: 10px;
+}
+.TomarFoto{
+    text-align: center;
+
+}
+.TomarFoto img{
+    width:130px;
+
+}
+.operaciones span:hover{
+    color: black;
+}
+#modalParticipante bodymodal{
+    width: 100%;
+
+}
+#tablaeventos tr td:nth-child(10), #tablaeventos tr th:nth-child(10){
+    border:1px dashed darkgreen;
+    
+    /*Quita esta linea y mira que pasa :)*/display:none;
+}
+#tablaeventos tr td:nth-child(7), #tablaeventos tr th:nth-child(7){
+    border:1px dashed darkgreen;
+    /*Quita esta linea y mira que pasa :)*/display:none;
+}
+#tablaeventosmodulo tr td:nth-child(7), #tablaeventosmodulo tr th:nth-child(7){
+    border:1px dashed darkgreen;
+
+    /*Quita esta linea y mira que pasa :)*/display:none;
+}
+.indice{
+    width: 5px;
+}
+.perfilesusuariotabla,.permisosperfilestabla{
+    float: left;
+    overflow: hidden;
+    width: 50%;
+    padding-left: 30px;
+}
+.TablaActividades{
+    width: 50%; 
+}
+#tablaiconos tbody td:hover{
+    color: #990000;
+}
+#tablaiconos td{
+    width: 50px;
+
+}
+#TablaActividadesmenu tbody{
+    text-align: left;
+}
+.opcioenstabla td{
+    border-color: #ffffff;
+    width: 10px;
+    float: left;
+}
+.bntLectura,.modalvisitaRegistro{
+    display: none;
+}
+.MostrarVisitantesInfo{
+    display: none;
+}  
+.opcioenstablavisitas div,#Coincidencias tr{
+
+ 
+    padding-left: 10px;
+    cursor: pointer;
+
+}
+.error_eve{
+    clear: both;
+}
+.divdrop{
+    padding-top:   10%;
+}
+.opcionesMy_Perfil{
+    background-image: url(../Imagenes/LogocucF.png) ;
+    background-size:15%;
+    background-repeat: no-repeat;
+    background-position-x:95%;
+    background-position-y:30%;    
+}.opcionesManejo_Versiones{
+    background-image: url(../Imagenes/LogocucF.png) ;
+    background-size:20%;
+    background-repeat: no-repeat;
+    background-position-x:95%;
+    background-position-y:100px;    
+}
+.omitir{
+    float: right;
+    width: 50px;
+    font-weight: bold;
+    color: #990000;
+    font-size: 10px;
+    cursor: pointer;
+    border-bottom-left-radius: 30px;
+    background-color: #cccccc;
+    border: 1px dashed #990000;
+}header,.footerPrincipal{
+
+    width: 100%;
+}
+.footerPrincipal{
+    height: 5%;
+    background-color: #990000;
+
+
+}
+.footerPrincipal h5{
+    color: white;
+    padding-left: 10px;
+    font-size: 15px;
+    padding-top: 5px;
+}
+
+.principalSection{
+    height: 85%; 
+    border-top:1px solid #cccccc;
+}
+.principalSection var,.principalSection section{
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    float: left;
+
+
+}
+var{
+    width: 20%;
+    border-right:1px solid #cccccc;
+    overflow: no-display;
+    resize: horizontal;
+    max-width: 20%;
+    min-width: 5%;
+
+
+}
+.ventanaPrincipal{
+    width: 80%;
+}
+header{
+    height: 10%;
+    background-image: url(../Imagenes/LogoNUevo.png);
+    background-repeat: no-repeat;
+    background-size: 370px;
+
+}
+.usuario2 .profile-img-card2 {
+
+    width: 96px;
+    height: 96px;
+    background: -moz-linear-gradient(top,  rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+titulos{
+    font-family: sans-serif;
+}
+
+.tablamenu{
+    background-color: #ffffff;
+}
+
+.Open{
+    width: 100%;
+    font-weight: bold;
+    font-size: 13px;
+    text-align: center;
+}
+.ver{
+    color: #990000;
+    cursor: pointer;
+}
+.ModalMicuenta{
+    width: 20%;margin: 0 auto;padding-top: 10px
+}
+@media screen and (max-width:950px) {
+    .ModalMicuenta{
+        width: 80%;margin: 0 auto;padding-top: 10px
+    }
+}
+@media screen and (max-width:860px) {
+    .MenusAlterno{
+        display: none;
+
+    }
+    .menuresposi{
+        display: block;
+    }
+    .OcultarResposi{
+        display: none;
+    }
+    var{
+        display: none;
+    }
+
+    .opciones .moduloname{
+        width: 100%;
+        float: left;
+        text-align: center;
+    }
+
+    .operaciones{
+        position: fixed;
+
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#dddddd+0,f6f6f6+47,ffffff+100&1+0,0+11,0+23,0+47,0+100 */
+        background: -moz-linear-gradient(left,  rgba(221,221,221,1) 0%, rgba(227,227,227,0) 11%, rgba(233,233,233,0) 23%, rgba(246,246,246,0) 47%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(left,  rgba(221,221,221,1) 0%,rgba(227,227,227,0) 11%,rgba(233,233,233,0) 23%,rgba(246,246,246,0) 47%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right,  rgba(221,221,221,1) 0%,rgba(227,227,227,0) 11%,rgba(233,233,233,0) 23%,rgba(246,246,246,0) 47%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dddddd', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
+        background-size:400px;
+        background-repeat: no-repeat;
+    }
+    .operaciones button{
+        clear: both;
+
+        float: left;
+        overflow: hidden;
+
+    }
+    .principalSection,.ventanaPrincipal{
+        width: 100%;
+    }  
+    .OpcionesPrincipal {
+        margin-bottom: 3px;   
+    }
+}
+
+@media screen and (max-width:500px) {
+    header {
+
+        background-size: 300px;
+
+    }
+    .OpcionesPrincipal{
+        padding-bottom: 10px;
+    }
+
+
+
+    .footerPrincipal h5{
+
+        font-size: 11px;
+
+    }
+
+    .ModalMicuenta{
+        width: 100%;margin: 0 auto;padding-top: 10px
+    }
+}
+
+.filtar_Eventos input{
+    margin: 5px;
+}
+#Coincidencias{
+
+
+   
+    width: 100%;
+
+}
+.Visitantesfoto{
+    width: 80%;
+ 
+    margin: 0 auto;
+    display: none;
+}
+.grafico{
+    min-width: 310px; height: 500px; max-width: 800px;width: 800px;margin: 0 auto;border-bottom: 1px solid #cccccc;
+    }
+    .bodygraficas{
+        height: 500px;
+        overflow-y: scroll;
+    }
+    
+    .fechare{
+        width: 100%;
+        float: right;
+         
+        margin-left: 5px;
+    }
+    .filtro{
+        clear: both;float: left;padding-top: 5px; 
+        width: 50%;
+        text-align: left;
+        color: #990000;
+     
+    }
+    .reporte{
+        width:100%; padding-top: 30px; padding-left: 30px;
+
+
+
+    }
+    .seleccion{
+        width: 30%;
+    }
+    #ventanareporte{
+               background-image: url(../Imagenes/reportes.jpg);
+        background-repeat: no-repeat;
+        background-size: 25%;    background-position-x:500px;
+         background-position-y:50px;
+        
+    }
+    .botonesreporte{
+        border-bottom: 1px solid #cccccc;
+          clear: both
+        ;padding-top: 5px; 
+        width: 30%;
+        text-align: left;
+        color: #990000;
+        padding-bottom: 20px;
+    }
+    .link{
+         text-decoration: none;
+       color: white;
+      
+    }
+    .link:hover{
+        color: white;
+    }

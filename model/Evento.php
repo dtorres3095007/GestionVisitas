@@ -169,7 +169,7 @@ function GuardarEvento2($nombre, $ubicacion, $horaEntrada, $horaSalida, $id, $ti
     //me conecto a la bade de datos
     include 'config.php';
     require_once './Visita.php';
-    require_once './esUsuario.php';
+    //require_once './esUsuario.php';
     session_start();
     $descripcion = "Ninguna";
     $estadoevento = "EveReg";

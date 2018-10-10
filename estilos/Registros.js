@@ -2668,25 +2668,7 @@ function cargarSancionesPorUsuario2(idUsuario) {
         ],
         "language": idioma,
         dom: 'Bfrtip',
-        "buttons": [{
-                extend: 'excelHtml5',
-                text: '<i class="fa fa-file-excel-o"></i>',
-                titleAttr: 'Excel',
-                className: 'btn btn-success',
-            },
-            {
-                extend: 'csvHtml5',
-                text: '<i class="fa fa-file-text-o"></i>',
-                titleAttr: 'CSV',
-                className: 'btn btn-default',
-            },
-            {
-                extend: 'pdfHtml5',
-                text: '<i class="fa fa-file-pdf-o"></i>',
-                titleAttr: 'PDF',
-                className: 'btn btn-danger',
-            }
-        ]
+        "buttons": []
 
     });
 
@@ -2696,6 +2678,50 @@ function cargarSancionesPorUsuario2(idUsuario) {
         var data = table.row(this).data();
         idSancion = data[3];
         $(".sancionesVisitante tbody tr").removeClass("warning");
+        $(this).attr("class", "warning");
+
+    });
+}
+
+function cargarSancionesPorUsuario3(idUsuario) {
+    $('#sancionesVisitante2 tbody').off('click', 'tr');
+    var table = $("#sancionesVisitante2").DataTable({
+        "destroy": true,
+        "ajax": {
+            url: "../model/Visita.php?cargarSancionesPorUsuario=si",
+            dataType: "json",
+            data: {
+                id: idUsuario,
+            },
+            type: "post",
+        },
+        // "processing": true,
+
+        "columns": [{
+                "data": "indice"
+            },
+            {
+                "data": "usuario"
+            },
+            {
+                "data": "valor"
+            },
+            {
+                "data": "fecha"
+            },
+        ],
+        "language": idioma,
+        dom: 'Bfrtip',
+        "buttons": []
+
+    });
+
+
+
+    $('#sancionesVisitante2 tbody').on('click', 'tr', function () {
+        var data = table.row(this).data();
+        idSancion = data[3];
+        $("#sancionesVisitante2 tbody tr").removeClass("warning");
         $(this).attr("class", "warning");
 
     });

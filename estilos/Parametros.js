@@ -1784,7 +1784,8 @@ function registrarPaticipanteDepartamento(participante, departamento, placa, aco
 
             $(".sancionado-error").show("fast");
             $(".TablaDepaPar").show("slow");
-            MensajeConClase("Atencion el Visitante esta sancionado por tal motivo no se le permite el ingreso a la universidad", ".error");
+            cargarSancionesPorUsuario3(participante);
+            $("#Modal_mensaje_sancion").modal();
 
         } else {
             $(".Visitantesfoto").hide("fast");

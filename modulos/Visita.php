@@ -6,6 +6,11 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+<?php 
+session_start();
+$perfil = $_SESSION['perfil'];
+
+?>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -34,7 +39,12 @@ and open the template in the editor.
                 <button  id="agregar" type="button" class="btn btn-link active btnAgregar oculto" ><span class="sagregar glyphicon glyphicon-floppy-disk" title="Agregar Visita" data-toggle="popover" data-trigger="hover"></span></button>
 
                 <button  type="button" class="btn btn-link active btnAgregar" data-toggle="modal" data-target="#myModal"><span class="sagregar glyphicon glyphicon-user" title="Agregar Visitante" data-toggle="popover" data-trigger="hover"></span></button>
-                <button  id="agregarSancion" class="btn btn-link active btnAgregar "><span class="smodificar glyphicon glyphicon-ban-circle" title="Agregar Sanción" data-toggle="popover" data-trigger="hover"></span></button>
+               <?php 
+               if ($perfil == "Admin") {
+                echo ' <button  id="agregarSancion" class="btn btn-link active btnAgregar "><span class="smodificar glyphicon glyphicon-ban-circle" title="Agregar Sanción" data-toggle="popover" data-trigger="hover"></span></button>';
+               }
+               ?>
+               
                 <button id="listar" type="button" class="btn btn-link active " ><span class="smodificar glyphicon glyphicon-list-alt" title="Listar Visitas" data-toggle="popover" data-trigger="hover"></span></button>
                 <button class="btn btn-link active" id="btnDepartamentos">  <span class=" smodificar glyphicon glyphicon-th-list"    title="Mostrar Departamentos" data-toggle="popover" data-trigger="hover"></span></button>
                 <button class="btn btn-link active" id="btneventos" >  <span class=" smodificar glyphicon glyphicon-calendar"   title="Mostrar Eventos" data-toggle="popover" data-trigger="hover"></span></button>
@@ -823,6 +833,8 @@ and open the template in the editor.
         </div>
 
 
+
+
         <div class="modal fade" id="ModalModificarReserva" role="dialog">
             <div class="modal-dialog">
 
@@ -1094,7 +1106,8 @@ and open the template in the editor.
                             </div>
 
                             <div class="TablaDepaPar">
-                               
+                          
+                                <div class="error"></div>
                                 <label style="color: #990000; font-size: 13px; "> <input type="checkbox"  class="vehiculo2 micheckbox" style="margin-right: 5px; margin-top: 5px;" >Visitante con Vehículo</label>
                                 <div class="oculto divplaca2"  style="width: 50%;margin:  0 auto">
                                     <input type="text" name="placa" id="txtPlacaVehiculo2" maxlength="6" class="form-control placa2" placeholder="Número Placa del Vehículo">
@@ -1140,8 +1153,7 @@ and open the template in the editor.
 
 
                         </div>
-                        <div class="sancionado-error col-lg-12 oculto"><img src="../Imagenes/Sancionado.png" style="width: 20%"></div>
-                        <div class="error"></div>
+
                     </div>
                     <div class="modal-footer foterMPde" id="footermodal">
                         <span  id="AgregarParticipanteDepartamento"  class="btn btn-danger active btnAgregar ">Asignar</span>
@@ -1155,7 +1167,42 @@ and open the template in the editor.
 
 
 
+        <div class="modal fade" id="Modal_mensaje_sancion" role="dialog">
 
+<div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content" >
+        <div class="modal-header" id="headermodal">
+            <button type="button" class="close" data-dismiss="modal"> X</button>
+            <h4 class="modal-title"><span class="glyphicon glyphicon-remove"></span> Visitante Sancionado</h4>
+        </div>
+        <div class="modal-body" id="bodymodal">
+            <div class="error"></div>
+            <div id="" style="text-align: center">
+            <p class="error_sancion"><b>Atención el Visitante esta sancionado por tal motivo no se le permite el ingreso a la universidad</b></p>
+            <div class="table-responsive">
+                <table class="table sancionesVisitante" id="sancionesVisitante2" style="width: 100%;">
+                    <thead class="ttitulo">
+                        <tr class="filaprincipal"><td  colspan="6" style="color: #990000; text-align: center">Sanciones del Visitante</td></tr>
+                        <tr class="filaprincipal"><td>No.</td><td>Usuario</td><td>Sanción</td><td>Fecha</td></tr>
+                    </thead>
+                </table>
+            </div>
+            </div>
+        </div>
+        <div class="modal-footer" id="footermodal">
+
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        </div>
+
+
+    </div>
+
+
+</div>
+
+</div>
 
         <div class="modal fade" id="participantesevento" role="dialog">
             <div class="modal-dialog" style="width: 60%">

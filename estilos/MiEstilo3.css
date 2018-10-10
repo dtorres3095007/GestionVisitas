@@ -1589,3 +1589,11 @@ titulos {
 .pointer {
     cursor: pointer;
 }
+
+.modal-backdrop.in {
+    display: none;
+}
+
+.modal {
+    overflow-y: auto !important;
+}

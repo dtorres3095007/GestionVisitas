@@ -2,7 +2,7 @@
 // ESTA VARIABLE GUARDA EL ID DE LA VISITA SELECCIOANDA
 fotof = 0;
 var ideVisitante;
-var datos_identidades="";
+var datos_identidades = "";
 var listaRe = 0;
 var esreser = 0;
 participanteVisita = 0;
@@ -46,8 +46,18 @@ $(document).ready(function () {
 
         }
     });
+    $("#btn_buscar_visitante_san").click(function () {
+        var dato = $("#txt_buscar_visitante_san").val().trim();
+        if (dato.length > 5) {
+            $(".error_busqueda").hide('fast');
+            listarVisitantesSanciones(dato);
+        } else {
+            $(".error_busqueda").html("Ingrese Dato de la persona a buscar con mas informacion.!")
+            $(".error_busqueda").show('fast');
+        }
+    });
 
-    $("#btnBuscarPersona").click(function(){
+    $("#btnBuscarPersona").click(function () {
         if ($("#txtBuscarPersona").val() != "") {
             buscarPersona($("#txtBuscarPersona").val());
         }
@@ -101,7 +111,7 @@ $(document).ready(function () {
 
             if (reporteSele == 1) {
                 listarlosmasVisitados(finicio, ffinal);
-                EnviarSql("1",finicio,ffinal,0);
+                EnviarSql("1", finicio, ffinal, 0);
                 $(".tablareportesVisitantes").hide("slow");
                 $(".tablareportesEmpleados").show("slow");
             } else if (reporteSele == 6) {
@@ -110,7 +120,7 @@ $(document).ready(function () {
                     MensajeConClase("Seleccione Departamento", ".error");
                 } else {
                     listarVisitantesDepartamento(dep, finicio, ffinal);
-                      EnviarSql("6",finicio,ffinal,dep);
+                    EnviarSql("6", finicio, ffinal, dep);
                     $(".tablareportesEmpleados").hide("slow");
                     $(".tablareportesVisitantes").show("slow");
 
@@ -122,23 +132,23 @@ $(document).ready(function () {
                 } else {
 
                     listarlosmasVisitadosDepartamento(dep, finicio, ffinal);
-                       EnviarSql("3",finicio,ffinal,dep);
+                    EnviarSql("3", finicio, ffinal, dep);
                     $(".tablareportesEmpleados").hide("slow");
                     $(".tablareportesVisitantes").show("slow");
 
                 }
             } else if (reporteSele == 2) {
                 listarDepartamentosMasVisitados(finicio, ffinal)
-                   EnviarSql("2",finicio,ffinal,0);
+                EnviarSql("2", finicio, ffinal, 0);
                 $(".tablareportesEmpleados").hide("slow");
                 $(".tablareportesVisitantes").show("slow");
             } else if (reporteSele == 4) {
                 listarVisitantesMasVisitas(finicio, ffinal);
-                   EnviarSql("4",finicio,ffinal,0);
+                EnviarSql("4", finicio, ffinal, 0);
                 $(".tablareportesEmpleados").hide("slow");
                 $(".tablareportesVisitantes").show("slow");
             }
-          
+
         }
     });
     $("#MostrarGraficas").click(function () {
@@ -171,8 +181,7 @@ $(document).ready(function () {
                     searching: false,
                     "language": idioma,
                     dom: 'Bfrtip',
-                    "buttons": [
-                    ]
+                    "buttons": []
 
                 });
             }
@@ -201,8 +210,7 @@ $(document).ready(function () {
         searching: false,
         "language": idioma,
         dom: 'Bfrtip',
-        "buttons": [
-        ]
+        "buttons": []
 
     });
 
@@ -300,8 +308,7 @@ $(document).ready(function () {
             searching: false,
             "language": idioma,
             dom: 'Bfrtip',
-            "buttons": [
-            ]
+            "buttons": []
 
         });
     });
@@ -322,13 +329,12 @@ $(document).ready(function () {
 
         } else {
 
-            listarVisitantesSanciones();
+            listarVisitantesSanciones("5D4EW5F7W8E7");
         }
 
     });
     $("#RecargarReporte").click(function () {
-        listarlosmasVisitados();
-        ;
+        listarlosmasVisitados();;
 
     });
     $('#btnRecargar2').click(function () {
@@ -363,13 +369,13 @@ $(document).ready(function () {
         }
     });
 
-// CUANDO SE CARGA LA PAGINA DE VISITAS LISTO LAS VISITAS
+    // CUANDO SE CARGA LA PAGINA DE VISITAS LISTO LAS VISITAS
 
 
     //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-// UNA VES PRECIONADO #CambiarTabla CAMBIO EL ESTILO DE LA TABLA Y LLAMO NUEVAMENTE AL listarVisitas
+    // UNA VES PRECIONADO #CambiarTabla CAMBIO EL ESTILO DE LA TABLA Y LLAMO NUEVAMENTE AL listarVisitas
 
 
     $("#CambiarTabla").click(function () {
@@ -460,7 +466,7 @@ $(document).ready(function () {
     });
 
 
-// UNA VES PRECIONADO #CambiarTabla2 CAMBIO EL ESTILO DE LA TABLA Y LLAMO NUEVAMENTE AL LISTAR listarVisitasid
+    // UNA VES PRECIONADO #CambiarTabla2 CAMBIO EL ESTILO DE LA TABLA Y LLAMO NUEVAMENTE AL LISTAR listarVisitasid
     $("#CambiarTabla2").click(function () {
         if (estilotablareserva == 0) {
             estilotablareserva = 1;
@@ -470,7 +476,7 @@ $(document).ready(function () {
 
         listarVisitasid();
     });
-// LLAMO AL FORMULARIO DE MODIFICAR
+    // LLAMO AL FORMULARIO DE MODIFICAR
     $("#modficarvisitamodal").click(function () {
 
         $(".visimodi").show("fast");
@@ -479,7 +485,7 @@ $(document).ready(function () {
 
 
     //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-//AL PRESIONAR EL BOTON MODIFICARRESERVA SE LLAMA A LA FUNCION DE MODIFICARRESERVA
+    //AL PRESIONAR EL BOTON MODIFICARRESERVA SE LLAMA A LA FUNCION DE MODIFICARRESERVA
     $("#modificarReserva").click(function () {
 
 
@@ -523,8 +529,8 @@ $(document).ready(function () {
 
         modificarReserva(visita, horaEntrada, horaSalida, tipoIngreso, acompanantes, observaciones, visitado, placa);
     });
-//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-//AL PRESIONAR EL BOTON MODIFICAR SE LLAMA A LA FUNCION DE MODIFICAR
+    //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+    //AL PRESIONAR EL BOTON MODIFICAR SE LLAMA A LA FUNCION DE MODIFICAR
 
     $("#ModificarEstadoVisita").click(function () {
 
@@ -535,7 +541,7 @@ $(document).ready(function () {
     });
 
 
-// REPORTE DE LOS MAS VISITADOS LE PASO COMO TITULO EL REPORTE SELECCIONADO
+    // REPORTE DE LOS MAS VISITADOS LE PASO COMO TITULO EL REPORTE SELECCIONADO
 
     $("#listar").click(function () {
         tiporecarga = 1;
@@ -566,7 +572,7 @@ $(document).ready(function () {
     //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     $('#agregarSancion').click(function () {
         tiporecarga = 4;
-        listarVisitantesSanciones();
+        listarVisitantesSanciones("ED65EF845");
         /*  var visita = $("#idSeleccionado").val().trim();
          if (visita.length == 0) {
          $("#mensajed").html("<p ><b>Antes de Continuar Debe Seleccionar la Visita</b></p>");
@@ -643,7 +649,7 @@ $(document).ready(function () {
         }
     });
 
-    $("#txtBuscarPersona").keydown(function(tecla){
+    $("#txtBuscarPersona").keydown(function (tecla) {
         if (tecla.keyCode == 13) {
             buscarPersona($(this).val());
         }
@@ -674,18 +680,31 @@ var listarVisitas = function () {
             }, //paging: false,
             //scrollY: 400,
             //  "processing": true,
-            "columns": [
-                {"data": "indice"},
-                {"data": "nombrevisitado"},
-                {"data": "HoraEntrada"},
-                {"data": "HoraSalida"},
-                {"data": "DuracionVisita"},
-                {"data": "Id_TipoIngreso"},
-                {"data": "Id_EstadoVisita"},
-            ], "language": idioma,
-            dom: 'Bfrtip',
-            "buttons": [
+            "columns": [{
+                    "data": "indice"
+                },
                 {
+                    "data": "nombrevisitado"
+                },
+                {
+                    "data": "HoraEntrada"
+                },
+                {
+                    "data": "HoraSalida"
+                },
+                {
+                    "data": "DuracionVisita"
+                },
+                {
+                    "data": "Id_TipoIngreso"
+                },
+                {
+                    "data": "Id_EstadoVisita"
+                },
+            ],
+            "language": idioma,
+            dom: 'Bfrtip',
+            "buttons": [{
                     extend: 'excelHtml5',
                     text: '<i class="fa fa-file-excel-o"></i>',
                     titleAttr: 'Excel',
@@ -744,8 +763,7 @@ var listarVisitas = function () {
                 searching: false,
                 "language": idioma,
                 dom: 'Bfrtip',
-                "buttons": [
-                ]
+                "buttons": []
 
             });
 
@@ -764,21 +782,35 @@ var listarVisitas = function () {
                 url: "../model/visita.php?mostrar=si",
                 dataType: "json",
                 type: "post",
-            }, paging: false,
+            },
+            paging: false,
             scrollY: 400,
             "processing": true,
-            "columns": [
-                {"data": "indice"},
-                {"data": "nombrevisitado"},
-                {"data": "HoraEntrada"},
-                {"data": "HoraSalida"},
-                {"data": "DuracionVisita"},
-                {"data": "Id_TipoIngreso"},
-                {"data": "Id_EstadoVisita"},
-            ], "language": idioma,
-            dom: 'Bfrtip',
-            "buttons": [
+            "columns": [{
+                    "data": "indice"
+                },
                 {
+                    "data": "nombrevisitado"
+                },
+                {
+                    "data": "HoraEntrada"
+                },
+                {
+                    "data": "HoraSalida"
+                },
+                {
+                    "data": "DuracionVisita"
+                },
+                {
+                    "data": "Id_TipoIngreso"
+                },
+                {
+                    "data": "Id_EstadoVisita"
+                },
+            ],
+            "language": idioma,
+            dom: 'Bfrtip',
+            "buttons": [{
                     extend: 'excelHtml5',
                     text: '<i class="fa fa-file-excel-o"></i>',
                     titleAttr: 'Excel',
@@ -837,8 +869,7 @@ var listarVisitas = function () {
                 searching: false,
                 "language": idioma,
                 dom: 'Bfrtip',
-                "buttons": [
-                ]
+                "buttons": []
 
             });
 
@@ -879,7 +910,8 @@ function MostrarVisitaporid(id) {
 
     $.ajax({
         url: "../model/Visita.php?buscarid=si",
-        dataType: "json", data: {
+        dataType: "json",
+        data: {
             idvisita: id,
         },
         type: "post",
@@ -934,18 +966,31 @@ var listarVisitasid = function () {
             //scrollY: 400,
             // "processing": true,
 
-            "columns": [
-                {"data": "indice"},
-                {"data": "nombrevisitado"},
-                {"data": "HoraEntrada"},
-                {"data": "HoraSalida"},
-                {"data": "DuracionVisita"},
-                {"data": "Id_TipoIngreso"},
-                {"data": "Id_EstadoVisita"},
-            ], "language": idioma,
-            dom: 'Bfrtip',
-            "buttons": [
+            "columns": [{
+                    "data": "indice"
+                },
                 {
+                    "data": "nombrevisitado"
+                },
+                {
+                    "data": "HoraEntrada"
+                },
+                {
+                    "data": "HoraSalida"
+                },
+                {
+                    "data": "DuracionVisita"
+                },
+                {
+                    "data": "Id_TipoIngreso"
+                },
+                {
+                    "data": "Id_EstadoVisita"
+                },
+            ],
+            "language": idioma,
+            dom: 'Bfrtip',
+            "buttons": [{
                     extend: 'excelHtml5',
                     text: '<i class="fa fa-file-excel-o"></i>',
                     titleAttr: 'Excel',
@@ -1005,8 +1050,7 @@ var listarVisitasid = function () {
                 searching: false,
                 "language": idioma,
                 dom: 'Bfrtip',
-                "buttons": [
-                ]
+                "buttons": []
 
             });
 
@@ -1038,22 +1082,36 @@ var listarVisitasid = function () {
                 url: "../model/visita.php?mostrarvisitasvisitado=si",
                 dataType: "json",
                 type: "post",
-            }, paging: false,
+            },
+            paging: false,
             scrollY: 400,
             // "processing": true,
 
-            "columns": [
-                {"data": "indice"},
-                {"data": "nombrevisitado"},
-                {"data": "HoraEntrada"},
-                {"data": "HoraSalida"},
-                {"data": "DuracionVisita"},
-                {"data": "Id_TipoIngreso"},
-                {"data": "Id_EstadoVisita"},
-            ], "language": idioma,
-            dom: 'Bfrtip',
-            "buttons": [
+            "columns": [{
+                    "data": "indice"
+                },
                 {
+                    "data": "nombrevisitado"
+                },
+                {
+                    "data": "HoraEntrada"
+                },
+                {
+                    "data": "HoraSalida"
+                },
+                {
+                    "data": "DuracionVisita"
+                },
+                {
+                    "data": "Id_TipoIngreso"
+                },
+                {
+                    "data": "Id_EstadoVisita"
+                },
+            ],
+            "language": idioma,
+            dom: 'Bfrtip',
+            "buttons": [{
                     extend: 'excelHtml5',
                     text: '<i class="fa fa-file-excel-o"></i>',
                     titleAttr: 'Excel',
@@ -1095,8 +1153,7 @@ var listarVisitasid = function () {
                 searching: false,
                 "language": idioma,
                 dom: 'Bfrtip',
-                "buttons": [
-                ]
+                "buttons": []
 
             });
             if (data[13] != "VisiCancel") {
@@ -1153,17 +1210,28 @@ var listarlosmasVisitantes = function () {
         // "processing": true,
 
         ordering: false,
-        "columns": [
-            {"data": "NombreCompleto"},
-            {"data": "TipoIdentificacion"},
-            {"data": "Identificacion"},
-            {"data": "correo"},
-            {"data": "celular"},
-            {"data": "NumVisitas"},
-        ], "language": idioma,
-        dom: 'Bfrtip',
-        "buttons": [
+        "columns": [{
+                "data": "NombreCompleto"
+            },
             {
+                "data": "TipoIdentificacion"
+            },
+            {
+                "data": "Identificacion"
+            },
+            {
+                "data": "correo"
+            },
+            {
+                "data": "celular"
+            },
+            {
+                "data": "NumVisitas"
+            },
+        ],
+        "language": idioma,
+        dom: 'Bfrtip',
+        "buttons": [{
                 extend: 'excelHtml5',
                 text: '<i class="fa fa-file-excel-o"></i>',
                 titleAttr: 'Excel',
@@ -1203,7 +1271,8 @@ var listarlosmasVisitados = function (inicio, final) {
         "destroy": true,
         "ajax": {
             url: "../model/visita.php?mostrarMasVisitados=si",
-            dataType: "json", data: {
+            dataType: "json",
+            data: {
                 inicio: inicio,
                 final: final,
             },
@@ -1213,17 +1282,28 @@ var listarlosmasVisitados = function (inicio, final) {
         // "processing": true,
 
         ordering: false,
-        "columns": [
-            {"data": "NombreCompleto"},
-            {"data": "Identificacion"},
-            {"data": "Id_Departamento"},
-            {"data": "cargo"},
-            {"data": "Telefono"},
-            {"data": "NumVisitas"},
-        ], "language": idioma,
-        dom: 'Bfrtip',
-        "buttons": [
+        "columns": [{
+                "data": "NombreCompleto"
+            },
             {
+                "data": "Identificacion"
+            },
+            {
+                "data": "Id_Departamento"
+            },
+            {
+                "data": "cargo"
+            },
+            {
+                "data": "Telefono"
+            },
+            {
+                "data": "NumVisitas"
+            },
+        ],
+        "language": idioma,
+        dom: 'Bfrtip',
+        "buttons": [{
                 extend: 'excelHtml5',
                 text: '<i class="fa fa-file-excel-o"></i>',
                 titleAttr: 'Excel',
@@ -1254,7 +1334,8 @@ var listarlosmasVisitadosDepartamento = function (id, inicio, final) {
         "destroy": true,
         "ajax": {
             url: "../model/visita.php?mostrarMasvisitdosdepar=si",
-            dataType: "json", data: {
+            dataType: "json",
+            data: {
                 id: id,
                 inicio: inicio,
                 final: final,
@@ -1265,14 +1346,19 @@ var listarlosmasVisitadosDepartamento = function (id, inicio, final) {
         // "processing": true,
 
         ordering: false,
-        "columns": [
-            {"data": "NombreCompleto"},
-            {"data": "Identificacion"},
-            {"data": "NumVisitas"},
-        ], "language": idioma,
-        dom: 'Bfrtip',
-        "buttons": [
+        "columns": [{
+                "data": "NombreCompleto"
+            },
             {
+                "data": "Identificacion"
+            },
+            {
+                "data": "NumVisitas"
+            },
+        ],
+        "language": idioma,
+        dom: 'Bfrtip',
+        "buttons": [{
                 extend: 'excelHtml5',
                 text: '<i class="fa fa-file-excel-o"></i>',
                 titleAttr: 'Excel',
@@ -1305,7 +1391,8 @@ var listarVisitantesDepartamento = function (id, inicio, final) {
         "destroy": true,
         "ajax": {
             url: "../model/visita.php?mostrarpordepartamento=si",
-            dataType: "json", data: {
+            dataType: "json",
+            data: {
                 id: id,
                 inicio: inicio,
                 final: final,
@@ -1316,14 +1403,19 @@ var listarVisitantesDepartamento = function (id, inicio, final) {
         // "processing": true,
 
         ordering: false,
-        "columns": [
-            {"data": "NombreCompleto"},
-            {"data": "identificacion"},
-            {"data": "NumVisitas"},
-        ], "language": idioma,
-        dom: 'Bfrtip',
-        "buttons": [
+        "columns": [{
+                "data": "NombreCompleto"
+            },
             {
+                "data": "identificacion"
+            },
+            {
+                "data": "NumVisitas"
+            },
+        ],
+        "language": idioma,
+        dom: 'Bfrtip',
+        "buttons": [{
                 extend: 'excelHtml5',
                 text: '<i class="fa fa-file-excel-o"></i>',
                 titleAttr: 'Excel',
@@ -1354,7 +1446,8 @@ var listarVisitantesMasVisitas = function (inicio, final) {
         "destroy": true,
         "ajax": {
             url: "../model/visita.php?mostrarMasvisitantes=si",
-            dataType: "json", data: {
+            dataType: "json",
+            data: {
                 inicio: inicio,
                 final: final,
             },
@@ -1364,14 +1457,19 @@ var listarVisitantesMasVisitas = function (inicio, final) {
         // "processing": true,
 
         ordering: false,
-        "columns": [
-            {"data": "NombreCompleto"},
-            {"data": "identificacion"},
-            {"data": "NumVisitas"},
-        ], "language": idioma,
-        dom: 'Bfrtip',
-        "buttons": [
+        "columns": [{
+                "data": "NombreCompleto"
+            },
             {
+                "data": "identificacion"
+            },
+            {
+                "data": "NumVisitas"
+            },
+        ],
+        "language": idioma,
+        dom: 'Bfrtip',
+        "buttons": [{
                 extend: 'excelHtml5',
                 text: '<i class="fa fa-file-excel-o"></i>',
                 titleAttr: 'Excel',
@@ -1401,7 +1499,8 @@ var listarDepartamentosMasVisitados = function (inicio, final) {
         "destroy": true,
         "ajax": {
             url: "../model/visita.php?mostrardepartamentosr=si",
-            dataType: "json", data: {
+            dataType: "json",
+            data: {
                 inicio: inicio,
                 final: final,
             },
@@ -1411,14 +1510,19 @@ var listarDepartamentosMasVisitados = function (inicio, final) {
         // "processing": true,
 
         ordering: false,
-        "columns": [
-            {"data": "nombre"},
-            {"data": "ubicacion"},
-            {"data": "NumVisitas"},
-        ], "language": idioma,
-        dom: 'Bfrtip',
-        "buttons": [
+        "columns": [{
+                "data": "nombre"
+            },
             {
+                "data": "ubicacion"
+            },
+            {
+                "data": "NumVisitas"
+            },
+        ],
+        "language": idioma,
+        dom: 'Bfrtip',
+        "buttons": [{
                 extend: 'excelHtml5',
                 text: '<i class="fa fa-file-excel-o"></i>',
                 titleAttr: 'Excel',
@@ -1517,6 +1621,7 @@ function actualizarEstado(id, estado) {
 
 
 }
+
 function guardarComentario(idVisita) {
 
     comentario = $('#txtComentario').val();
@@ -1575,13 +1680,15 @@ function cargarComentarios(idVisita) {
     });
 
 }
+
 function ListarComentarios(idVisita) {
 
     var table = $("#tblComentarios").DataTable({
         "destroy": true,
         "ajax": {
             url: "../model/Visita.php?cargarComentarios=si",
-            dataType: "json", data: {
+            dataType: "json",
+            data: {
                 id: idVisita,
             },
             type: "post",
@@ -1589,15 +1696,22 @@ function ListarComentarios(idVisita) {
         //scrollY: 400,
         // "processing": true,
         "lengthMenu": [5, 25, 50, 75, 100],
-        "columns": [
-            {"data": "indice"},
-            {"data": "usuario"},
-            {"data": "comentario"},
-            {"data": "fecha"},
-        ], "language": idioma,
+        "columns": [{
+                "data": "indice"
+            },
+            {
+                "data": "usuario"
+            },
+            {
+                "data": "comentario"
+            },
+            {
+                "data": "fecha"
+            },
+        ],
+        "language": idioma,
         dom: 'Bfrtip',
-        "buttons": [
-        ]
+        "buttons": []
 
     });
 
@@ -1619,21 +1733,29 @@ function cargarSancionesPorVisitante(idUsuario) {
         },
         // "processing": true,
 
-        "columns": [
-            {"data": "indice"},
-            {"data": "usuario"},
-            {"data": "valor"},
-            {"data": "fecha"},
-        ], "language": idioma,
+        "columns": [{
+                "data": "indice"
+            },
+            {
+                "data": "usuario"
+            },
+            {
+                "data": "valor"
+            },
+            {
+                "data": "fecha"
+            },
+        ],
+        "language": idioma,
         dom: 'Bfrtip',
-        "buttons": [
-        ]
+        "buttons": []
 
     });
 
 
 
 }
+
 function prueba() {
 
     $(".confirmar").show("fast");
@@ -1682,8 +1804,7 @@ function CargarTiposSanciones() {
 
             for (var i = 0; i <= datos.length - 1; i++) {
                 $('.sanciones1').append("<option value=" + datos[i].id + ">" + datos[i].valor + "</option>");
-            }
-            ;
+            };
         },
         error: function () {
             console.log('Something went wrong', status, err);
@@ -1796,7 +1917,8 @@ function modificarReserva(id, horaEntrada, horaSalida, tipoIngreso, numAcompanan
 function BuscarVisitanteid2(id) {
     $.ajax({
         url: "../model/visitantesMetodos.php?buscarporid=si",
-        dataType: "json", data: {
+        dataType: "json",
+        data: {
             id: id,
         },
         type: "post",
@@ -1818,10 +1940,12 @@ function BuscarVisitanteid2(id) {
         }
     });
 }
+
 function AgregarVisitanteVisita(id, visita) {
     $.ajax({
         url: "../model/Visita.php?AsignarVisita=si",
-        dataType: "json", data: {
+        dataType: "json",
+        data: {
             id: id,
             visita: visita,
         },
@@ -1844,11 +1968,13 @@ function AgregarVisitanteVisita(id, visita) {
         }
     });
 }
+
 function retirarVisitanteVisita(id, visita) {
 
     $.ajax({
         url: "../model/Visita.php?retirarVisita=si",
-        dataType: "json", data: {
+        dataType: "json",
+        data: {
             id: id,
             visita: visita,
         },
@@ -1868,6 +1994,7 @@ function retirarVisitanteVisita(id, visita) {
         }
     });
 }
+
 function MostrarVisitantesVisitaMostrar(id) {
 
     $('#tablaVisitantesVisitaMostrar tbody').off('click', 'tr');
@@ -1881,19 +2008,29 @@ function MostrarVisitantesVisitaMostrar(id) {
                 id: id,
             },
             type: "post",
-        }, "lengthMenu": [5, 25, 50, 75, 100],
+        },
+        "lengthMenu": [5, 25, 50, 75, 100],
         //  "processing": true,
-        "columns": [
-            {"data": "indice"},
-            {"data": "nombres"},
-            {"data": "apellidos"},
-            {"data": "identificacion"},
-            {"defaultContent": "<span  onclick='javascript:MostrarDatosVisitante();' style='  color: #990000;' class='glyphicon glyphicon-user btn btn-link '></span>"}
+        "columns": [{
+                "data": "indice"
+            },
+            {
+                "data": "nombres"
+            },
+            {
+                "data": "apellidos"
+            },
+            {
+                "data": "identificacion"
+            },
+            {
+                "defaultContent": "<span  onclick='javascript:MostrarDatosVisitante();' style='  color: #990000;' class='glyphicon glyphicon-user btn btn-link '></span>"
+            }
 
-        ], "language": idioma,
+        ],
+        "language": idioma,
         dom: 'Bfrtip',
-        "buttons": [
-        ]
+        "buttons": []
 
     });
     $('#tablaVisitantesVisitaMostrar tbody').on('click', 'tr', function () {
@@ -1921,6 +2058,7 @@ function MostrarVisitantesVisitaMostrar(id) {
     });
 
 }
+
 function MostrarVisitantesVisitaMostrar2(id) {
 
     $('#tablaVisitantesVisitaMostrar2 tbody').off('click', 'tr');
@@ -1934,17 +2072,25 @@ function MostrarVisitantesVisitaMostrar2(id) {
                 id: id,
             },
             type: "post",
-        }, "lengthMenu": [5, 25, 50, 75, 100],
+        },
+        "lengthMenu": [5, 25, 50, 75, 100],
         //  "processing": true,
-        "columns": [
-            {"data": "indice"},
-            {"data": "nombres"},
-            {"data": "apellidos"},
-            {"data": "identificacion"},
-        ], "language": idioma,
+        "columns": [{
+                "data": "indice"
+            },
+            {
+                "data": "nombres"
+            },
+            {
+                "data": "apellidos"
+            },
+            {
+                "data": "identificacion"
+            },
+        ],
+        "language": idioma,
         dom: 'Bfrtip',
-        "buttons": [
-        ]
+        "buttons": []
 
     });
     $('#tablaVisitantesVisitaMostrar2 tbody').on('click', 'tr', function () {
@@ -1972,6 +2118,7 @@ function MostrarVisitantesVisitaMostrar2(id) {
     });
 
 }
+
 function MostrarParticipantesVisita(dato) {
 
     $('#tablaParticipantesVisita tbody').off('click', 'tr');
@@ -1988,15 +2135,22 @@ function MostrarParticipantesVisita(dato) {
             },
         },
         //  "processing": true,
-        "columns": [
-            {"data": "indice"},
-            {"data": "nombres"},
-            {"data": "apellidos"},
-            {"data": "identificacion"},
-        ], "language": idioma,
+        "columns": [{
+                "data": "indice"
+            },
+            {
+                "data": "nombres"
+            },
+            {
+                "data": "apellidos"
+            },
+            {
+                "data": "identificacion"
+            },
+        ],
+        "language": idioma,
         dom: 'Bfrtip',
-        "buttons": [
-        ]
+        "buttons": []
 
     });
     $('#tablaParticipantesVisita tbody').on('click', 'tr', function () {
@@ -2017,6 +2171,7 @@ function MostrarParticipantesVisita(dato) {
     });
 
 }
+
 function registrarVisitante5() {
     if (fotof != 0) {
         //tomamos el formulairo ingresar visitante
@@ -2039,7 +2194,7 @@ function registrarVisitante5() {
             if (datos == 1) {
 
                 MensajeConClase("Todos Los campos son Obligatorios", ".error")
-                return  true;
+                return true;
             } else if (datos == 2) {
 
                 MensajeConClase("Debe Ingresar Solo letras en el Nombre y Apellido", ".error")
@@ -2067,9 +2222,11 @@ function registrarVisitante5() {
         MensajeConClase("Antes de Guardar debe Tomar La Foto", ".error")
     }
 }
+
 function reserv() {
     esreser = 1;
 }
+
 function registrarVisitante6() {
 
     //tomamos el formulairo ingresar visitante
@@ -2089,7 +2246,7 @@ function registrarVisitante6() {
         if (datos == 1) {
 
             MensajeConClase("Todos Los campos son Obligatorios", ".error")
-            return  true;
+            return true;
         } else if (datos == 2) {
 
             MensajeConClase("Debe Ingresar Solo letras en el Nombre y Apellido", ".error")
@@ -2115,17 +2272,17 @@ function registrarVisitante6() {
     });
 }
 
-function EnviarSql(sql,inicio,final,id) {
-  
-listorep=1;
- $("#link-grafica").attr("href","../modulos/Graficos.php?sql="+sql+"&id=" + id + "&final="+final+"&inicio="+inicio+"")
+function EnviarSql(sql, inicio, final, id) {
+
+    listorep = 1;
+    $("#link-grafica").attr("href", "../modulos/Graficos.php?sql=" + sql + "&id=" + id + "&final=" + final + "&inicio=" + inicio + "")
 
 }
 
-function buscarPersona(id){
+function buscarPersona(id) {
     $.ajax({
         url: "../model/Visita.php?buscarPersona=si",
-        dataType: "json", 
+        dataType: "json",
         data: {
             idPersona: id,
         },
@@ -2135,36 +2292,36 @@ function buscarPersona(id){
             if (datos != ",") {
                 perfiles = [];
                 $("#modalPersona").modal("show");
-                $("#body_modal_personas").html("<table class='table' style='width:100%'>"+
-                     "<tr class='filaprincipal ttitulo'><td colspan='2'> Datos Personales</td></tr>"+
-                     "<tr><th class='primero2'>Identificación:</th><td>" + datos[0].num_documento + "</td></tr>"+
-                    "<tr><th class='primero2'>Nombre Completo:</th><td>" + datos[0].nombres + " " + datos[0].primer_apellido + " " + datos[0].segundo_apellido + "</td></tr>"+
-                    "<tr><th class='primero2'>Fecha de Nacimiento:</th><td>" + datos[0].fecha_nacimiento + "</td></tr>"+
-                    "<tr><th class='primero2'>Telefono:</th><td>"+ datos[0].telefonos +"</td></tr>"+
-                    "<tr><th class='primero2'>Dirección:</th><td>"+ datos[0].celular +"</td></tr>"+
-                    "<tr><th class='primero2'>Correo Personal:</th><td>"+ datos[0].correo_personal +"</td></tr>"+
-                    "<tr><th class='primero2'>Usuario:</th><td>"+ datos[0].logon_name +"</td></tr>"+
-                    "<tr><th class='primero2'>Código:</th><td>"+ datos[0].codigo_barras +"</td></tr>"+
+                $("#body_modal_personas").html("<table class='table' style='width:100%'>" +
+                    "<tr class='filaprincipal ttitulo'><td colspan='2'> Datos Personales</td></tr>" +
+                    "<tr><th class='primero2'>Identificación:</th><td>" + datos[0].num_documento + "</td></tr>" +
+                    "<tr><th class='primero2'>Nombre Completo:</th><td>" + datos[0].nombres + " " + datos[0].primer_apellido + " " + datos[0].segundo_apellido + "</td></tr>" +
+                    "<tr><th class='primero2'>Fecha de Nacimiento:</th><td>" + datos[0].fecha_nacimiento + "</td></tr>" +
+                    "<tr><th class='primero2'>Telefono:</th><td>" + datos[0].telefonos + "</td></tr>" +
+                    "<tr><th class='primero2'>Dirección:</th><td>" + datos[0].celular + "</td></tr>" +
+                    "<tr><th class='primero2'>Correo Personal:</th><td>" + datos[0].correo_personal + "</td></tr>" +
+                    "<tr><th class='primero2'>Usuario:</th><td>" + datos[0].logon_name + "</td></tr>" +
+                    "<tr><th class='primero2'>Código:</th><td>" + datos[0].codigo_barras + "</td></tr>" +
                     "</table>");
                 $("#body_modal_personas").append("<br><table id='TablaDatos' class='table'><thead class='' ><tr class='filaprincipal' style='color:#990000; text-align:center'><th  style='text-align:center'>Empresa</th><th style='text-align:center'>Tipo</th><th style='text-align:center'>Departamento</th><th style='text-align:center'>Cargo</th><th style='text-align:center'>Código - Unidad Académica</th><th style='text-align:center'>Estado</th></tr></thead><tbody></tbody></table>");
-                for (var i = 0; i <= datos[1].length-1; i++) {
+                for (var i = 0; i <= datos[1].length - 1; i++) {
                     color = "red";
                     if (datos[1][i].estado == 1) {
                         estado = "Activo";
                         color = "green";
-                    }else if (datos[1][i].estado == 2) {
+                    } else if (datos[1][i].estado == 2) {
                         estado = "Inactivo";
-                    }else{
+                    } else {
                         estado = "Eliminado";
                     }
-                    $("#TablaDatos tbody").append("<tr style='text-align:center'>"+
-                        "<td>" + datos[1][i].nombre_empresa + "</td>"+
-                        "<td>" + datos[1][i].descripcion + "</td>"+
-                        "<td>" + datos[1][i].nom_departamento + "</td>"+
-                        "<td>" + datos[1][i].nombre_cargo + "</td>"+
-                        "<td>" + datos[1][i].nombre_unidad_aca + "</td>"+
-                        "<td style='background-color:" + color + "; color: white';><b>" + estado + "</b></td>"+
-                    "</tr>");
+                    $("#TablaDatos tbody").append("<tr style='text-align:center'>" +
+                        "<td>" + datos[1][i].nombre_empresa + "</td>" +
+                        "<td>" + datos[1][i].descripcion + "</td>" +
+                        "<td>" + datos[1][i].nom_departamento + "</td>" +
+                        "<td>" + datos[1][i].nombre_cargo + "</td>" +
+                        "<td>" + datos[1][i].nombre_unidad_aca + "</td>" +
+                        "<td style='background-color:" + color + "; color: white';><b>" + estado + "</b></td>" +
+                        "</tr>");
                     perfiles[i] = datos[1][i].descripcion;
                     infVisitante['num_documento'] = datos[0].num_documento;
                     infVisitante['nombres'] = datos[0].nombres;
@@ -2174,7 +2331,7 @@ function buscarPersona(id){
                     infVisitante['celular'] = datos[0].celular;
                     infVisitante['correo_personal'] = datos[0].correo_personal;
                 }
-            }else{
+            } else {
                 $("#mensajed").html("<h4><b>Esta Persona no existe</b></h4>");
                 $("#ModalMensajevisita").modal("show");
             }

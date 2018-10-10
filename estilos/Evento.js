@@ -13,7 +13,11 @@ var p = 0;
 var capacidad = 0;
 var Eventos_Filtro = [];
 var fecha_buscada = "";
-var nombre_coin = "", hentrada_coin = "", hsalida_coin = "", recurso_coin = "", id_coin = "";
+var nombre_coin = "",
+    hentrada_coin = "",
+    hsalida_coin = "",
+    recurso_coin = "",
+    id_coin = "";
 var fechaentrada_coin = "";
 var fechasalida_coin = "";
 var Mensajes = ["Estamos Migrando Los Eventos", "No Tardamos", "Ya Casi Terminamos", "Espera Por favor...", "Ya puedes Trabajar..."];
@@ -66,8 +70,7 @@ $(document).ready(function () {
         searching: false,
         "language": idioma,
         dom: 'Bfrtip',
-        "buttons": [
-        ]
+        "buttons": []
 
     });
     $("#Mostar_Mis_Eventos").click(function () {
@@ -91,8 +94,7 @@ $(document).ready(function () {
                     destroy: true,
                     "language": idioma,
                     dom: 'Bfrtip',
-                    "buttons": [
-                    ]
+                    "buttons": []
 
                 });
             }
@@ -144,8 +146,7 @@ $(document).ready(function () {
     });
     // VALIDO QUE TENGO UN EVENTO SELECCIONADO ANTES DE CANCELAR
     $(".cerrarForPar").click(function () {
-        $(".TablaEvenPar").show("slow");
-        ;
+        $(".TablaEvenPar").show("slow");;
         $(".RegistrarParticipante").hide("slow");
         $(".foterMP").show("slow");
         $(".NuevoPartEv").show("slow");
@@ -338,8 +339,7 @@ function GuardarEvento() {
 function ModificarEvento() {
 
     var formData = new FormData(document.getElementById("Modificar-evento"));
-    formData.append('id', evento);
-    ;
+    formData.append('id', evento);;
 
     $.ajax({
         url: "../model/Evento.php?modificarevento=si",
@@ -406,21 +406,47 @@ function listarEventos() {
             //"processing": true,
             paging: false,
             scrollY: 300,
-            "columns": [
-                {"data": "indice"},
-                {"data": "nombre"},
-                {"data": "Hora_Inicio"},
-                {"data": "Hora_Fin"},
-                {"data": "Duracion"},
-                {"data": "ubicacion"},
-                {"data": "idestado"},
-                {"data": "Cupos"},
-                {"data": "total"},
-                {"data": "Preinscripcion"},
-                {"data": "Descripcion"},
-                {"data": "estado_evento"},
-                {"data": "agrega"},
-            ], "language": idioma,
+            "columns": [{
+                    "data": "indice"
+                },
+                {
+                    "data": "nombre"
+                },
+                {
+                    "data": "Hora_Inicio"
+                },
+                {
+                    "data": "Hora_Fin"
+                },
+                {
+                    "data": "Duracion"
+                },
+                {
+                    "data": "ubicacion"
+                },
+                {
+                    "data": "idestado"
+                },
+                {
+                    "data": "Cupos"
+                },
+                {
+                    "data": "total"
+                },
+                {
+                    "data": "Preinscripcion"
+                },
+                {
+                    "data": "Descripcion"
+                },
+                {
+                    "data": "estado_evento"
+                },
+                {
+                    "data": "agrega"
+                },
+            ],
+            "language": idioma,
             dom: 'Bfrtip',
             "buttons": [{
                     extend: 'excelHtml5',
@@ -504,20 +530,46 @@ function listarEventos() {
                 type: "post",
             },
             //"processing": true,
-            "columns": [
-                {"data": "indice"},
-                {"data": "nombre"},
-                {"data": "Hora_Inicio"},
-                {"data": "Hora_Fin"},
-                {"data": "Duracion"},
-                {"data": "ubicacion"},
-                {"data": "idestado"},
-                {"data": "Cupos"},
-                {"data": "total"},
-                {"data": "Preinscripcion"},
-                {"data": "Descripcion"},
-                {"data": "estado_evento"},
-                {"data": "agrega"}, ],
+            "columns": [{
+                    "data": "indice"
+                },
+                {
+                    "data": "nombre"
+                },
+                {
+                    "data": "Hora_Inicio"
+                },
+                {
+                    "data": "Hora_Fin"
+                },
+                {
+                    "data": "Duracion"
+                },
+                {
+                    "data": "ubicacion"
+                },
+                {
+                    "data": "idestado"
+                },
+                {
+                    "data": "Cupos"
+                },
+                {
+                    "data": "total"
+                },
+                {
+                    "data": "Preinscripcion"
+                },
+                {
+                    "data": "Descripcion"
+                },
+                {
+                    "data": "estado_evento"
+                },
+                {
+                    "data": "agrega"
+                },
+            ],
             "language": idioma,
             dom: 'Bfrtip',
             "buttons": [{
@@ -554,7 +606,7 @@ function listarEventos() {
             $("#tablaeventos tbody tr").removeClass("warning");
             $(this).attr("class", "warning");
             evento = data[6];
-          
+
             $("#tablaParticipantesmodal").hide("fast");
             $(".RegistrarParticipante").hide("fast");
             $(".TablaEvenPar").show("fast");
@@ -609,17 +661,25 @@ function MostrarParticipantes(evento) {
                 dato: evento,
             },
             type: "post",
-        }, "lengthMenu": [5, 25, 50, 75, 100],
+        },
+        "lengthMenu": [5, 25, 50, 75, 100],
         //  "processing": true,
-        "columns": [
-            {"data": "indice"},
-            {"data": "nombres"},
-            {"data": "apellidos"},
-            {"data": "identificacion"},
-        ], "language": idioma,
+        "columns": [{
+                "data": "indice"
+            },
+            {
+                "data": "nombres"
+            },
+            {
+                "data": "apellidos"
+            },
+            {
+                "data": "identificacion"
+            },
+        ],
+        "language": idioma,
         dom: 'Bfrtip',
-        "buttons": [
-        ]
+        "buttons": []
 
     });
     $('#tablaParticipantes tbody').on('click', 'tr', function () {
@@ -697,7 +757,8 @@ function registrarPaticipante(participante, evento, placa, acompa, tipo_ingreso)
     //  Enviamos el formulario a nuestro archivo php con parametro guardar     
     $.ajax({
         url: "../model/Evento.php?guardarparticipante=si",
-        dataType: "json", data: {
+        dataType: "json",
+        data: {
             participante: participante,
             evento: evento,
             placa: placa,
@@ -741,6 +802,7 @@ function registrarPaticipante(participante, evento, placa, acompa, tipo_ingreso)
     });
 
 }
+
 function MostrarParticipantesevento(evento) {
 
     $(".confirmar").hide('fast');
@@ -755,16 +817,29 @@ function MostrarParticipantesevento(evento) {
                 id: evento,
             },
             type: "post",
-        }, "lengthMenu": [5, 25, 50, 75, 100],
+        },
+        "lengthMenu": [5, 25, 50, 75, 100],
         //  "processing": true,
-        "columns": [
-            {"data": "indice"},
-            {"data": "nombres"},
-            {"data": "apellidos"},
-            {"data": "identificacion"},
-            {"data": "Hora_Ingreso"},
-            {"data": "tipo_participante"},
-        ], "language": idioma,
+        "columns": [{
+                "data": "indice"
+            },
+            {
+                "data": "nombres"
+            },
+            {
+                "data": "apellidos"
+            },
+            {
+                "data": "identificacion"
+            },
+            {
+                "data": "Hora_Ingreso"
+            },
+            {
+                "data": "tipo_participante"
+            },
+        ],
+        "language": idioma,
         dom: 'Bfrtip',
         "buttons": [{
                 extend: 'excelHtml5',
@@ -803,7 +878,7 @@ function MostrarParticipantesevento(evento) {
     });
 
     $("#participantesevento").modal("show");
-}//Con esta funcion marco la hora de entrada de un participante en un evento
+} //Con esta funcion marco la hora de entrada de un participante en un evento
 function MarcarHoraEntrada(participante, evento) {
 
 
@@ -811,7 +886,8 @@ function MarcarHoraEntrada(participante, evento) {
     //  Enviamos el formulario a nuestro archivo php con parametro guardar     
     $.ajax({
         url: "../model/Evento.php?marcarentrada=si",
-        dataType: "json", data: {
+        dataType: "json",
+        data: {
             participante: participante,
             evento: evento,
         },
@@ -851,6 +927,7 @@ function MarcarHoraEntrada(participante, evento) {
     });
 
 }
+
 function RetirarPaticipante(participante) {
 
 
@@ -858,7 +935,8 @@ function RetirarPaticipante(participante) {
     //  Enviamos el formulario a nuestro archivo php con parametro guardar     
     $.ajax({
         url: "../model/Evento.php?retirar=si",
-        dataType: "json", data: {
+        dataType: "json",
+        data: {
             participante: participante,
         },
         type: "post",
@@ -871,6 +949,7 @@ function RetirarPaticipante(participante) {
     });
 
 }
+
 function listarEventosusuario(buscar, consulta) {
 
     $('#tablaeventosmodulo tbody').off('dblclick', 'tr');
@@ -890,23 +969,49 @@ function listarEventosusuario(buscar, consulta) {
             //"processing": true,
             paging: false,
             scrollY: 300,
-            "columns": [
-                {"data": "indice"},
-                {"data": "nombre"},
-                {"data": "Hora_Inicio"},
-                {"data": "Hora_Fin"},
-                {"data": "Duracion"},
-                {"data": "ubicacion"},
-                {"data": "idestado"},
-                {"data": "Cupos"},
-                 {"data": "total"},
-                {"data": "Preinscripcion"},
-                {"data": "Descripcion"},
-                {"data": "estado_evento"},
-                {"data": "agrega"}
+            "columns": [{
+                    "data": "indice"
+                },
+                {
+                    "data": "nombre"
+                },
+                {
+                    "data": "Hora_Inicio"
+                },
+                {
+                    "data": "Hora_Fin"
+                },
+                {
+                    "data": "Duracion"
+                },
+                {
+                    "data": "ubicacion"
+                },
+                {
+                    "data": "idestado"
+                },
+                {
+                    "data": "Cupos"
+                },
+                {
+                    "data": "total"
+                },
+                {
+                    "data": "Preinscripcion"
+                },
+                {
+                    "data": "Descripcion"
+                },
+                {
+                    "data": "estado_evento"
+                },
+                {
+                    "data": "agrega"
+                }
 
 
-            ], "language": idioma,
+            ],
+            "language": idioma,
             dom: 'Bfrtip',
             "buttons": [{
                     extend: 'excelHtml5',
@@ -936,11 +1041,11 @@ function listarEventosusuario(buscar, consulta) {
 
             if (agrega == 1) {
                 $(".NuevoPartEv").show("fast");
-                if (data[8] == 0) {
-                    $("#marcarentrada").hide("fast");
-                } else {
-                    $("#marcarentrada").show("fast");
-                }
+                /* if (data[8] == 0) {
+                     $("#marcarentrada").hide("fast");
+                 } else {
+                     $("#marcarentrada").show("fast");
+                 }*/
             } else {
                 $(".NuevoPartEv").hide("fast");
             }
@@ -1006,29 +1111,56 @@ function listarEventosusuario(buscar, consulta) {
             "ajax": {
                 url: "../model/Evento.php?mostrarusuario=si",
                 dataType: "json",
-                type: "post", data: {
+                type: "post",
+                data: {
                     buscar: buscar,
                     consulta: consulta,
                 }
             },
             //"processing": true,
-            "columns": [
-                {"data": "indice"},
-                {"data": "nombre"},
-                {"data": "Hora_Inicio"},
-                {"data": "Hora_Fin"},
-                {"data": "Duracion"},
-                {"data": "ubicacion"},
-                {"data": "idestado"},
-                {"data": "Cupos"},
-                 {"data": "total"},
-                {"data": "Preinscripcion"},
-                {"data": "Descripcion"},
-                {"data": "estado_evento"},
-                {"data": "agrega"}
+            "columns": [{
+                    "data": "indice"
+                },
+                {
+                    "data": "nombre"
+                },
+                {
+                    "data": "Hora_Inicio"
+                },
+                {
+                    "data": "Hora_Fin"
+                },
+                {
+                    "data": "Duracion"
+                },
+                {
+                    "data": "ubicacion"
+                },
+                {
+                    "data": "idestado"
+                },
+                {
+                    "data": "Cupos"
+                },
+                {
+                    "data": "total"
+                },
+                {
+                    "data": "Preinscripcion"
+                },
+                {
+                    "data": "Descripcion"
+                },
+                {
+                    "data": "estado_evento"
+                },
+                {
+                    "data": "agrega"
+                }
 
 
-            ], "language": idioma,
+            ],
+            "language": idioma,
             dom: 'Bfrtip',
             "buttons": [{
                     extend: 'excelHtml5',
@@ -1055,14 +1187,13 @@ function listarEventosusuario(buscar, consulta) {
             participante = 0;
             participantesele = 0;
             estadoevento = data[10];
-
             if (agrega == 1) {
                 $(".NuevoPartEv").show("fast");
-                if (data[8] == 0) {
-                    $("#marcarentrada").hide("fast");
-                } else {
-                    $("#marcarentrada").show("fast");
-                }
+                /* if (data[8] == 0) {
+                     $("#marcarentrada").hide("fast");
+                 } else {
+                     $("#marcarentrada").show("fast");
+                 }*/
             } else {
                 $(".NuevoPartEv").hide("fast");
             }
@@ -1126,6 +1257,7 @@ function listarEventosusuario(buscar, consulta) {
         });
     }
 }
+
 function estadoAgrega() {
     agrega = 0;
 }
@@ -1141,12 +1273,13 @@ function CancelarEvento(id) {
     $.ajax({
         // LLAMO AL AJAX Y ENVIO POR POST EL ID DEL VISITANTE A ELIMINAR Y POR GET LA FUNCION QUE VA A JECUTAR A VisitantesMetodos.php
         url: "../model/Evento.php?cancelar=si",
-        dataType: "json", data: {
+        dataType: "json",
+        data: {
             id: id,
         },
         type: "post",
         success: function (datos) {
-// DEPENDIENDO DEL DATO QUE ME RETORNE LA FUNCION QUE EJECUTE EN EL PHP LE INFORMO AL USUARIO
+            // DEPENDIENDO DEL DATO QUE ME RETORNE LA FUNCION QUE EJECUTE EN EL PHP LE INFORMO AL USUARIO
             if (datos == 1) {
                 $(".mc").hide("fast");
                 $(".mc").html("Evento Cancelado Con Exito");
@@ -1184,7 +1317,8 @@ function BuscarDepartamentoNombre(nombre) {
     $.ajax({
         // LLAMO AL AJAX Y ENVIO POR POST EL ID DEL VISITANTE A ELIMINAR Y POR GET LA FUNCION QUE VA A JECUTAR A VisitantesMetodos.php
         url: "../model/Parametros.php?BuscarNombreParametro=si",
-        dataType: "json", data: {
+        dataType: "json",
+        data: {
             nombre: nombre,
         },
         type: "post",
@@ -1203,6 +1337,7 @@ function BuscarDepartamentoNombre(nombre) {
         }
     });
 }
+
 function CambiarEstiloTablaEve() {
     if (estilotablaeventore == 0) {
         estilotablaeventore = 1;
@@ -1217,7 +1352,8 @@ function GuardarEventosDia(consulta) {
     MostrarMensajes()
     $.ajax({
         url: "../Admin/siru.php",
-        dataType: "json", data: {
+        dataType: "json",
+        data: {
             consulta: consulta,
         },
         type: "post",
@@ -1245,11 +1381,13 @@ function GuardarEventosDia(consulta) {
     });
 
 }
+
 function GuardarEventosDesdeSiru(nombre, ubicacion, hentrada, hsalida, id, tipo, capacidad) {
 
     $.ajax({
         url: "../model/Evento.php?guardarevento2=si",
-        dataType: "json", data: {
+        dataType: "json",
+        data: {
             nombre: nombre,
             ubicacion: ubicacion,
             horaEntrada: hentrada,
@@ -1281,8 +1419,9 @@ function GuardarEventosDesdeSiru(nombre, ubicacion, hentrada, hsalida, id, tipo,
     });
 
 }
-function EventosDeldiaGuardados(repetir) {
 
+function EventosDeldiaGuardados(repetir) {
+    return;
     $.ajax({
         url: "../model/Evento.php?BuscarDia=si",
         dataType: "json",
@@ -1322,7 +1461,8 @@ function BuscarEventosSiruFecha(fecha) {
 
     $.ajax({
         url: "../Admin/siru.php",
-        dataType: "json", data: {
+        dataType: "json",
+        data: {
             consulta: fecha,
         },
         type: "post",
@@ -1345,8 +1485,7 @@ function BuscarEventosSiruFecha(fecha) {
                 $('#Coincidencias tbody').html(" <tr><td colspan='6'>Ningun dato Disponible en la tabla</td></tr>");
                 $('#Buscar_En_Filtro').hide("fast")
             } else {
-                $("#Coincidencias tbody tr").on("click", function () {
-                })
+                $("#Coincidencias tbody tr").on("click", function () {})
                 $('#Buscar_En_Filtro').show("fast")
             }
             p = 3;
@@ -1364,6 +1503,7 @@ function BuscarEventosSiruFecha(fecha) {
 }
 
 var timerEv;
+
 function BuscarNombreFiltro(nombre) {
     var encontro = 0;
     if (nombre.trim().length == 0) {
@@ -1387,13 +1527,13 @@ function BuscarNombreFiltro(nombre) {
 
             }
         }
-        $("#Coincidencias tbody tr").on("click", function () {
-        })
+        $("#Coincidencias tbody tr").on("click", function () {})
         if (encontro == 0) {
             $('#Coincidencias tbody').html(" <tr><td colspan='6'>Ningun dato Disponible en la tabla</td></tr>");
         }
     }
 }
+
 function BuscarTodo(nombre) {
     $('#Coincidencias tbody').html("");
 
@@ -1406,9 +1546,9 @@ function BuscarTodo(nombre) {
 
 
     }
-    $("#Coincidencias tbody tr").on("click", function () {
-    })
+    $("#Coincidencias tbody tr").on("click", function () {})
 }
+
 function MostrarMensajes() {
 
     if (p < Mensajes.length && x == 0) {
@@ -1434,6 +1574,7 @@ function MostrarMensajes() {
 
     }
 }
+
 function myScript() {
     var i = 0;
 
@@ -1516,7 +1657,7 @@ function registrarVisitante3() {
                 if (datos == 1) {
 
                     MensajeConClase("Todos Los campos son Obligatorios", ".error")
-                    return  true;
+                    return true;
                 } else if (datos == 2) {
 
                     MensajeConClase("Debe Ingresar Solo letras en el Nombre y Apellido", ".error")
@@ -1572,6 +1713,7 @@ function registrarVisitante3() {
         MensajeConClase("Antes de Guardar debe Tomar La Foto", ".error")
     }
 }
+
 function registrarVisitante2() {
 
     var s = 0;
@@ -1600,7 +1742,7 @@ function registrarVisitante2() {
             if (datos == 1) {
 
                 MensajeConClase("Los campos Nombres, Apellidos e identificacion son obligatorios", ".error")
-                return  true;
+                return true;
             } else if (datos == 2) {
 
                 MensajeConClase("Debe Ingresar Solo letras en el Nombres y Apellidos", ".error")
@@ -1650,4 +1792,3 @@ function registrarVisitante2() {
 
     }
 }
-

@@ -78,8 +78,16 @@
             <div class="tablausu col-md-12 " >
                 <div class="table-responsive col-sm-12 col-md-12  tablauser" style="text-align: left;">
                     <table class="table table-bordered table-hover  " id="tablavisitantes"  cellspacing="0" width="100%" style="">
+                    <br>
+                    <div class="error error_busqueda oculto"></div>
+                        <div class="form-group col-md-6">
+                            <div class="input-group">
+                                <input class="form-control " id="txt_buscar_visitante" value="" placeholder="Ingrese Nombre, Apellido o Identificacion">
+                                <span class="input-group-addon pointer" title="Buscar Persona" data-toggle="popover" data-trigger="hover" id="btn_buscar_visitante"><span class="glyphicon glyphicon-search"></span></span>
+                            </div>
+                        </div>
                         <thead class="ttitulo ">
-                            <tr class="filaprincipal"><td class="" id='nombrevisitante'>Primer Nombre</td><td class="">Segundo Nombre</td><td class="">Primer Apellido</td><td class="">Segundo Apellido</td><td class="">Tipo Identificacion</td><td class="">identificacion</td><td class="">Celular</td><td class="">Correo Personal</td></tr>
+                            <tr class="filaprincipal"><td class="" id='nombrevisitante'>Nombre Completo</td><td class="">Tipo Identificacion</td><td class="">identificacion</td></tr>
                         </thead>
                         <tbody>
                         </tbody>
@@ -339,7 +347,7 @@
             //CON ESTE LLAMADO CARGO LOS PERMISOS QUE TENGAN LOS TIPOS DE USUARIOS
             BuscarPermisosActividadPerfil("Visitantes");
             // EJECUTO LA FUNCION LISTAR VISITANTES CUANDO SE CARGA LA PAGINA
-            listarVisitantes();
+            listarVisitantes("WDWHDGHGDW");
         </script>
 
     </body>

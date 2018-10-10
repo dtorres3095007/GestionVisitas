@@ -7,7 +7,7 @@ sus valores al navegar a través de las páginas del sitio */
 $server = "localhost"; 
 $database = "gestionvisitas"; //nombre de la base de datos
 $username = "root"; // nombre de usuario con el que se conecta a la base de datos
-$password = ""; // contraseña
+$password = "789512346"; // contraseña
 
 //Conexión
 	$link = mysqli_connect($server, $username, $password, $database);

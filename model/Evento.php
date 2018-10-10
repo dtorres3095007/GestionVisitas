@@ -565,7 +565,6 @@ function MostrarEventosUsuario($buscar, $consulta) {
  *  ESTE METODO ES QUIEN REGISTRA LOS VISITANTES A UN EVENTO SE PASA EL ID DEL VISITANTES Y EL ID DEL EVENTO
  * 
  */
-
 function GuardarParticipante($evento, $participante, $extra, $placa, $acompa, $tipo) {
     include 'config.php';
     if ($extra == -1) {
@@ -575,13 +574,14 @@ function GuardarParticipante($evento, $participante, $extra, $placa, $acompa, $t
         $usuario = $extra;
     }
 
-    $existe = BuscarParticipante($participante, $evento);
+    //$existe = BuscarParticipante($participante, $evento);
     $eventobuscado = BuscarEventoPorid($evento);
 
 
     $idusuarios = $_SESSION['perfil'];
     $cupos = NumeroParticipantesEnEvento($evento);
-    if (!empty($existe)) {
+    //if (!empty($existe)) {
+        if (false) {
         return 2;
     }if ($eventobuscado["Estado_evento"] == "EveCan") {
         return 7;
@@ -607,19 +607,15 @@ function GuardarParticipante($evento, $participante, $extra, $placa, $acompa, $t
         if ($validahora == 2) {
             return 6;
         } else
-        if ($eventobuscado["Cupos"] > $cupos) {
+        //if ($eventobuscado["Cupos"] > $cupos) {
+        if (true) {
             if ($eventobuscado["Id_Usuario_Crea"] == $usuario || $idusuarios == "UserRep" || $idusuarios == "Admin") {
 
                 $datetime1 = date_create($horainicio);
                 $datetime3 = date_create($horaentrada);
                 $fechaInicio = date_format($datetime1, 'Y-m-d');
                 $fechaEntrada = date_format($datetime3, 'Y-m-d');
-                if ($eventobuscado["Id_Usuario_Crea"] == $usuario && $idusuarios != "UserRep" && $idusuarios != "Admin") {
-                    $query = "INSERT INTO `participantes`(`id_evento`, `id_participante`,`tipo_participante`, `placa_vehiculo`, `acompanantes`) VALUES ('$evento','$participante','$tipo','$placa','$acompa')";
-                    mysqli_query($link, $query);
-                    return 1;
-                } else {
-                    if ($idusuarios == "UserRep" || $idusuarios == "Admin") {
+                
                         if ($fechaInicio == $fechaEntrada) {
                             $query = "INSERT INTO `participantes`( `id_evento`, `id_participante`, `EnEvento`, `Hora_Ingreso`,`tipo_participante`, `placa_vehiculo`, `acompanantes`) VALUES ('$evento','$participante','1','$horaentrada','$tipo','$placa','$acompa')";
                             mysqli_query($link, $query);
@@ -629,8 +625,8 @@ function GuardarParticipante($evento, $participante, $extra, $placa, $acompa, $t
                             mysqli_query($link, $query);
                             return 1;
                         }
-                    }
-                }
+                    
+                
             } else {
                 return 3;
                 ;
@@ -640,7 +636,6 @@ function GuardarParticipante($evento, $participante, $extra, $placa, $acompa, $t
         }
     }
 }
-
 /*
  * CON ESTE METODO BUSCO UN PARTICIPANTE POR SU ID
  */

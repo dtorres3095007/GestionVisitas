@@ -30,21 +30,21 @@ estiloDepar = 0;
 tablaMenup = 0;
 fotov = 0;
 var HtmlFoto = ' <div class="TomarFoto"><table class="table"> <thead class="ttitulo "> <tr class="filaprincipal"><td colspan="2"> Foto Visitante</td></tr></thead><tr><td class="videov"><video id="videov"  autoplay="autoplay"></video></td><td class="canvasv nomostrar"><canvas id="canvasv" width="300" height="208" ></canvas></td></tr><tr><td colspan="2">  <span  id="fotov" class="btn btn-danger active form-control">Tomar Foto! </span></td></tr> </table>  </div>';
-$(document).ready(function() {
+$(document).ready(function () {
     $("input[type=number]").attr("min", "0");
-    $("#Ruta").change(function() {
+    $("#Ruta").change(function () {
         $("#MyrutaFinal").val($("#Ruta").val());
     });
-    $("#Empresas").change(function() {
+    $("#Empresas").change(function () {
         valorEmpresa = $(this).val();
         ListarDepartamentos(valorEmpresa);
     });
 
-//-----------------------------------------------------------------------
-    $("#btnAsignarPersona").click(function() {
+    //-----------------------------------------------------------------------
+    $("#btnAsignarPersona").click(function () {
         var empleado = false;
         var ic = perfiles[0];
-        $.each(perfiles, function(index, value) {
+        $.each(perfiles, function (index, value) {
             if (value.toUpperCase() == "EMPLEADO") {
                 empleado = true;
             }
@@ -57,9 +57,9 @@ $(document).ready(function() {
         var docPersona = $("#txtBuscarPersona").val();
         existeVisitante(docPersona);
     })
-//-----------------------------------------------------------------------
+    //-----------------------------------------------------------------------
 
-    $(".buscarvisitante").on('keyup', function(e) {
+    $(".buscarvisitante").on('keyup', function (e) {
         participanteDepar = 0;
         if (e.which === 13) { // if is enter
             e.preventDefault(); // don't submit form
@@ -76,8 +76,7 @@ $(document).ready(function() {
                     searching: false,
                     "language": idioma,
                     dom: 'Bfrtip',
-                    "buttons": [
-                    ]
+                    "buttons": []
 
                 });
             }
@@ -87,25 +86,25 @@ $(document).ready(function() {
 
 
 
-    $("#Recargar2").click(function() {
+    $("#Recargar2").click(function () {
         listarParametros();
         ListarValorParametros(0);
         $(".opcioenstablaparametros").css("display", "none");
 
     });
 
-    $("#Recargar3").click(function() {
+    $("#Recargar3").click(function () {
         MostrarTiposUsuarios();
         $(".opcioenstablaacividades").css("display", "none");
         MostrarActividadesAsignar("x")
     });
-    $("#Recargar4").click(function() {
+    $("#Recargar4").click(function () {
 
         CargarMenuTabla();
     });
 
 
-    $("#form-ingresar-visitante4").submit(function() {
+    $("#form-ingresar-visitante4").submit(function () {
         canvas2 = document.getElementById("canvas3");
 
         registrarVisitante4();
@@ -114,7 +113,7 @@ $(document).ready(function() {
     });
 
     canvasv = document.getElementById("canvasv");
-    $('#fotov').click(function() {
+    $('#fotov').click(function () {
         if (fotov == 0) {
             $(".videov").hide('fast');
 
@@ -136,7 +135,7 @@ $(document).ready(function() {
 
     });
 
-    $("#AgregarParticipanteDepartamento").click(function() {
+    $("#AgregarParticipanteDepartamento").click(function () {
 
         if (participanteDepar == 0) {
 
@@ -164,16 +163,16 @@ $(document).ready(function() {
         }
     });
 
-    $("#retirarsiVisitante").click(function() {
+    $("#retirarsiVisitante").click(function () {
         $(".confirmarVisita").hide('fast');
         RetirarPaticipanteDepartamento(participanteseledepa);
 
     });
-    $("#retirarnoVisitante").click(function() {
+    $("#retirarnoVisitante").click(function () {
         $(".confirmarVisita").hide('fast');
 
     });
-    $("#retirarVisi").click(function() {
+    $("#retirarVisi").click(function () {
 
         if (participanteseledepa == 0) {
 
@@ -185,7 +184,7 @@ $(document).ready(function() {
         }
 
     });
-    $("#SalidaVisi").click(function() {
+    $("#SalidaVisi").click(function () {
 
         if (participanteseledepa == 0) {
 
@@ -201,35 +200,34 @@ $(document).ready(function() {
         }
 
     });
-    $(".cerrarForParDepa").click(function() {
-        $(".TablaDepaPar").show("slow");
-        ;
+    $(".cerrarForParDepa").click(function () {
+        $(".TablaDepaPar").show("slow");;
         $(".RegistrarParticipanteDepa").hide("slow");
         $(".foterMPde").show("slow");
         $(".NuevoPartDepart").show("slow");
 
     });
 
-    $(".NuevoPartDepart").click(function() {
+    $(".NuevoPartDepart").click(function () {
 
         $(".RegistrarParticipanteDepa").show("slow");
         $(".TablaDepaPar").hide("slow");
         $(".foterMPde").hide("slow");
         $(".NuevoPartDepart").hide("slow");
     });
-    $("#cerrarinfoDepar").click(function() {
+    $("#cerrarinfoDepar").click(function () {
         $("#participantesDeparta").hide("slow");
 
     });
-    $("#cerrarinfoDeparPer").click(function() {
+    $("#cerrarinfoDeparPer").click(function () {
         $("#tablaParticipanteDepartamento").hide("slow");
 
     });
-    $("#cerrarinfoVisitante").click(function() {
+    $("#cerrarinfoVisitante").click(function () {
         $("#tablaVisitanteVisitaModal").hide("slow");
 
     });
-    $("#btnModificar").click(function() {
+    $("#btnModificar").click(function () {
         $(".error").hide();
         if (valorseleccionado.length == 0) {
             $("#mensajed").html("<p ><b>Antes de Continuar Debe Seleccionar un Valor Parametro</b></p>");
@@ -243,7 +241,7 @@ $(document).ready(function() {
     });
 
 
-    $("#btnModificarParametro").click(function() {
+    $("#btnModificarParametro").click(function () {
         $(".error").hide();
         if (valorseleccionado.length == 0) {
             $("#mensajed").html("<p ><b>Antes de Continuar Debe Seleccionar un Valor Parametro</b></p>");
@@ -259,20 +257,20 @@ $(document).ready(function() {
         }
 
     });
-//-----------------------------------------------------------------------
+    //-----------------------------------------------------------------------
 
 
 
-    $("#retirarsiact").click(function() {
+    $("#retirarsiact").click(function () {
         $(".confirmarAct").hide('fast');
         EliminarActividad(ActiReti);
 
     });
-    $("#retirarnoAct").click(function() {
+    $("#retirarnoAct").click(function () {
         $(".confirmarAct").hide('fast');
 
     });
-    $(".RetirarSctividad").click(function() {
+    $(".RetirarSctividad").click(function () {
         if (ActiReti == 0) {
             MensajeConClase("Seleccione Actividad a Retirar", ".error")
         } else {
@@ -282,7 +280,7 @@ $(document).ready(function() {
 
     });
 
-    $("#CambiarTabla").click(function() {
+    $("#CambiarTabla").click(function () {
         if (estilotablaparametros == 0) {
             estilotablaparametros = 1;
         } else {
@@ -291,7 +289,7 @@ $(document).ready(function() {
 
         listarParametros();
     });
-    $(".CambiarTabla").click(function() {
+    $(".CambiarTabla").click(function () {
 
         if (estilotperfil == 0) {
             estilotperfil = 1;
@@ -301,7 +299,7 @@ $(document).ready(function() {
 
         MostrarTiposUsuarios();
     });
-    $("#CambiarTablaPerfiles").click(function() {
+    $("#CambiarTablaPerfiles").click(function () {
 
         if (tablaMenup == 0) {
             tablaMenup = 1;
@@ -311,7 +309,7 @@ $(document).ready(function() {
         CargarMenuTabla();
     });
 
-    $(".modificaricono").click(function() {
+    $(".modificaricono").click(function () {
 
         if (modulosele == 0) {
             $("#ModalMe").html("<p >Antes de Continuar debe seleccionar el perfil</p>");
@@ -322,7 +320,7 @@ $(document).ready(function() {
         }
 
     });
-    $("#asignaricono").click(function() {
+    $("#asignaricono").click(function () {
         if (icono == "") {
 
             MensajeConClase("Debe Seleccionar Un Icono", "#error1");
@@ -332,13 +330,13 @@ $(document).ready(function() {
     });
 
 
-    $("#tablaiconos tbody td").click(function() {
+    $("#tablaiconos tbody td").click(function () {
         $("#tablaiconos td").css("color", "black");
         $(this).css("color", "#990000");
         icono = $(this).attr('class');
     });
 
-    $("#GuardarActividadPerfil").click(function() {
+    $("#GuardarActividadPerfil").click(function () {
         actividad = $("#idactividades").val();
 
         if (actividad == "") {
@@ -348,10 +346,10 @@ $(document).ready(function() {
             registrarPermisoPorUsuario(perfilseleaux, actividad);
         }
     });
-    $("#btnCambiarPermiso").click(function() {
+    $("#btnCambiarPermiso").click(function () {
         CambiarEstado();
     });
-    $(".agregaractividad").click(function() {
+    $(".agregaractividad").click(function () {
 
         if (perfilsele == 0) {
             $("#ModalMe").html("<p >Antes de Continuar debe seleccionar el perfil</p>");
@@ -378,16 +376,14 @@ $(document).ready(function() {
         //"processing": true,
         "language": idioma,
         dom: 'Bfrtip',
-        "buttons": [
-        ]
+        "buttons": []
 
     });
     $("#tablavalorparametros").DataTable({
         //"processing": true,
         "language": idioma,
         dom: 'Bfrtip',
-        "buttons": [
-        ]
+        "buttons": []
 
     });
     $("#tablaParticipantesDepar").DataTable({
@@ -395,40 +391,39 @@ $(document).ready(function() {
         searching: false,
         "language": idioma,
         dom: 'Bfrtip',
-        "buttons": [
-        ]
+        "buttons": []
 
     });
 
     /*
      * AL DAR CLICK EN EL BOTON ELIMINAR LLAMO A MI FUNCION EliminarValorParametro
      */
-    $("#btnEliminarParametro").click(function() {
+    $("#btnEliminarParametro").click(function () {
 
         EliminarValorParametro(valorseleccionado)
     });
-    $(".btnEliminarvalorparametro").click(function() {
-        if (valorseleccionado == "") {
-            $("#btnEliminarParametro").hide("fast");
-            $("#ModalEliminar").hide("fast");
-            $("#ModalEliminar").html('<p class="mc">Antes de Continuar Debe Seleccionar el Parametro a Eliminar</p>')
-            $("#ModalEliminar").show("fast");
-            $("#ModalConfirmacionEliminar").modal("show")
-        } else {
-            $("#btnEliminarParametro").show("fast");
-            $("#ModalEliminar").hide("fast");
-            $("#ModalEliminar").html('<p class="mc">¿ Esta Seguro de Desea Eliminar el Parametro ?</p>')
-            $("#ModalEliminar").show("fast");
-            $("#ModalConfirmacionEliminar").modal("show");
-        }
+    $(".btnEliminarvalorparametro").click(function () {
+            if (valorseleccionado == "") {
+                $("#btnEliminarParametro").hide("fast");
+                $("#ModalEliminar").hide("fast");
+                $("#ModalEliminar").html('<p class="mc">Antes de Continuar Debe Seleccionar el Parametro a Eliminar</p>')
+                $("#ModalEliminar").show("fast");
+                $("#ModalConfirmacionEliminar").modal("show")
+            } else {
+                $("#btnEliminarParametro").show("fast");
+                $("#ModalEliminar").hide("fast");
+                $("#ModalEliminar").html('<p class="mc">¿ Esta Seguro de Desea Eliminar el Parametro ?</p>')
+                $("#ModalEliminar").show("fast");
+                $("#ModalConfirmacionEliminar").modal("show");
+            }
 
-    }
+        }
 
     )
     /*
      * OCULTO LOS MENSAJES DE ERROR O DE INFORMACION
      */
-    $(".operaciones").click(function() {
+    $(".operaciones").click(function () {
         $('#error1').hide('fast');
         $('#error').hide('fast');
 
@@ -437,7 +432,7 @@ $(document).ready(function() {
      * HAY CIERTOS PARAMETROS QUE REQUIEREN CIERTOS VALORES ESPECILES 
      * CON ESTA FUNCION MUESTRO DEPENDIENDO DEL PARAMETRO SELECCIONADO EL VALOR QUE ES NECESARIO
      */
-    $('#idParametros').change(function() {
+    $('#idParametros').change(function () {
         $('#valorparametro').attr("type", "text");
         $('#valorparametro').attr("placeholder", "valor");
         $('#id_aux').attr("placeholder", "codigo");
@@ -481,7 +476,7 @@ function CargarParametros() {
         url: "../model/Parametros.php?mostrarParametro2=si",
         dataType: "json",
         type: "post",
-        success: function(datos) {
+        success: function (datos) {
 
 
             $('.idParametros').html("");
@@ -489,16 +484,15 @@ function CargarParametros() {
             for (var i = 0; i <= datos.length - 1; i++) {
                 $('.idParametros').append("<option value=" + datos[i].id + ">" + datos[i].nombre + "</option>");
 
-            }
-            ;
+            };
         },
-        error: function() {
+        error: function () {
 
             console.log('Something went wrong', status, err);
 
         }
     });
-}// este metodo me permite mostrar los parametros en una tabla
+} // este metodo me permite mostrar los parametros en una tabla
 
 
 /**
@@ -510,7 +504,7 @@ function CargarParametros() {
  * EL PRIMER ESTILO DE TABLA ES CON PAGINACION
  * EL SEGUNDO ESTILO DE LA TABLA ES CON SCROLL
  */
-var listarParametros = function() {
+var listarParametros = function () {
 
     $('#tablaparametros tbody').off('click', 'tr');
     if (estilotablaparametros == 0) {
@@ -524,17 +518,22 @@ var listarParametros = function() {
             //"processing": true,
             paging: false,
             scrollY: 300,
-            "columns": [
-                {"data": "indice"},
-                {"data": "nombre"},
-                {"data": "descripcion"},
-            ], "language": idioma,
+            "columns": [{
+                    "data": "indice"
+                },
+                {
+                    "data": "nombre"
+                },
+                {
+                    "data": "descripcion"
+                },
+            ],
+            "language": idioma,
             "lengthMenu": [5, 25, 50, 75, 100],
             dom: 'Bfrtip',
-            "buttons": [
-            ],
+            "buttons": [],
         });
-        $('#tablaparametros tbody').on('click', 'tr', function() {
+        $('#tablaparametros tbody').on('click', 'tr', function () {
 
             var data = myTable.row(this).data();
             parametroseleccionado = data[3];
@@ -565,17 +564,22 @@ var listarParametros = function() {
                 type: "post",
             },
             //"processing": true,
-            "columns": [
-                {"data": "indice"},
-                {"data": "nombre"},
-                {"data": "descripcion"},
-            ], "language": idioma,
+            "columns": [{
+                    "data": "indice"
+                },
+                {
+                    "data": "nombre"
+                },
+                {
+                    "data": "descripcion"
+                },
+            ],
+            "language": idioma,
             "lengthMenu": [5, 25, 50, 75, 100],
             dom: 'Bfrtip',
-            "buttons": [
-            ],
+            "buttons": [],
         });
-        $('#tablaparametros tbody').on('click', 'tr', function() {
+        $('#tablaparametros tbody').on('click', 'tr', function () {
 
             var data = myTable.row(this).data();
             parametroseleccionado = data[3];
@@ -614,25 +618,33 @@ function ListarValorParametros(id) {
         "ajax": {
             url: "../model/Parametros.php?mostrarvalor=si",
             dataType: "json",
-            type: "post", data: {
+            type: "post",
+            data: {
                 data: elegido,
             }
         },
         // "processing": true,
         "lengthMenu": [5, 25, 50, 75, 100],
-        "columns": [
-            {"data": "indice"},
-            {"data": "id_aux"},
-            {"data": "valor"},
-            {"data": "valorx"},
-        ], "language": idioma,
+        "columns": [{
+                "data": "indice"
+            },
+            {
+                "data": "id_aux"
+            },
+            {
+                "data": "valor"
+            },
+            {
+                "data": "valorx"
+            },
+        ],
+        "language": idioma,
         dom: 'Bfrtip',
-        "buttons": [
-        ]
+        "buttons": []
 
     });
 
-    $('#tablavalorparametros tbody').on('click', 'tr', function() {
+    $('#tablavalorparametros tbody').on('click', 'tr', function () {
         var data = myTablevalor.row(this).data();
         valorseleccionado = data[0];
         $("#tablavalorparametros tbody tr").removeClass("warning");
@@ -646,6 +658,7 @@ function ListarValorParametros(id) {
 
     });
 }
+
 function MostrarTiposUsuarios() {
 
     $('#tablaperfilesusuairos tbody').off('click', 'tr');
@@ -661,18 +674,23 @@ function MostrarTiposUsuarios() {
             "lengthMenu": [5, 25, 50, 75, 100],
             paging: false,
             scrollY: 300,
-            "columns": [
-                {"data": "indice"},
-                {"data": "valor"},
-                {"data": "valorx"},
-            ], "language": idioma,
+            "columns": [{
+                    "data": "indice"
+                },
+                {
+                    "data": "valor"
+                },
+                {
+                    "data": "valorx"
+                },
+            ],
+            "language": idioma,
             dom: 'Bfrtip',
-            "buttons": [
-            ]
+            "buttons": []
 
         });
 
-        $('#tablaperfilesusuairos tbody').on('click', 'tr', function() {
+        $('#tablaperfilesusuairos tbody').on('click', 'tr', function () {
             var data = myTablevalor.row(this).data();
             $("#tablaperfilesusuairos tbody tr").removeClass("warning");
 
@@ -696,18 +714,23 @@ function MostrarTiposUsuarios() {
             },
             // "processing": true,
             "lengthMenu": [5, 25, 50, 75, 100],
-            "columns": [
-                {"data": "indice"},
-                {"data": "valor"},
-                {"data": "valorx"},
-            ], "language": idioma,
+            "columns": [{
+                    "data": "indice"
+                },
+                {
+                    "data": "valor"
+                },
+                {
+                    "data": "valorx"
+                },
+            ],
+            "language": idioma,
             dom: 'Bfrtip',
-            "buttons": [
-            ]
+            "buttons": []
 
         });
 
-        $('#tablaperfilesusuairos tbody').on('click', 'tr', function() {
+        $('#tablaperfilesusuairos tbody').on('click', 'tr', function () {
             var data = myTablevalor.row(this).data();
             $("#tablaperfilesusuairos tbody tr").removeClass("warning");
 
@@ -721,6 +744,7 @@ function MostrarTiposUsuarios() {
 
     }
 }
+
 function MostrarActividadesAsignar(id) {
     $(".confirmarAct").hide('fast');
     $('#tablaactividades tbody').off('click', 'tr');
@@ -728,29 +752,43 @@ function MostrarActividadesAsignar(id) {
         "destroy": true,
         "ajax": {
             url: "../model/Parametros.php?mostraractividadesasignadas=si",
-            dataType: "json", data: {
+            dataType: "json",
+            data: {
                 id: id,
             },
             type: "post",
         },
         // "processing": true,
         "lengthMenu": [5, 25, 50, 75, 100],
-        "columns": [
-            {"data": "indice"},
-            {"data": "valor"},
-            {"data": "agrega"},
-            {"data": "modifica"},
-            {"data": "elimina"},
-            {"data": "amplia"},
-            {"data": "cambia_tabla"},
-        ], "language": idioma,
+        "columns": [{
+                "data": "indice"
+            },
+            {
+                "data": "valor"
+            },
+            {
+                "data": "agrega"
+            },
+            {
+                "data": "modifica"
+            },
+            {
+                "data": "elimina"
+            },
+            {
+                "data": "amplia"
+            },
+            {
+                "data": "cambia_tabla"
+            },
+        ],
+        "language": idioma,
         dom: 'Bfrtip',
-        "buttons": [
-        ]
+        "buttons": []
 
     });
 
-    $('#tablaactividades tbody').on('click', 'tr', function() {
+    $('#tablaactividades tbody').on('click', 'tr', function () {
         var data = myTablevalor.row(this).data();
 
         $("#tablaactividades tbody tr").removeClass("warning");
@@ -763,10 +801,11 @@ function MostrarActividadesAsignar(id) {
     });
 
 }
-function AgregarPar()
-{
+
+function AgregarPar() {
     agrega = 0;
 }
+
 function sombrear2(idp, valorp, operacionp) {
 
     if (modificapermisos == 1) {
@@ -794,7 +833,7 @@ function MostrarActividadesAsignarcombo(id) {
             id: id,
         },
         type: "post",
-        success: function(datos) {
+        success: function (datos) {
 
 
             $('.idactividades').html("");
@@ -802,10 +841,9 @@ function MostrarActividadesAsignarcombo(id) {
             for (var i = 0; i <= datos.length - 1; i++) {
                 $('.idactividades').append("<option value=" + datos[i].id_aux + ">" + datos[i].valor + "</option>");
 
-            }
-            ;
+            };
         },
-        error: function() {
+        error: function () {
 
             console.log('Something went wrong', status, err);
 
@@ -822,15 +860,14 @@ function Cargaridentificacion() {
         url: "../model/Parametros.php?mostrarTiposIdentificacion=si",
         dataType: "json",
         type: "post",
-        success: function(datos) {
+        success: function (datos) {
             $('.cbxtipoIdentificacion').html("");
             for (var i = 0; i <= datos.length - 1; i++) {
                 $('.cbxtipoIdentificacion').append("<option value=" + datos[i].id + ">" + datos[i].valor + "</option>");
 
-            }
-            ;
+            };
         },
-        error: function() {
+        error: function () {
 
             console.log('Something went wrong', status, err);
 
@@ -845,7 +882,7 @@ function CargartiposDepartamentos() {
         url: "../model/Parametros.php?mostrarDepartamen=si",
         dataType: "json",
         type: "post",
-        success: function(datos) {
+        success: function (datos) {
 
             $('.departamentos').html("");
             $('.departamentos').append("<option value=" + '' + ">" + 'Seleccione Departamento o Area' + "</option>");
@@ -853,10 +890,9 @@ function CargartiposDepartamentos() {
             for (var i = 0; i <= datos.length - 1; i++) {
                 $('.departamentos').append("<option value=" + datos[i].id + ">" + datos[i].valor + "</option>");
 
-            }
-            ;
+            };
         },
-        error: function() {
+        error: function () {
 
             console.log('Something went wrong', status, err);
 
@@ -874,19 +910,28 @@ function ListarDepartamentos(empresa) {
             "ajax": {
                 url: "../model/Parametros.php?mostrarDepartamen2=si",
                 dataType: "json",
-                data: {empresa: empresa},
+                data: {
+                    empresa: empresa
+                },
                 type: "post",
             },
             // "processing": true,
             "lengthMenu": [10, 25, 50, 75, 100],
-            "columns": [
-                {"data": "indice"},
-                {"data": "valor"},
-                {"data": "valorx"},
-                {"data": "numvi"},
-                {"defaultContent": "<span data-toggle='modal' data-target='#participantesDepartamentos'style='  color: #990000;' class='glyphicon glyphicon-user btn btn-link'></span>"}
+            "columns": [{
+                    "data": "indice"
+                },
+                {
+                    "data": "valor"
+                },
+                {
+                    "data": "valorx"
+                },
+                {
+                    "defaultContent": "<span data-toggle='modal' data-target='#participantesDepartamentos'style='  color: #990000;' class='glyphicon glyphicon-user btn btn-link'></span>"
+                }
 
-            ], "language": idioma,
+            ],
+            "language": idioma,
             dom: 'Bfrtip',
             "buttons": [{
                     extend: 'excelHtml5',
@@ -909,7 +954,7 @@ function ListarDepartamentos(empresa) {
             ],
         });
 
-        $('#tablaDepar tbody').on('click', 'tr', function() {
+        $('#tablaDepar tbody').on('click', 'tr', function () {
             var data = myTablevalor.row(this).data();
             DepartaSele = data[0];
 
@@ -929,7 +974,7 @@ function ListarDepartamentos(empresa) {
             $('.placa2').removeAttr('required', 'false');
 
         });
-        $('#tablaDepar tbody').on('dblclick', 'tr', function() {
+        $('#tablaDepar tbody').on('dblclick', 'tr', function () {
 
             $("#tablaParticipanteDepartamento").hide("fast")
             MostrarParticipantesDepartamentoEsp(DepartaSele);
@@ -946,18 +991,28 @@ function ListarDepartamentos(empresa) {
             "ajax": {
                 url: "../model/Parametros.php?mostrarDepartamen2=si",
                 dataType: "json",
-                data: {empresa: empresa},
+                data: {
+                    empresa: empresa
+                },
                 type: "post",
             },
             // "processing": true,
             "lengthMenu": [10, 25, 50, 75, 100],
-            "columns": [
-                {"data": "indice"},
-                {"data": "valor"},
-                {"data": "valorx"},
-                {"defaultContent": "<span data-toggle='modal' data-target='#participantesDepartamentos'style='  color: #990000;' class='glyphicon glyphicon-user btn btn-link'></span>"}
+            "columns": [{
+                    "data": "indice"
+                },
+                {
+                    "data": "valor"
+                },
+                {
+                    "data": "valorx"
+                },
+                {
+                    "defaultContent": "<span data-toggle='modal' data-target='#participantesDepartamentos'style='  color: #990000;' class='glyphicon glyphicon-user btn btn-link'></span>"
+                }
 
-            ], "language": idioma,
+            ],
+            "language": idioma,
             dom: 'Bfrtip',
             paging: false,
             scrollY: 300,
@@ -982,7 +1037,7 @@ function ListarDepartamentos(empresa) {
             ],
         });
 
-        $('#tablaDepar tbody').on('click', 'tr', function() {
+        $('#tablaDepar tbody').on('click', 'tr', function () {
             var data = myTablevalor.row(this).data();
             DepartaSele = data[0];
 
@@ -1001,7 +1056,7 @@ function ListarDepartamentos(empresa) {
             $('.placa2').removeAttr('required', 'false');
 
         });
-        $('#tablaDepar tbody').on('dblclick', 'tr', function() {
+        $('#tablaDepar tbody').on('dblclick', 'tr', function () {
             $("#tablaParticipanteDepartamento").hide("fast")
             MostrarParticipantesDepartamentoEsp(DepartaSele);
 
@@ -1035,7 +1090,7 @@ function CargartiposEstadosEventos() {
         url: "../model/Parametros.php?estadoeventos=si",
         dataType: "json",
         type: "post",
-        success: function(datos) {
+        success: function (datos) {
 
             $('.Estado-Evento').html("");
             $('.Estado-Evento').append("<option value=" + '' + ">" + 'Seleccione Estado del evento' + "</option>");
@@ -1043,10 +1098,9 @@ function CargartiposEstadosEventos() {
             for (var i = 0; i <= datos.length - 1; i++) {
                 $('.Estado-Evento').append("<option value=" + datos[i].id_aux + ">" + datos[i].valor + "</option>");
 
-            }
-            ;
+            };
         },
-        error: function() {
+        error: function () {
 
             console.log('Something went wrong', status, err);
 
@@ -1085,16 +1139,15 @@ function CargartiposCargos() {
         url: "../model/Parametros.php?mostrarcargos=si",
         dataType: "json",
         type: "post",
-        success: function(datos) {
+        success: function (datos) {
             $('.tiposcargo').html("");
             $('.tiposcargo').append("<option value=" + '' + ">" + 'Seleccione Cargo' + "</option>");
 
             for (var i = 0; i <= datos.length - 1; i++) {
                 $('.tiposcargo').append("<option value=" + datos[i].id + ">" + datos[i].valor + "</option>");
-            }
-            ;
+            };
         },
-        error: function() {
+        error: function () {
 
             console.log('Something went wrong', status, err);
 
@@ -1102,21 +1155,21 @@ function CargartiposCargos() {
     });
 
 }
+
 function CargartiposParticipantes() {
     $.ajax({
         url: "../model/Parametros.php?mostrarparti=si",
         dataType: "json",
         type: "post",
-        success: function(datos) {
+        success: function (datos) {
             $('.tipo_par').html("");
             $('.tipo_par').append("<option value=" + '' + ">" + 'Seleccione Tipo Participante' + "</option>");
 
             for (var i = 0; i <= datos.length - 1; i++) {
                 $('.tipo_par').append("<option value=" + datos[i].id + ">" + datos[i].valor + "</option>");
-            }
-            ;
+            };
         },
-        error: function() {
+        error: function () {
 
             console.log('Something went wrong', status, err);
 
@@ -1131,15 +1184,14 @@ function CargarTipoVisita() {
         url: "../model/Parametros.php?mostrarTiposVisitas=si",
         dataType: "json",
         type: "post",
-        success: function(datos) {
+        success: function (datos) {
             $('.tipoIngreso').html("");
             $('.tipoIngreso').append("<option value=" + '' + ">" + 'Seleccione Tipo de Ingreso' + "</option>");
             for (var i = 0; i <= datos.length - 1; i++) {
                 $('.tipoIngreso').append("<option value=" + datos[i].id + ">" + datos[i].valor + "</option>");
-            }
-            ;
+            };
         },
-        error: function() {
+        error: function () {
 
             console.log('Something went wrong', status, err);
 
@@ -1153,7 +1205,7 @@ function CargarEmpresas() {
         url: "../model/Parametros.php?mostrarempresas=si",
         dataType: "json",
         type: "post",
-        success: function(datos) {
+        success: function (datos) {
 
             $('.Empresas').html("");
             $('.Empresas').append("<option value=" + '' + ">" + 'Seleccione Empresa' + "</option>");
@@ -1161,32 +1213,31 @@ function CargarEmpresas() {
 
                 $('.Empresas').append("<option value=" + datos[i].id_aux + ">" + datos[i].valor + "</option>");
             }
-            $('#Empresas').val("cuc");
-            ;
+            $('#Empresas').val("cuc");;
         },
-        error: function() {
+        error: function () {
 
             console.log('Something went wrong', status, err);
 
         }
     });
 }
+
 function CargarEstadoVisita() {
 
     $.ajax({
         url: "../model/Parametros.php?mostrarEstadosVisitas=si",
         dataType: "json",
         type: "post",
-        success: function(datos) {
+        success: function (datos) {
 
             $('.cbxestadovisita').html("");
             $('.cbxestadovisita').append("<option value=" + '' + ">" + 'Seleccione Estado Visita' + "</option>");
             for (var i = 0; i <= datos.length - 1; i++) {
                 $('.cbxestadovisita').append("<option value=" + datos[i].id_aux + ">" + datos[i].valor + "</option>");
-            }
-            ;
+            };
         },
-        error: function() {
+        error: function () {
 
             console.log('Something went wrong', status, err);
 
@@ -1200,10 +1251,11 @@ function CargarValorParametros(id) {
     $.ajax({
         url: "../model/Parametros.php?mostrarvalor=si",
         dataType: "json",
-        type: "post", data: {
+        type: "post",
+        data: {
             data: elegido,
         },
-        success: function(datos) {
+        success: function (datos) {
 
 
 
@@ -1218,20 +1270,21 @@ function CargarValorParametros(id) {
                 $("#ModalMensaje").modal();
             }
         },
-        error: function() {
+        error: function () {
 
             console.log('Something went wrong', status, err);
 
         }
     });
 }
+
 function CargartiposPersonas() {
 
     $.ajax({
         url: "../model/Parametros.php?mostrarPersonas=si",
         dataType: "json",
         type: "post",
-        success: function(datos) {
+        success: function (datos) {
 
             $('#cbxtipopersona').html("");
             $('#cbxtipopersona').append("<option value=''>" + 'Seleccione Tipo de Persona' + "</option>");
@@ -1240,10 +1293,9 @@ function CargartiposPersonas() {
                 $('#cbxtipopersona').append("<option value=" + datos[i].id_aux + ">" + datos[i].valor + "</option>");
 
             }
-            $('#cbxtipopersona').val("tblvisitado");
-            ;
+            $('#cbxtipopersona').val("tblvisitado");;
         },
-        error: function() {
+        error: function () {
 
             console.log('Something went wrong', status, err);
 
@@ -1251,6 +1303,7 @@ function CargartiposPersonas() {
     });
 
 }
+
 function sombrear(id) {
 
     $("tr").css("background-color", "white");
@@ -1284,14 +1337,16 @@ var idioma = {
         "sSortDescending": ": Activar para ordenar la columna de manera descendente"
     }
 }
+
 function EliminarValorParametro(id) {
     $.ajax({
         url: "../model/Parametros.php?eliminar=si",
-        dataType: "json", data: {
+        dataType: "json",
+        data: {
             id: id,
         },
         type: "post",
-        success: function(datos) {
+        success: function (datos) {
 
             if (datos == 1) {
                 $(".mc").hide("fast");
@@ -1310,7 +1365,7 @@ function EliminarValorParametro(id) {
                 $("#salirEliminar").show("slow");
             }
         },
-        error: function() {
+        error: function () {
 
             $(".mc").hide("fast");
             $(".mc").html("Error Al Eliminar El Valor parametro");
@@ -1324,15 +1379,17 @@ function EliminarValorParametro(id) {
 
 
 }
+
 function EliminarActividad(id) {
 
     $.ajax({
         url: "../model/Parametros.php?eliminarActividad=si",
-        dataType: "json", data: {
+        dataType: "json",
+        data: {
             id: id,
         },
         type: "post",
-        success: function(datos) {
+        success: function (datos) {
 
             if (datos == 1) {
                 MensajeConClase("Actividad Eliminada Con exito", ".error");
@@ -1341,7 +1398,7 @@ function EliminarActividad(id) {
                 MensajeConClase("Error Al Eliminar la Actividad", ".error");
             }
         },
-        error: function() {
+        error: function () {
             MensajeConClase("Error Al Eliminar la Actividad", ".error")
             console.log('Something went wrong', status, err);
 
@@ -1350,23 +1407,25 @@ function EliminarActividad(id) {
 
 
 }
+
 function registrarPermisoPorUsuario(perfil, actividad) {
 
     $.ajax({
         url: "../model/Parametros.php?GuardarPermiso=si",
-        dataType: "json", data: {
+        dataType: "json",
+        data: {
             perfil: perfil,
             actividad: actividad,
         },
         type: "post",
-    }).done(function(datos) {
+    }).done(function (datos) {
 
         //Recibo los datos del php
         //si es un quiere decir que los campos estan vacios
         if (datos == 1) {
 
             MensajeConClase("Debe Seleccionar Una Actividad", "#error1");
-            return  true;
+            return true;
             //si es dos es por que guardo el parametro
         } else if (datos == 2) {
 
@@ -1383,18 +1442,20 @@ function registrarPermisoPorUsuario(perfil, actividad) {
         }
     });
 }
+
 function CambiarEstado() {
 
 
     $.ajax({
         url: "../model/Parametros.php?ModificarPermiso=si",
-        dataType: "json", data: {
+        dataType: "json",
+        data: {
             id: id,
             valor: valor,
             operacion: operacion,
         },
         type: "post",
-    }).done(function(datos) {
+    }).done(function (datos) {
 
         if (datos == 2) {
             $('#ModalEliminar').hide('fast');
@@ -1415,10 +1476,12 @@ function CambiarEstado() {
         }
     });
 }
+
 function ocultar() {
     $('#error1').hide('slow');
 
 }
+
 function CargarMenuTabla() {
 
     if (tablaMenup == 0) {
@@ -1428,26 +1491,34 @@ function CargarMenuTabla() {
             "destroy": true,
             "ajax": {
                 url: "../model/Parametros.php?menutabla=si",
-                dataType: "json", data: {
+                dataType: "json",
+                data: {
                     id: id,
                 },
                 type: "post",
             },
             // "processing": true,
             "lengthMenu": [20, 25, 50, 75, 100],
-            "columns": [
-                {"data": "indice"},
-                {"data": "valory"},
-                {"data": "valor"},
-                {"data": "valorx"},
-            ], "language": idioma,
+            "columns": [{
+                    "data": "indice"
+                },
+                {
+                    "data": "valory"
+                },
+                {
+                    "data": "valor"
+                },
+                {
+                    "data": "valorx"
+                },
+            ],
+            "language": idioma,
             dom: 'Bfrtip',
-            "buttons": [
-            ]
+            "buttons": []
 
         });
 
-        $('#TablaActividadesmenu tbody').on('click', 'tr', function() {
+        $('#TablaActividadesmenu tbody').on('click', 'tr', function () {
             var data = myTablevalor.row(this).data();
             HabilitarModifica(".divmodifica");
             $("#TablaActividadesmenu tbody tr").removeClass("warning");
@@ -1464,7 +1535,8 @@ function CargarMenuTabla() {
             "destroy": true,
             "ajax": {
                 url: "../model/Parametros.php?menutabla=si",
-                dataType: "json", data: {
+                dataType: "json",
+                data: {
                     id: id,
                 },
                 type: "post",
@@ -1473,19 +1545,26 @@ function CargarMenuTabla() {
             "lengthMenu": [20, 25, 50, 75, 100],
             paging: false,
             scrollY: 300,
-            "columns": [
-                {"data": "indice"},
-                {"data": "valory"},
-                {"data": "valor"},
-                {"data": "valorx"},
-            ], "language": idioma,
+            "columns": [{
+                    "data": "indice"
+                },
+                {
+                    "data": "valory"
+                },
+                {
+                    "data": "valor"
+                },
+                {
+                    "data": "valorx"
+                },
+            ],
+            "language": idioma,
             dom: 'Bfrtip',
-            "buttons": [
-            ]
+            "buttons": []
 
         });
 
-        $('#TablaActividadesmenu tbody').on('click', 'tr', function() {
+        $('#TablaActividadesmenu tbody').on('click', 'tr', function () {
             var data = myTablevalor.row(this).data();
             HabilitarModifica(".divmodifica");
             $("#TablaActividadesmenu tbody tr").removeClass("warning");
@@ -1497,16 +1576,18 @@ function CargarMenuTabla() {
         });
     }
 }
+
 function CambiarIcono(id, icono) {
 
     $.ajax({
         url: "../model/Parametros.php?Modificaricono=si",
-        dataType: "json", data: {
+        dataType: "json",
+        data: {
             id: id,
             icono: icono,
         },
         type: "post",
-    }).done(function(datos) {
+    }).done(function (datos) {
 
         if (datos == 1) {
 
@@ -1523,6 +1604,7 @@ function CambiarIcono(id, icono) {
         }
     });
 }
+
 function PuedeModificarPermiso() {
 
     modificapermisos = 0;
@@ -1538,7 +1620,7 @@ function cargarValorParametro(id) {
             id: id,
         },
         type: "post",
-        success: function(datos) {
+        success: function (datos) {
 
             if (datos.idParametro == 9) {
 
@@ -1549,7 +1631,7 @@ function cargarValorParametro(id) {
             $("#txtValor").val(datos.valor);
             $("#txtDescripcion").val(datos.valorx);
         },
-        error: function() {
+        error: function () {
             console.log('Something went wrong', status, error);
         }
     });
@@ -1567,12 +1649,12 @@ function modificarValorParametro(id, valor, valorx, id_aux) {
             idparametro: parametroseleccionado
         },
         type: "post",
-        success: function(datos) {
+        success: function (datos) {
 
             if (datos == 1) {
 
                 MensajeConClase("Todos Los Campos Son Obligatorios", ".error")
-                return  true;
+                return true;
                 //si es dos es por que guardo el parametro
             } else if (datos == 2) {
 
@@ -1604,7 +1686,7 @@ function modificarValorParametro(id, valor, valorx, id_aux) {
                 return true;
             }
         },
-        error: function() {
+        error: function () {
             console.log('Something went wrong', status, error);
         }
     });
@@ -1627,18 +1709,25 @@ function MostrarParticipantesDepartamentos(dato) {
             },
         },
         //  "processing": true,
-        "columns": [
-            {"data": "indice"},
-            {"data": "nombres"},
-            {"data": "apellidos"},
-            {"data": "identificacion"},
-        ], "language": idioma,
+        "columns": [{
+                "data": "indice"
+            },
+            {
+                "data": "nombres"
+            },
+            {
+                "data": "apellidos"
+            },
+            {
+                "data": "identificacion"
+            },
+        ],
+        "language": idioma,
         dom: 'Bfrtip',
-        "buttons": [
-        ]
+        "buttons": []
 
     });
-    $('#tablaParticipantesDepar tbody').on('click', 'tr', function() {
+    $('#tablaParticipantesDepar tbody').on('click', 'tr', function () {
         var data = table.row(this).data();
         $("#tablaParticipantesDepar tbody tr").removeClass("warning");
 
@@ -1648,7 +1737,7 @@ function MostrarParticipantesDepartamentos(dato) {
         mostrarInfoCompletaparticipante(participanteDepar, "#participantesDeparta")
 
     });
-    $('#tablaParticipantesDepar tbody').on('dblclick', 'tr', function() {
+    $('#tablaParticipantesDepar tbody').on('dblclick', 'tr', function () {
         var data = table.row(this).data();
 
         $("#participantesDeparta").show("slow");
@@ -1666,19 +1755,20 @@ function registrarPaticipanteDepartamento(participante, departamento, placa, aco
     //  Enviamos el formulario a nuestro archivo php con parametro guardar     
     $.ajax({
         url: "../model/Parametros.php?guardarparticipantedepartamento=si",
-        dataType: "json", data: {
+        dataType: "json",
+        data: {
             participante: participante,
             departamento: departamento,
             placa: placa,
             acompa: acompa,
         },
         type: "post",
-    }).done(function(datos) {
+    }).done(function (datos) {
 
         if (datos == -1) {
             MensajeConClase("El Visitante no cuenta con foto en el sistema, por favor tomar la foto <b class='tomar glyphicon glyphicon-camera'></b>", ".error");
             $(".tomar").css("-webkit-animation", " tiembla 0.3s infinite");
-            $(".tomar").click(function() {
+            $(".tomar").click(function () {
 
                 $(".TablaDepaPar").hide("fast");
 
@@ -1691,7 +1781,7 @@ function registrarPaticipanteDepartamento(participante, departamento, placa, aco
         } else if (datos == -20) {
 
             $(".Visitantesfoto").hide("fast");
-          
+
             $(".sancionado-error").show("fast");
             $(".TablaDepaPar").show("slow");
             MensajeConClase("Atencion el Visitante esta sancionado por tal motivo no se le permite el ingreso a la universidad", ".error");
@@ -1706,6 +1796,7 @@ function registrarPaticipanteDepartamento(participante, departamento, placa, aco
     });
 
 }
+
 function MostrarParticipantesDepartamentoEsp(evento) {
 
     $(".confirmarVisita").hide('fast');
@@ -1720,18 +1811,35 @@ function MostrarParticipantesDepartamentoEsp(evento) {
                 id: evento,
             },
             type: "post",
-        }, "lengthMenu": [5, 25, 50, 75, 100],
+        },
+        "lengthMenu": [5, 25, 50, 75, 100],
         //  "processing": true,
-        "columns": [
-            {"data": "indice"},
-            {"data": "nombres"},
-            {"data": "apellidos"},
-            {"data": "identificacion"},
-            {"data": "placa_visitante"},
-            {"data": "Acompanantes"},
-            {"data": "HoraEntrada"},
-            {"data": "HoraSalida"},
-        ], "language": idioma,
+        "columns": [{
+                "data": "indice"
+            },
+            {
+                "data": "nombres"
+            },
+            {
+                "data": "apellidos"
+            },
+            {
+                "data": "identificacion"
+            },
+            {
+                "data": "placa_visitante"
+            },
+            {
+                "data": "Acompanantes"
+            },
+            {
+                "data": "HoraEntrada"
+            },
+            {
+                "data": "HoraSalida"
+            },
+        ],
+        "language": idioma,
         dom: 'Bfrtip',
         "buttons": [{
                 extend: 'excelHtml5',
@@ -1753,7 +1861,7 @@ function MostrarParticipantesDepartamentoEsp(evento) {
             }
         ],
     });
-    $('#tablaParticipantesDepartamentos tbody').on('click', 'tr', function() {
+    $('#tablaParticipantesDepartamentos tbody').on('click', 'tr', function () {
         var data = table.row(this).data();
         $("#tablaParticipantesDepartamentos tbody  tr").removeClass("warning");
         $(this).attr("class", "warning");
@@ -1763,7 +1871,7 @@ function MostrarParticipantesDepartamentoEsp(evento) {
         mostrarInfoCompletaparticipante(data[3], "#tablaParticipanteDepartamento")
 
     });
-    $('#tablaParticipantesDepartamentos tbody').on('dblclick', 'tr', function() {
+    $('#tablaParticipantesDepartamentos tbody').on('dblclick', 'tr', function () {
         var data = table.row(this).data();
 
         $("#tablaParticipanteDepartamento").show("slow");
@@ -1772,6 +1880,7 @@ function MostrarParticipantesDepartamentoEsp(evento) {
 
     $("#participantesDepartamentoInfo").modal("show");
 }
+
 function RetirarPaticipanteDepartamento(participante) {
 
 
@@ -1779,11 +1888,12 @@ function RetirarPaticipanteDepartamento(participante) {
     //  Enviamos el formulario a nuestro archivo php con parametro guardar     
     $.ajax({
         url: "../model/VisitantesMetodos.php?retirarVisitante=si",
-        dataType: "json", data: {
+        dataType: "json",
+        data: {
             participante: participante,
         },
         type: "post",
-    }).done(function(datos) {
+    }).done(function (datos) {
 
 
         MensajeConClase("Participante Retirado con exito", ".error");
@@ -1792,6 +1902,7 @@ function RetirarPaticipanteDepartamento(participante) {
     });
 
 }
+
 function MarcarHoraSalida(participante) {
 
 
@@ -1799,11 +1910,12 @@ function MarcarHoraSalida(participante) {
     //  Enviamos el formulario a nuestro archivo php con parametro guardar     
     $.ajax({
         url: "../model/Parametros.php?marcarsalida=si",
-        dataType: "json", data: {
+        dataType: "json",
+        data: {
             participante: participante,
         },
         type: "post",
-    }).done(function(datos) {
+    }).done(function (datos) {
 
         if (datos == 6) {
             MostrarParticipantesDepartamentoEsp(DepartaSele);
@@ -1818,6 +1930,7 @@ function MarcarHoraSalida(participante) {
     });
 
 }
+
 function CambiarEstiloTablaDepa() {
     if (estiloDepar == 0) {
         estiloDepar = 1;
@@ -1882,12 +1995,12 @@ function registrarVisitante4() {
             cache: false,
             contentType: false,
             processData: false
-        }).done(function(datos) {
+        }).done(function (datos) {
 
             if (datos == 1) {
 
                 MensajeConClase("Todos Los campos son Obligatorios", ".error")
-                return  true;
+                return true;
             } else if (datos == 2) {
 
                 MensajeConClase("Debe Ingresar Solo letras en el Nombre y Apellido", ".error")
@@ -1920,13 +2033,14 @@ function registrarVisitante4() {
         MensajeConClase("Antes de Guardar debe Tomar La Foto", ".error")
     }
 }
+
 function MostrarRutas() {
 
     $.ajax({
         url: "../model/Parametros.php?traerrutas=si",
         dataType: "json",
         type: "post",
-        success: function(datos) {
+        success: function (datos) {
 
 
             $('.rutas').html("");
@@ -1934,10 +2048,9 @@ function MostrarRutas() {
             for (var i = 0; i <= datos.length - 1; i++) {
                 $('.rutas').append("<option value=" + datos[i].id_aux + ">" + datos[i].valor + "</option>");
 
-            }
-            ;
+            };
         },
-        error: function() {
+        error: function () {
 
             console.log('Something went wrong', status, err);
 
@@ -1950,11 +2063,12 @@ function mostrarInfoCompletaparticipante(id, tabla) {
     $.ajax({
         //HAGO LA LLAMADA AJAX Y LE ENVIO POR POST EL ID DEL VISITANTE Y POR GET LA FUNCION A EJECUTAR
         url: "../model/visitantesMetodos.php?buscarporid=si",
-        dataType: "json", data: {
+        dataType: "json",
+        data: {
             id: id,
         },
         type: "post",
-        success: function(datos) {
+        success: function (datos) {
 
             // MUESTRO LOS DATOS EN LOS CAMPOS QUE LE CORRESPONDE EN EL FORMULARIO
 
@@ -1972,7 +2086,7 @@ function mostrarInfoCompletaparticipante(id, tabla) {
             $(' ' + tabla + ' .apellidovisitante').html(datos[0].apellido + " " + datos[0].Segundo_Apellido);
 
         },
-        error: function() {
+        error: function () {
 
             console.log('Something went wrong', status, err);
 
@@ -1980,6 +2094,7 @@ function mostrarInfoCompletaparticipante(id, tabla) {
     });
 
 }
+
 function TraerValorEmpre() {
     return valorEmpresa;
 }
@@ -1997,11 +2112,11 @@ function ActualizarFoto(id, data) {
             id: id,
         },
         type: "post",
-        success: function(datos) {
+        success: function (datos) {
 
 
         },
-        error: function() {
+        error: function () {
 
             console.log('Something went wrong', status, err);
 
@@ -2017,7 +2132,7 @@ function existeVisitante(id) {
             id: id,
         },
         type: "post",
-        success: function(datos) {
+        success: function (datos) {
             if (datos != false) {
                 registrarPaticipanteDepartamento(datos.id, DepartaSeleccionado, "------", 0);
             } else {
@@ -2037,22 +2152,22 @@ function existeVisitante(id) {
                         celular: infVisitante['celular'],
                         correo: infVisitante['correo_personal'],
                         tipo_identificacion: 43,
-                                segundoapellido: infVisitante['segundo_apellido'],
+                        segundoapellido: infVisitante['segundo_apellido'],
                         placa: "------",
                         acompa: 0,
                         xxx: 1
                     },
-                    success: function(datos) {
+                    success: function (datos) {
                         MensajeConClase("Persona Registrada exitosamente!", ".error");
                     },
-                    error: function() {
+                    error: function () {
                         MensajeConClase("Error al registrar a la persona!", ".error");
                         console.log('Something went wrong', status, err);
                     }
                 });
             }
         },
-        error: function() {
+        error: function () {
             console.log('Something went wrong', status, err);
         }
     });

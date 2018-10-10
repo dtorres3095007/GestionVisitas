@@ -341,7 +341,7 @@ $(document).ready(function () {
         tipoidentificacion = $("#cbxtipoIdentificacion").val();
         BuscarPersona(tipopersona, identificacion, tipoidentificacion)
     });
-// ESTE CANVA ES PARA CAPTURAR LA FOTO DEL VISITANTES
+    // ESTE CANVA ES PARA CAPTURAR LA FOTO DEL VISITANTES
     canvas = document.getElementById("canvas");
     canvas2 = document.getElementById("canvas2");
     $('#foto').click(function () {
@@ -360,7 +360,7 @@ $(document).ready(function () {
         }
 
     });
-//  SI SELECCIONA UN VISITANTE PUEDE SEGUIR CON EL FORMULARIO DE VISITA
+    //  SI SELECCIONA UN VISITANTE PUEDE SEGUIR CON EL FORMULARIO DE VISITA
     $('#cbxlistadovisitantes').change(function () {
 
         idvisitante = $('#cbxlistadovisitantes').val();
@@ -382,7 +382,7 @@ $(document).ready(function () {
 
         }
     });
-// SI SELECCIONA UN VISITADO PUEDE CONTINUAR CON EL FORMULARI ODE VISITA
+    // SI SELECCIONA UN VISITADO PUEDE CONTINUAR CON EL FORMULARI ODE VISITA
     $('#cbxlistadovisitado').change(function () {
 
         idvisitado = $('#cbxlistadovisitado').val();
@@ -406,7 +406,7 @@ $(document).ready(function () {
         }
     });
 
-// CON ESTA FUNCION CAMBIO EL MODO DE BUSQUEDA DE VISITADOS EN EL FORMULARIO DE VISITA
+    // CON ESTA FUNCION CAMBIO EL MODO DE BUSQUEDA DE VISITADOS EN EL FORMULARIO DE VISITA
     /*
      * SE PUEDE BUSCAR YA SEA POR NOMBRE COMPLETO O POR LA CEDULA
      */
@@ -566,8 +566,7 @@ $(document).ready(function () {
     $('#cbxtipoIdentificacionVisitante').focusout(function () {
         visi1 = 0
     });
-    $('#txtIdentificacionvisitante').change(function () {
-    });
+    $('#txtIdentificacionvisitante').change(function () {});
 
     $("#txtIdentificacionvisitante").on('keyup', function (e) {
         if (e.which === 13) { // if is enter
@@ -622,14 +621,14 @@ $(document).ready(function () {
             e.preventDefault();
             if (visi1 == 1) {
                 BuscarVisitado();
-                visi1 = 2;
-                ;
+                visi1 = 2;;
             } else {
                 mostrarFormVisita();
                 visi1 = 1;
             }
         }
     });
+
     function mostrarFormVisitado() {
         if (visitantedere == 1) {
             $(".error").hide('fast');
@@ -763,24 +762,39 @@ $(document).ready(function () {
     // esta funcion no permite el ingreso de numeros en los campos con la clase inputt2
     $(".inputt2").keypress(function (key) {
         window.console.log(key.charCode)
-        if ((key.charCode < 97 || key.charCode > 122)//letras mayusculas
-                && (key.charCode < 65 || key.charCode > 90) //letras minusculas
-                && (key.charCode != 45) //retroceso
-                && (key.charCode != 241) //ñ
-                && (key.charCode != 209) //Ñ
-                && (key.charCode != 32) //espacio
-                && (key.charCode != 225) //á
-                && (key.charCode != 233) //é
-                && (key.charCode != 237) //í
-                && (key.charCode != 243) //ó
-                && (key.charCode != 250) //ú
-                && (key.charCode != 193) //Á
-                && (key.charCode != 201) //É
-                && (key.charCode != 205) //Í
-                && (key.charCode != 211) //Ó
-                && (key.charCode != 218) //Ú
+        if ((key.charCode < 97 || key.charCode > 122) //letras mayusculas
+            &&
+            (key.charCode < 65 || key.charCode > 90) //letras minusculas
+            &&
+            (key.charCode != 45) //retroceso
+            &&
+            (key.charCode != 241) //ñ
+            &&
+            (key.charCode != 209) //Ñ
+            &&
+            (key.charCode != 32) //espacio
+            &&
+            (key.charCode != 225) //á
+            &&
+            (key.charCode != 233) //é
+            &&
+            (key.charCode != 237) //í
+            &&
+            (key.charCode != 243) //ó
+            &&
+            (key.charCode != 250) //ú
+            &&
+            (key.charCode != 193) //Á
+            &&
+            (key.charCode != 201) //É
+            &&
+            (key.charCode != 205) //Í
+            &&
+            (key.charCode != 211) //Ó
+            &&
+            (key.charCode != 218) //Ú
 
-                )
+        )
             return false;
 
     });
@@ -790,7 +804,7 @@ $(document).ready(function () {
 
         return false;
     });
-// LLAMO AL METODO REGISTRAR VISITADO
+    // LLAMO AL METODO REGISTRAR VISITADO
     $("#form-ingresar-visitado").submit(function () {
         registrarVisitado();
         return false;
@@ -814,12 +828,12 @@ $(document).ready(function () {
         return false;
     });
 
-//Cuando envien el Formulario de guardar Parametro Llamo a la funcion
+    //Cuando envien el Formulario de guardar Parametro Llamo a la funcion
     $("#GuardarParametro").submit(function () {
         registrarParametro();
         return false;
     });
-// CUANDO SE ENVIA EL FORMULARIO LLAMO AL METODO registrarValorParametro
+    // CUANDO SE ENVIA EL FORMULARIO LLAMO AL METODO registrarValorParametro
     $("#GuardarValorParametro").submit(function () {
         registrarValorParametro();
         return false;
@@ -829,7 +843,7 @@ $(document).ready(function () {
         registrarusuario();
         return false;
     });
-//LLAMA AL METODO RESERVAR VISITA
+    //LLAMA AL METODO RESERVAR VISITA
     $("#reservar-visita").submit(function () {
         ReservarVisita();
 
@@ -840,7 +854,7 @@ $(document).ready(function () {
 function registrarParametro() {
     //obtengo el formulario de registro de parametros
     var formData = new FormData(document.getElementById("GuardarParametro"));
-// Envio los datos a mi archivo PHP y le envio por get la funcion que va a realizar
+    // Envio los datos a mi archivo PHP y le envio por get la funcion que va a realizar
     $.ajax({
         url: "../model/Parametros.php?GuardarParametro=si",
         type: "post",
@@ -856,7 +870,7 @@ function registrarParametro() {
         if (datos == 1) {
 
             MensajeConClase("Todos Los Campos Son Obligatorios", "#error")
-            return  true;
+            return true;
             //si es dos es por que guardo el parametro
         } else if (datos == 2) {
 
@@ -879,11 +893,12 @@ function registrarParametro() {
         }
     });
 }
+
 function registrarValorParametro() {
 
     //obtengo el formulario  registro valor  parametros
     var formData = new FormData(document.getElementById("GuardarValorParametro"));
-// Envio los datos a mi archivo PHP y le envio por get la funcion que va a realizar
+    // Envio los datos a mi archivo PHP y le envio por get la funcion que va a realizar
     $.ajax({
         url: "../model/Parametros.php?GuardarValorParametro=si",
         type: "post",
@@ -899,7 +914,7 @@ function registrarValorParametro() {
         if (datos == 1) {
 
             MensajeConClase("Todos Los Campos Son Obligatorios", "#error1")
-            return  true;
+            return true;
             //si es dos es por que guardo el parametro
         } else if (datos == 2) {
 
@@ -932,6 +947,7 @@ function registrarValorParametro() {
         }
     });
 }
+
 function registrarusuario() {
     if (mostrarpersona == 0) {
 
@@ -940,7 +956,7 @@ function registrarusuario() {
         //obtengo los datos del formulario
         var formData = new FormData(document.getElementById("GuardarUsuario"));
         formData.append('contrasena', identificacionpersona);
-// envio los datos al php y como parametro guardar
+        // envio los datos al php y como parametro guardar
         $.ajax({
             url: "../model/esUsuario.php?guardar=si",
             type: "post",
@@ -955,7 +971,7 @@ function registrarusuario() {
 
                 MensajeConClase("Todos Los campos Son Obligatorios", ".error")
 
-                return  true;
+                return true;
             } else if (datos == 3) {
 
                 MensajeConClase("El Nombre Usuario  ya esta en el sistema", ".error")
@@ -1002,7 +1018,7 @@ function registrarVisitante() {
             if (datos == 1) {
 
                 MensajeConClase("Todos Los campos son Obligatorios", ".error")
-                return  true;
+                return true;
             } else if (datos == 2) {
 
                 MensajeConClase("Debe Ingresar Solo letras en el Nombre y Apellido", ".error")
@@ -1109,7 +1125,8 @@ function BuscarVisitante() {
 
         $.ajax({
             url: "../model/visitantesMetodos.php?buscar=si",
-            dataType: "json", data: {
+            dataType: "json",
+            data: {
                 tipo: tipo,
                 identificacion: id,
                 busqueda: modobusqueda,
@@ -1226,7 +1243,8 @@ function BuscarVisitante() {
         var apellido = $('#apellidovisi').val();
         $.ajax({
             url: "../model/visitantesMetodos.php?buscar=si",
-            dataType: "json", data: {
+            dataType: "json",
+            data: {
                 nombre: nombre,
                 apellido: apellido,
                 busqueda: modobusqueda,
@@ -1304,7 +1322,8 @@ function BuscarVisitado() {
 
         $.ajax({
             url: "../model/visitado.php?buscar=si",
-            dataType: "json", data: {
+            dataType: "json",
+            data: {
                 tipo: tipo,
                 identificacion: id,
                 modo: busquedaVisitado,
@@ -1382,7 +1401,8 @@ function BuscarVisitado() {
 
         $.ajax({
             url: "../model/visitado.php?buscar=si",
-            dataType: "json", data: {
+            dataType: "json",
+            data: {
                 nombre: nombre,
                 apellido: apellido,
                 modo: busquedaVisitado,
@@ -1492,7 +1512,8 @@ function EnviarCorreo(id) {
 
     $.ajax({
         url: "../model/Visita.php?enviarcorreo=si",
-        dataType: "json", data: {
+        dataType: "json",
+        data: {
             id: id,
         },
         type: "post",
@@ -1520,27 +1541,45 @@ function ListarVisitasVisitante(id) {
         "ajax": {
             url: "../model/visitantesMetodos.php?mostrarVisitasVisitante=si",
             dataType: "json",
-            type: "post", data: {
+            type: "post",
+            data: {
                 visitante: id,
             },
         }, //paging: false,
         //scrollY: 400,
         // "processing": true,
 
-        "columns": [
-            {"data": "indice"},
-            {"data": "nombrevisitado"},
-            {"data": "Identificacion"},
-            {"data": "HoraEntrada"},
-            {"data": "HoraSalida"},
-            {"data": "DuracionVisita"},
-            {"data": "NumAcompanantes"},
-            {"data": "TipoVisita"},
-            {"data": "EstadoVisita"},
-        ], "language": idioma,
-        dom: 'Bfrtip',
-        "buttons": [
+        "columns": [{
+                "data": "indice"
+            },
             {
+                "data": "nombrevisitado"
+            },
+            {
+                "data": "Identificacion"
+            },
+            {
+                "data": "HoraEntrada"
+            },
+            {
+                "data": "HoraSalida"
+            },
+            {
+                "data": "DuracionVisita"
+            },
+            {
+                "data": "NumAcompanantes"
+            },
+            {
+                "data": "TipoVisita"
+            },
+            {
+                "data": "EstadoVisita"
+            },
+        ],
+        "language": idioma,
+        dom: 'Bfrtip',
+        "buttons": [{
                 extend: 'excelHtml5',
                 text: '<i class="fa fa-file-excel-o"></i>',
                 titleAttr: 'Excel',
@@ -1591,7 +1630,8 @@ function ListarVisitasVisitante(id) {
 function BuscarVisitanteid(id) {
     $.ajax({
         url: "../model/visitantesMetodos.php?buscarporid=si",
-        dataType: "json", data: {
+        dataType: "json",
+        data: {
             id: id,
         },
         type: "post",
@@ -1677,15 +1717,17 @@ function BuscarVisitanteid(id) {
  * LA BSUQUEDA SE REALIZA POR MEDIO DEL ARCHIVO visitado Y SE LE PASA COMO PARAMETRO buscarporid
  * LA CUAL ME RETORNA TODOS LOS DATOS DEL VISITADO
  */
-function  EsReserva() {
+function EsReserva() {
 
     reservaEs = 1;
 }
+
 function BuscarVisitadoid(id) {
 
     $.ajax({
         url: "../model/visitado.php?buscarid=si",
-        dataType: "json", data: {
+        dataType: "json",
+        data: {
             id: id,
         },
         type: "post",
@@ -1714,6 +1756,7 @@ function BuscarVisitadoid(id) {
         }
     });
 }
+
 function registrarVisitado() {
     //tomamos el formulairo ingresar visitante
     var formData = new FormData(document.getElementById("form-ingresar-visitado"));
@@ -1732,7 +1775,7 @@ function registrarVisitado() {
         if (datos == 1) {
 
             MensajeConClase("Todos Los campos son Obligatorios", ".error")
-            return  true;
+            return true;
         } else if (datos == 2) {
 
             MensajeConClase("Debe Ingresar Solo letras en el Nombre y Apellido", ".error")
@@ -1776,7 +1819,8 @@ function BuscarPersona(idtipopersona, identificacion, idtipoidentificacion) {
 
     $.ajax({
         url: "../model/esUsuario.php?buscar2=si",
-        dataType: "json", data: {
+        dataType: "json",
+        data: {
             tipopersona: idtipopersona,
             identificacion: identificacion,
             idtipoidentificacion: idtipoidentificacion,
@@ -2002,7 +2046,8 @@ function MostrarCruzes(id) {
 
     $.ajax({
         url: "../model/Visita.php?mostrarcruzes=si",
-        dataType: "json", data: {
+        dataType: "json",
+        data: {
             id: id,
         },
         type: "post",
@@ -2027,10 +2072,11 @@ function MostrarCruzes(id) {
  * FUNCION MOSTRAR INFORMACION COMPLETA DEL VISITANTES A MODIFICAR LE PASO POR PARAMETRO AL ID DEL VISITANTES
  */
 function mostrarInfoCompletaVisitanteModificarVisita(id) {
-// HAGO LA LLAMADA AJAX Y ENVIO EL ID DEL VISITANTES Y LA FUNCION QUE VA A EJECUTAR
+    // HAGO LA LLAMADA AJAX Y ENVIO EL ID DEL VISITANTES Y LA FUNCION QUE VA A EJECUTAR
     $.ajax({
         url: "../model/visitantesMetodos.php?buscarporid=si",
-        dataType: "json", data: {
+        dataType: "json",
+        data: {
             id: id,
         },
         type: "post",
@@ -2074,7 +2120,7 @@ function ModificarVisitantevisita(id) {
     var formData = new FormData(document.getElementById("form-modificar-visitante-visita"));
     var data = canvas.toDataURL("image/jpeg");
     var info = data.split(",", 2);
-// LE AGREGO AL FORMULARIO LOS DATOS ADICIONALES QUE NECESITO
+    // LE AGREGO AL FORMULARIO LOS DATOS ADICIONALES QUE NECESITO
     formData.append("data", info[1]);
     formData.append("id", id);
     formData.append("misma", MismaFoto);
@@ -2091,10 +2137,10 @@ function ModificarVisitantevisita(id) {
         processData: false
     }).done(function (datos) {
 
-// DEPENDIENDO DE LO QUE ME RETORNE LA FUNCION DEL PHP LE INFORMO AL USUARIO
+        // DEPENDIENDO DE LO QUE ME RETORNE LA FUNCION DEL PHP LE INFORMO AL USUARIO
         if (datos == 1) {
             MensajeConClase("Todos Los campos son Obligatorios, excepto el Segundo Nombre", ".error");
-            return  true;
+            return true;
         } else if (datos == 2) {
             MensajeConClase("Debe Ingresar Solo letras en el Nombre y Apellido", ".error");
             return true;
@@ -2132,7 +2178,8 @@ function ModificarVisitantevisita(id) {
 
 
 }
-function  ModificarDesdeVisita() {
+
+function ModificarDesdeVisita() {
 
     DesdeVisita = 1;
 }
@@ -2147,19 +2194,29 @@ function MostrarVisitantesVisita() {
             url: "../model/visitantesMetodos.php?mostrarparticipantesDepartamento=si",
             dataType: "json",
             type: "post",
-        }, "lengthMenu": [5, 25, 50, 75, 100],
+        },
+        "lengthMenu": [5, 25, 50, 75, 100],
         //  "processing": true,
-        "columns": [
-            {"data": "indice"},
-            {"data": "nombres"},
-            {"data": "apellidos"},
-            {"data": "identificacion"},
-            {"defaultContent": "<span  onclick='javascript:MostrarDatosVisitante();' style='  color: #990000;' class='glyphicon glyphicon-user btn btn-link '></span>"}
+        "columns": [{
+                "data": "indice"
+            },
+            {
+                "data": "nombres"
+            },
+            {
+                "data": "apellidos"
+            },
+            {
+                "data": "identificacion"
+            },
+            {
+                "defaultContent": "<span  onclick='javascript:MostrarDatosVisitante();' style='  color: #990000;' class='glyphicon glyphicon-user btn btn-link '></span>"
+            }
 
-        ], "language": idioma,
+        ],
+        "language": idioma,
         dom: 'Bfrtip',
-        "buttons": [
-        ]
+        "buttons": []
 
     });
     $('#tablaVisitantesVisita tbody').on('click', 'tr', function () {
@@ -2224,7 +2281,7 @@ function MostrarVisitantesVisita() {
 
 }
 
-function  GuardarEnVectorVisitante(id) {
+function GuardarEnVectorVisitante(id) {
     VisitantesVector.push(id);
 
     $('#derevisitante').css('color', '#cccccc');
@@ -2238,7 +2295,7 @@ function  GuardarEnVectorVisitante(id) {
 
 function EliminarEnVectorVisitantes(id) {
 
-    for (var i = VisitantesVector.length; i--; ) {
+    for (var i = VisitantesVector.length; i--;) {
         if (VisitantesVector[i] == id) {
             VisitantesVector.splice(i, 1);
         }
@@ -2255,9 +2312,10 @@ function EliminarEnVectorVisitantes(id) {
         visi1 = 0;
     }
 }
+
 function NuevaVisitaTodo() {
 
-    for (var i = VisitantesVector.length; i--; ) {
+    for (var i = VisitantesVector.length; i--;) {
         VisitantesVector.splice(i, 1);
     }
     VisitadosVisita1 = 0;
@@ -2287,14 +2345,17 @@ function NuevaVisitaTodo() {
     $('#panelvisitante').show('slow');
 
 }
+
 function MostrarDatosVisitante() {
 
     $("#InfoVisitante").modal("show")
 }
+
 function MostrarDatosVisitado() {
 
     $("#InfoVisitado").modal("show")
 }
+
 function MostrarVisitadosVisita() {
 
     $('#tablaVisitadosVisita tbody').off('click', 'tr');
@@ -2305,19 +2366,29 @@ function MostrarVisitadosVisita() {
             url: "../model/visitado.php?mostrarVisitadosVisitas=si",
             dataType: "json",
             type: "post",
-        }, "lengthMenu": [5, 25, 50, 75, 100],
+        },
+        "lengthMenu": [5, 25, 50, 75, 100],
         //  "processing": true,
-        "columns": [
-            {"data": "indice"},
-            {"data": "nombres"},
-            {"data": "apellidos"},
-            {"data": "Identificacion"},
-            {"defaultContent": "<span  onclick='javascript:MostrarDatosVisitado();' style='  color: #990000;' class='glyphicon glyphicon-user btn btn-link '></span>"}
+        "columns": [{
+                "data": "indice"
+            },
+            {
+                "data": "nombres"
+            },
+            {
+                "data": "apellidos"
+            },
+            {
+                "data": "Identificacion"
+            },
+            {
+                "defaultContent": "<span  onclick='javascript:MostrarDatosVisitado();' style='  color: #990000;' class='glyphicon glyphicon-user btn btn-link '></span>"
+            }
 
-        ], "language": idioma,
+        ],
+        "language": idioma,
         dom: 'Bfrtip',
-        "buttons": [
-        ]
+        "buttons": []
 
     });
     $('#tablaVisitadosVisita tbody').on('click', 'tr', function () {
@@ -2363,7 +2434,7 @@ function MostrarVisitadosVisita() {
 
 
 // FUNCION LISTAR VISITANTE
-function listarVisitantesSanciones() {
+function listarVisitantesSanciones(datos) {
 
     // BORRO LAS FUNCIONES QUE TENIA LA TABLA ANTERIORMENTE PARA NO TENER PROBLEMAS CON LOS DATOS ESTO ES PROPIO DE LA LIBRERIA DATA TABLE
     $('#tablavisitantesSanciones tbody').off('click', 'tr');
@@ -2376,54 +2447,46 @@ function listarVisitantesSanciones() {
         var table = $("#tablavisitantesSanciones").DataTable({
             //ELIMINO CUALQUIER RASTRO DE DATOS QUE ESTEN EN LA TABLA
             "destroy": true,
+            "searching": false,
             // LLAMADA AJAX
             "ajax": {
                 //ENVIO POR GET EL TIPO DE FUNCION QUE VOY A EJECUTAR A VisitantesMetodos.php Y LE DIGO QUE ME MUESTRE LOS VISITANTES 
                 url: "../model/visitantesMetodos.php?mostrar=si",
                 // RECIBO UN JSON
+                data: {
+                    datos
+                },
                 dataType: "json",
                 // EN DADO CASO NECESITE ENVIAR UN DATO LO ENVIO POR POST
                 type: "post",
+                "dataSrc": function (json) {
+                    if (json.length == 0) {
+                        return Array();
+                    }
+                    return json.data;
+                },
             },
+            "processing": true,
             // ESTO ES PROPIO DEL DATA TABLE PARA QUE CUANDO EXISTAN MUCHOS DATOS Y SE TARDE UN POCO AL TRAER LOS DATOS SE  LE INFORME AL USUARIO QUE LOS DATOS ESTAN CARGANDO
             //  "processing": true,
             // PASOS LOS DATOS A LA TABLA
-            "columns": [
-                {"data": "nombre"},
-                {"data": "Segundo_Nombre"},
-                {"data": "apellido"},
-                {"data": "Segundo_Apellido"},
-                {"data": "Tipo"},
-                {"data": "identificacion"},
-                {"data": "celular"},
-                {"data": "correo"},
+            "columns": [{
+                    "data": "persona"
+                },
+
+                {
+                    "data": "Tipo"
+                },
+                {
+                    "data": "identificacion"
+                },
             ],
             //SELECCIONO EL TIPO DE LENGUAJE QUE TENDRA LA TABLA
             "language": idioma,
             //DECLARO LOS BOTONES PARA EXPORTAR LOS DATOS DE LA TABLA
             dom: 'Bfrtip',
             "buttons": [
-                //BOTON DE EXCEL
-                {
-                    extend: 'excelHtml5',
-                    text: '<i class="fa fa-file-excel-o"></i>',
-                    titleAttr: 'Excel',
-                    className: 'btn btn-success',
-                },
-                //BOTON CSV
-                {
-                    extend: 'csvHtml5',
-                    text: '<i class="fa fa-file-text-o"></i>',
-                    titleAttr: 'CSV',
-                    className: 'btn btn-default',
-                },
-                //BOTON PDF
-                {
-                    extend: 'pdfHtml5',
-                    text: '<i class="fa fa-file-pdf-o"></i>',
-                    titleAttr: 'PDF',
-                    className: 'btn btn-danger',
-                }
+
             ]
 
         });
@@ -2433,11 +2496,11 @@ function listarVisitantesSanciones() {
         $('#tablavisitantesSanciones tbody').on('click', 'tr', function () {
             var data = table.row(this).data();
             $("tr").removeClass("warning");
-            VisitanteSancion = data[8];
-            cargarSancionesPorUsuario2(data[8]);
-            mostrarInfoCompletaparticipante(data[8], "#Modaldetallevisitante")
+            VisitanteSancion = data[5];
+            cargarSancionesPorUsuario2(data[5]);
+            mostrarInfoCompletaparticipante(data[5], "#Modaldetallevisitante")
             $(this).attr("class", "warning");
-            $("#idSeleccionado").val(data[8]);
+            $("#idSeleccionado").val(data[5]);
 
         });
 
@@ -2467,15 +2530,30 @@ function listarVisitantesSanciones() {
             // ESTO ES PROPIO DEL DATA TABLE PARA QUE CUANDO EXISTAN MUCHOS DATOS Y SE TARDE UN POCO AL TRAER LOS DATOS SE  LE INFORME AL USUARIO QUE LOS DATOS ESTAN CARGANDO
             //  "processing": true,
             // PASOS LOS DATOS A LA TABLA
-            "columns": [
-                {"data": "nombre"},
-                {"data": "Segundo_Nombre"},
-                {"data": "apellido"},
-                {"data": "Segundo_Apellido"},
-                {"data": "Tipo"},
-                {"data": "identificacion"},
-                {"data": "celular"},
-                {"data": "correo"},
+            "columns": [{
+                    "data": "nombre"
+                },
+                {
+                    "data": "Segundo_Nombre"
+                },
+                {
+                    "data": "apellido"
+                },
+                {
+                    "data": "Segundo_Apellido"
+                },
+                {
+                    "data": "Tipo"
+                },
+                {
+                    "data": "identificacion"
+                },
+                {
+                    "data": "celular"
+                },
+                {
+                    "data": "correo"
+                },
             ],
             //SELECCIONO EL TIPO DE LENGUAJE QUE TENDRA LA TABLA
             "language": idioma,
@@ -2512,11 +2590,11 @@ function listarVisitantesSanciones() {
         $('#tablavisitantesSanciones tbody').on('click', 'tr', function () {
             var data = table.row(this).data();
             $("tr").removeClass("warning");
-            VisitanteSancion = data[8];
-            cargarSancionesPorUsuario2(data[8]);
-            mostrarInfoCompletaparticipante(data[8], "#Modaldetallevisitante")
+            VisitanteSancion = data[5];
+            cargarSancionesPorUsuario2(data[5]);
+            mostrarInfoCompletaparticipante(data[5], "#Modaldetallevisitante")
             $(this).attr("class", "warning");
-            $("#idSeleccionado").val(data[8]);
+            $("#idSeleccionado").val(data[5]);
 
         });
 
@@ -2560,6 +2638,7 @@ function agregarSancion(idSancion, visitante) {
         }
     });
 }
+
 function cargarSancionesPorUsuario2(idUsuario) {
     $('.sancionesVisitante tbody').off('click', 'tr');
     var table = $(".sancionesVisitante").DataTable({
@@ -2574,15 +2653,22 @@ function cargarSancionesPorUsuario2(idUsuario) {
         },
         // "processing": true,
 
-        "columns": [
-            {"data": "indice"},
-            {"data": "usuario"},
-            {"data": "valor"},
-            {"data": "fecha"},
-        ], "language": idioma,
-        dom: 'Bfrtip',
-        "buttons": [
+        "columns": [{
+                "data": "indice"
+            },
             {
+                "data": "usuario"
+            },
+            {
+                "data": "valor"
+            },
+            {
+                "data": "fecha"
+            },
+        ],
+        "language": idioma,
+        dom: 'Bfrtip',
+        "buttons": [{
                 extend: 'excelHtml5',
                 text: '<i class="fa fa-file-excel-o"></i>',
                 titleAttr: 'Excel',
@@ -2614,6 +2700,7 @@ function cargarSancionesPorUsuario2(idUsuario) {
 
     });
 }
+
 function eliminarSancion(idVisitante, idSancion) {
     $.ajax({
         url: "../model/Visita.php?eliminarSancion=si",
@@ -2639,14 +2726,16 @@ function QuitarEspaciosBlanco() {
     limpio = $(this).val().trim();
     $(this).val(limpio);
 }
+
 function CambiarEstiloTablasanci() {
     if (estiloTablasanciones == 0) {
         estiloTablasanciones = 1;
     } else {
         estiloTablasanciones = 0;
     }
-    listarVisitantesSanciones();
+    listarVisitantesSanciones("1143454");
 }
+
 function registrarVisitante22() {
 
     //tomamos el formulairo ingresar visitante
@@ -2666,7 +2755,7 @@ function registrarVisitante22() {
         if (datos == 1) {
 
             MensajeConClase("Los campos Nombres, Apellidos e identificacion son obligatorios", ".error")
-            return  false;
+            return false;
         } else if (datos == 2) {
 
             MensajeConClase("Debe Ingresar Solo letras en el Nombres y Apellidos", ".error")
@@ -2700,11 +2789,11 @@ function EnviarAyuda() {
     var correo = $("#correo").val().trim();
     var tema = $("#tema").val().trim();
     var mensaje = $("#mensaje").val().trim();
-  
+
     if (nombre.length == 0 || correo.length == 0 || tema.length == 0 || mensaje.length == 0) {
 
         MensajeConClase("Todos los Campos son obligatorios", "#error")
-        return  true;
+        return true;
     } else {
 
         $.ajax({
@@ -2722,7 +2811,7 @@ function EnviarAyuda() {
             if (datos == 2) {
 
                 MensajeConClase("El mensaje No Fue Enviado", "#error")
-                return  true;
+                return true;
 
             } else if (datos == 1) {
 

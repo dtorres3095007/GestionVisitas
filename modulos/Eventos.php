@@ -378,7 +378,9 @@ and open the template in the editor.
                             <div class="confirmar" style="color: #990000">Esta Seguro que desea Retirar al Participante..? <span id="retirarsi" class="btn btn-link">Si</span>-<span id="retirarno" class="btn btn-link">No</span></div>
                             <table class="table table-bordered table-hover  table-responsive" id="tablaParticipantesevento"  cellspacing="0" width="100%" style="width: 100%">
                                 <thead class="ttitulo ">
-                                    <tr class="opcioenstabla"><td id="retirar" title='Retirar del Evento' data-toggle='popover' data-trigger='hover' style='  color: #990000;' class=' glyphicon glyphicon-remove btnElimina'></td></tr>
+                                    <tr class="opcioenstabla">
+                                    <td id="marcarentrada"  title='Marcar Entrada' data-toggle='popover' data-trigger='hover' style='  color: #990000; ' class='glyphicon glyphicon-time btnAgregar'></td>
+                                    <td id="retirar" title='Retirar del Evento' data-toggle='popover' data-trigger='hover' style='  color: #990000;' class=' glyphicon glyphicon-remove btnElimina'></td></tr>
                                     <tr><th class="filaprincipal" colspan="6" style="color: #990000; text-align: center"> Participantes </th></tr>
                                     <tr class="filaprincipal"><td>No.</td><td class="" >Nombres</td><td class="">Apellidos</td><td class="">Identificacion</td><td>Hora Entrada</td><td>Tipo</td></tr>
 

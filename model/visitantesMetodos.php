@@ -95,8 +95,8 @@ if (!empty($_GET['buscarporid'])) {
  * CON ESTE LLAMADO MUESTRO TODOS LOS VISITANTES
  */
 if (!empty($_GET['mostrar'])) {
-
-    echo json_encode(MostrarVisitantes2());
+    $datos = $_POST['datos'];
+    echo json_encode(MostrarVisitantes2($datos));
 }
 /*
  * CON ESTE LLAMADO MUESTRO LOS VISITANTES EN LA TABLA PARTICIPANTES DEL MODULO DE EVENETOS
@@ -393,12 +393,12 @@ function mostrarVisitantes() {
 }
 
 // me trae todos los visitantes registrados
-function MostrarVisitantes2() {
+function MostrarVisitantes2($datos) {
     include'../model/config.php';
 
     $visitantes = array();
 
-    $query = "SELECT o.nombre,o.Segundo_Nombre,o.Segundo_Apellido,o.apellido,o.correo,o.celular,o.identificacion,p.valor Tipo,o.id FROM  visitantes o, `valor_parametros` p  WHERE o.id_TipoIdentificacion=p.id AND o.estado='1' ";
+    $query = "SELECT CONCAT(o.nombre,' ',o.Segundo_Nombre,' ',o.apellido,' ',o.Segundo_Apellido) persona,o.correo,o.celular,o.identificacion,p.valor Tipo,o.id FROM  visitantes o INNER JOIN  valor_parametros p  ON o.id_TipoIdentificacion=p.id WHERE CONCAT(o.nombre,' ',o.apellido,' ',o.Segundo_Apellido) LIKE '%$datos%' OR o.identificacion LIKE '%$datos%'";
     $resultado = mysqli_query($link, $query);
     $resultado = mysqli_query($link, $query);
     if (!$resultado) {

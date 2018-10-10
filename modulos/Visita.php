@@ -31,7 +31,7 @@ and open the template in the editor.
             <div class="operaciones"> 
                 <button type="button" id="Recargarvisita" class="btn btn-link active" ><span class="smodificar glyphicon glyphicon-refresh" title="Recargar" data-toggle="popover" data-trigger="hover"></span></button>
 
-                <button  id="agregar" type="button" class="btn btn-link active btnAgregar " ><span class="sagregar glyphicon glyphicon-floppy-disk" title="Agregar Visita" data-toggle="popover" data-trigger="hover"></span></button>
+                <button  id="agregar" type="button" class="btn btn-link active btnAgregar oculto" ><span class="sagregar glyphicon glyphicon-floppy-disk" title="Agregar Visita" data-toggle="popover" data-trigger="hover"></span></button>
 
                 <button  type="button" class="btn btn-link active btnAgregar" data-toggle="modal" data-target="#myModal"><span class="sagregar glyphicon glyphicon-user" title="Agregar Visitante" data-toggle="popover" data-trigger="hover"></span></button>
                 <button  id="agregarSancion" class="btn btn-link active btnAgregar "><span class="smodificar glyphicon glyphicon-ban-circle" title="Agregar Sanción" data-toggle="popover" data-trigger="hover"></span></button>
@@ -129,7 +129,7 @@ and open the template in the editor.
                         <thead class="ttitulo ">
                             <tr class="filaprincipal"><td colspan="10">Tabla Departamentos :  <select class="form-control Empresas " id="Empresas" style="width: 30%"></select>
                                 </td></tr>
-                            <tr class="filaprincipal"><td class="indice" style="">No.</td><td class="" >Nombre</td><td>Ubicacion</td><td>No.Visitas</td><td class="indice">***</td></tr>
+                            <tr class="filaprincipal"><td class="indice" style="">No.</td><td class="" >Nombre</td><td>Ubicacion</td><td class="indice">***</td></tr>
                         </thead>
                         <tbody>
                         </tbody>
@@ -138,10 +138,17 @@ and open the template in the editor.
 
             </div>
             <div class="tablausuSanciones col-md-12 " >
+            <div class="error error_busqueda oculto"></div>
+                        <div class="form-group col-md-6">
+                            <div class="input-group">
+                                <input class="form-control " id="txt_buscar_visitante_san" value="" placeholder="Ingrese Nombre, Apellido o Identificacion">
+                                <span class="input-group-addon pointer" title="Buscar Persona" data-toggle="popover" data-trigger="hover" id="btn_buscar_visitante_san"><span class="glyphicon glyphicon-search"></span></span>
+                            </div>
+                        </div>
                 <div class="table-responsive col-sm-12 col-md-12  tablauser" style="text-align: left;">
                     <table class="table table-bordered table-hover  " id="tablavisitantesSanciones"  cellspacing="0" width="100%" style="">
                         <thead class="ttitulo ">
-                            <tr class="filaprincipal"><td class="" id='nombrevisitante'>Primer Nombre</td><td class="">Segundo Nombre</td><td class="">Primer Apellido</td><td class="">Segundo Apellido</td><td class="">Tipo Identificacion</td><td class="">identificacion</td><td class="">Celular</td><td class="">Correo Personal</td></tr>
+                            <tr class="filaprincipal"><td class="" id='nombrevisitante'>Nombre Completo</td><td class="">Tipo Identificacion</td><td class="">identificacion</td></tr>
                         </thead>
                         <tbody>
                         </tbody>

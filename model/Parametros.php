@@ -477,7 +477,7 @@ function mostrarDepartamentos($id) {
             $row["indice"] = $i;
 
             $i++;
-            $row["numvi"] = ContarEnDepartamento($row["Id"]);
+            $row["numvi"] = "0";
             $valorparametros["data"][] = $row;
         }
         return $valorparametros;

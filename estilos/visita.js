@@ -46,6 +46,24 @@ $(document).ready(function () {
 
         }
     });
+
+    $("#btnAsignarPersona").click(function () {
+        var empleado = false;
+        var ic = perfiles[0];
+        $.each(perfiles, function (index, value) {
+            if (value.toUpperCase() == "EMPLEADO") {
+                empleado = true;
+            }
+        });
+        if (empleado) {
+            DepartaSeleccionado = 128;
+        } else {
+            DepartaSeleccionado = 127;
+        }
+        var docPersona = $("#txtBuscarPersona").val();
+        existeVisitante(docPersona);
+    })
+
     $("#btn_buscar_visitante_san").click(function () {
         var dato = $("#txt_buscar_visitante_san").val().trim();
         if (dato.length > 5) {
@@ -2341,6 +2359,55 @@ function buscarPersona(id) {
             $("#ModalMensajevisita").modal("show");
             console.log('Something went wrong', status, error);
 
+        }
+    });
+}
+
+function existeVisitante(id) {
+    $.ajax({
+        url: "../model/visitantesMetodos.php?existeVisitante=si",
+        dataType: "json",
+        data: {
+            id: id,
+        },
+        type: "post",
+        success: function (datos) {
+            if (datos != false) {
+                registrarPaticipanteDepartamento(datos.id, DepartaSeleccionado, "------", 0);
+            } else {
+                nombre = infVisitante['nombres'];
+                var myarr = nombre.split(" ");
+                $.ajax({
+                    url: "../model/visitantesMetodos.php?guardar=si",
+                    dataType: "json",
+                    type: "post",
+                    data: {
+                        departa: DepartaSeleccionado,
+                        identificacion: infVisitante['num_documento'],
+                        tipo_identificacion: infVisitante['tipo_identificacion'],
+                        nombre: myarr[0],
+                        segundonombre: myarr[1],
+                        apellido: infVisitante['primer_apellido'],
+                        celular: infVisitante['celular'],
+                        correo: infVisitante['correo_personal'],
+                        tipo_identificacion: 43,
+                        segundoapellido: infVisitante['segundo_apellido'],
+                        placa: "------",
+                        acompa: 0,
+                        xxx: 1
+                    },
+                    success: function (datos) {
+                        MensajeConClase("Persona Registrada exitosamente!", ".error");
+                    },
+                    error: function () {
+                        MensajeConClase("Error al registrar a la persona!", ".error");
+                        console.log('Something went wrong', status, err);
+                    }
+                });
+            }
+        },
+        error: function () {
+            console.log('Something went wrong', status, err);
         }
     });
 }

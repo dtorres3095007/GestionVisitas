@@ -1550,12 +1550,28 @@ function buscarPersona($id){
     include 'configI.php';
     $array = array();
     $vinculacion = array();
-    $query = "SELECT a.id_usuario,b.descripcion,a.num_documento,a.nombres,a.primer_apellido,a.segundo_apellido,a.fecha_nacimiento,a.direccion,a.telefonos,a.celular,a.correo_personal,a.logon_name,a.codigo_barras 
-FROM inf_identidades a, tipo_documento b WHERE a.num_documento= '$id'";
+    $query = "SELECT a.id_usuario,a.num_documento,a.nombres,a.primer_apellido,a.segundo_apellido,a.fecha_nacimiento,a.direccion,a.telefonos,a.celular,a.correo_personal,a.logon_name,a.codigo_barras 
+    FROM inf_identidades a WHERE a.num_documento=  '$id'";
 
     $resultado = mysqli_query($link, $query);
-    $row = mysqli_fetch_array($resultado, MYSQLI_BOTH);
-    array_push($array, $row);
+    if ($row = mysqli_fetch_array($resultado)) {
+
+        array_push($array, array(
+        "num_documento"=>$row["num_documento"],
+        "nombres"=>htmlentities($row["nombres"], ENT_QUOTES | ENT_IGNORE, "UTF-8"),
+        "primer_apellido"=>htmlentities($row["primer_apellido"], ENT_QUOTES | ENT_IGNORE, "UTF-8"),
+        "segundo_apellido"=>htmlentities($row["segundo_apellido"], ENT_QUOTES | ENT_IGNORE, "UTF-8"),
+        "fecha_nacimiento"=>$row["fecha_nacimiento"],
+        "telefonos"=>$row["telefonos"],
+        "celular"=>$row["celular"],
+        "correo_personal"=>$row["correo_personal"],
+        "logon_name"=>$row["logon_name"],
+        "codigo_barras"=>$row["codigo_barras"],
+   
+    ));
+    }else{
+        return "";
+    }
     $id_usuario = $row['id_usuario'];
     $query = "SELECT b.nombre_empresa,c.descripcion,d.nom_departamento,e.nombre_cargo,f.id_unidad_aca,f.nombre_unidad_aca,a.estado 
 FROM inf_vinculacion a, empresas b, tipo_persona c, dept_empresa d, cargos e, unidades_academicas f

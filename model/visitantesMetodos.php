@@ -121,7 +121,8 @@ if (!empty($_GET['mostrarparticipantesEvento'])) {
 }
 if (!empty($_GET['mostrarparDepa'])) {
     $departamento = $_POST['id'];
-    echo json_encode(MostrarParticipantesDepartamentoVisita($departamento));
+    $persona = $_POST['persona'];
+    echo json_encode(MostrarParticipantesDepartamentoVisita($departamento,$persona));
 }
 
 /*
@@ -521,12 +522,17 @@ function MostrarParticipantesEvento($evento) {
     mysqli_free_result($resultado);
 }
 
-function MostrarParticipantesDepartamentoVisita($departamento) {
+function MostrarParticipantesDepartamentoVisita($departamento,$persona) {
     include'../model/config.php';
 
     $visitantes = array();
     $i = 1;
-    $query = "SELECT CONCAT(o.apellido, ' ', o.Segundo_apellido) apellidos,CONCAT(o.nombre, ' ', o.Segundo_nombre)nombres,o.identificacion,o.id,d.`HoraEntrada`,d.`HoraSalida`,d.Id,d.placa_visitante,d.Acompanantes FROM `visitantes_departamento` d INNER JOIN visitantes o on o.id=d.`Id_Visitantes` WHERE d.`Id_Departamento`='$departamento' AND DATE_FORMAT(`HoraEntrada`,'%Y-%m-%d')=DATE_FORMAT(NOW(),'%Y-%m-%d')";
+    if ($persona!=-1) {
+        $query = "SELECT CONCAT(o.apellido, ' ', o.Segundo_apellido) apellidos,CONCAT(o.nombre, ' ', o.Segundo_nombre)nombres,o.identificacion,o.id,d.`HoraEntrada`,d.`HoraSalida`,d.Id,d.placa_visitante,d.Acompanantes FROM `visitantes_departamento` d INNER JOIN visitantes o on o.id=d.`Id_Visitantes` WHERE o.identificacion='$persona' AND DATE_FORMAT(`HoraEntrada`,'%Y-%m-%d')=DATE_FORMAT(NOW(),'%Y-%m-%d')";
+    }else{
+        $query = "SELECT CONCAT(o.apellido, ' ', o.Segundo_apellido) apellidos,CONCAT(o.nombre, ' ', o.Segundo_nombre)nombres,o.identificacion,o.id,d.`HoraEntrada`,d.`HoraSalida`,d.Id,d.placa_visitante,d.Acompanantes FROM `visitantes_departamento` d INNER JOIN visitantes o on o.id=d.`Id_Visitantes` WHERE d.`Id_Departamento`='$departamento' AND DATE_FORMAT(`HoraEntrada`,'%Y-%m-%d')=DATE_FORMAT(NOW(),'%Y-%m-%d')";
+    }
+   
     $resultado = mysqli_query($link, $query);
 
     if (!$resultado) {

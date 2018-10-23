@@ -68,6 +68,28 @@ $(document).ready(function () {
 
         }
     });
+    $("#buscar_para_dep").click(function () {
+        participanteDepar = 0;
+        var valor = $(".buscarvisitante").val().trim();
+        if (valor.length != 0) {
+            MostrarParticipantesDepartamentos(valor);
+        } else {
+            participanteDepar = 0;
+            $("#tablaParticipantesDepar").html('<table class="table table-bordered table-hover  table-responsive" id="tablaParticipantesDepar"  cellspacing="0" width="100%" style="width: 100%"> <thead class="ttitulo "><tr class="filaprincipal"><td>No.</td><td class="" >Nombres</td><td class="">Apellidos</td><td class="">Identificacion</td></tr></thead>    </table>');
+
+            $("#tablaParticipantesDepar").DataTable({
+                //"processing": true,
+                "destroy": true,
+                searching: false,
+                "language": idioma,
+                dom: 'Bfrtip',
+                "buttons": []
+
+            });
+        }
+
+
+    });
 
 
 
@@ -918,25 +940,7 @@ function ListarDepartamentos(empresa) {
             ],
             "language": idioma,
             dom: 'Bfrtip',
-            "buttons": [{
-                    extend: 'excelHtml5',
-                    text: '<i class="fa fa-file-excel-o"></i>',
-                    titleAttr: 'Excel',
-                    className: 'btn btn-success',
-                },
-                {
-                    extend: 'csvHtml5',
-                    text: '<i class="fa fa-file-text-o"></i>',
-                    titleAttr: 'CSV',
-                    className: 'btn btn-default',
-                },
-                {
-                    extend: 'pdfHtml5',
-                    text: '<i class="fa fa-file-pdf-o"></i>',
-                    titleAttr: 'PDF',
-                    className: 'btn btn-danger',
-                }
-            ],
+            "buttons": [],
         });
 
         $('#tablaDepar tbody').on('click', 'tr', function () {
@@ -1775,7 +1779,7 @@ function registrarPaticipanteDepartamento(participante, departamento, placa, aco
         } else {
             $(".Visitantesfoto").hide("fast");
             $(".TablaDepaPar").show("slow");
-            MensajeConClase("Visitante Agregado con exito,Visita Numero: " + datos, ".error");
+            MensajeConClase("Visitante Agregado con exito", ".error");
             return true;
         }
 
@@ -1783,7 +1787,7 @@ function registrarPaticipanteDepartamento(participante, departamento, placa, aco
 
 }
 
-function MostrarParticipantesDepartamentoEsp(evento) {
+function MostrarParticipantesDepartamentoEsp(evento, identificacion = "-1") {
 
     $(".confirmarVisita").hide('fast');
     $('#tablaParticipantesDepartamentos tbody').off('click', 'tr');
@@ -1795,6 +1799,7 @@ function MostrarParticipantesDepartamentoEsp(evento) {
             dataType: "json",
             data: {
                 id: evento,
+                persona: identificacion
             },
             type: "post",
         },

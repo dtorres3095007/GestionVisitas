@@ -70,7 +70,7 @@ $(document).ready(function () {
             $(".error_busqueda").hide('fast');
             listarVisitantesSanciones(dato);
         } else {
-            $(".error_busqueda").html("Ingrese Dato de la persona a buscar con mas informacion.!")
+            $(".error_busqueda").html("<p>Ingrese Dato de la persona a buscar con mas informacion.!</p>")
             $(".error_busqueda").show('fast');
         }
     });
@@ -78,8 +78,20 @@ $(document).ready(function () {
     $("#btnBuscarPersona").click(function () {
         if ($("#txtBuscarPersona").val() != "") {
             buscarPersona($("#txtBuscarPersona").val());
+            $(".error_depar").hide('fast');
+        } else {
+            $(".error_depar").html("Ingrese #identificación de la persona a buscar!")
+            $(".error_depar").show('fast');
         }
-    })
+    });
+    $("#btnBuscarentradas").click(function () {
+        if ($("#txtBuscarPersona").val() != "") {
+            MostrarParticipantesDepartamentoEsp("", $("#txtBuscarPersona").val())
+        } else {
+            $(".error_depar").html("Ingrese #identificación de la persona a buscar!")
+            $(".error_depar").show('fast');
+        }
+    });
 
     $('.filtrarfecha').on('click', function () {
 

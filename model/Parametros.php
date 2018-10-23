@@ -966,8 +966,9 @@ function GuardarParticipanteDepartamento($departamento, $participante, $placa, $
     if ($tienefoto == 1) {
         $query = "INSERT INTO `visitantes_departamento`(`Id_Visitantes`, `Id_Departamento`, `HoraEntrada`,placa_visitante,Acompanantes) VALUES ('$participante','$departamento','$horaentrada','$placa','$acompa')";
         mysqli_query($link, $query);
-        $suma = contarVisitasDepartamentoVisitante($participante);
-        return $suma;
+        //$suma = contarVisitasDepartamentoVisitante($participante);
+        //return $suma;
+        return 1;
     } else {
         return -1;
     }

@@ -130,9 +130,16 @@ $perfil = $_SESSION['perfil'];
             <!-- Modal -->
 
             <div class="tablausuDeparta col-md-12" >
-                <div id="capa" style="height: 130px; width: 100%; padding-top: 80px;">
-                    <label>Buscar Persona:<br><input type="number" id="txtBuscarPersona" class="form-control input-sm" required></label>
-                    <button id="btnBuscarPersona" type="button" class="btn btn-danger" ><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+            <div class=" error_depar oculto"></div>
+                <div class="col-md-6">
+                <h5 class="text-left"><span class="glyphicon glyphicon-ok"></span> Marcar Entrada o salida</h5>
+                    <div class="input-group">
+                    <input type="number" id="txtBuscarPersona" class="form-control" placeholder="Buscar persona por No. Identificación ">
+                    <span class="input-group-btn">
+                        <button id="btnBuscarPersona" class="btn btn-default" type="button">Entrada!</button>
+                        <button id="btnBuscarentradas" class="btn btn-danger" type="button">Salida!</button>
+                    </span>
+                    </div><!-- /input-group -->
                 </div>
                 <div class="table-responsive col-sm-12 col-md-12  tablauser tabedepa" style="text-align: left;width: 100%">
                     <table class="table table-bordered table-hover  table-responsive" id="tablaDepar"  cellspacing="0" width="100%" style="">
@@ -148,7 +155,7 @@ $perfil = $_SESSION['perfil'];
 
             </div>
             <div class="tablausuSanciones col-md-12 " >
-            <div class="error error_busqueda oculto"></div>
+            <div class="error_busqueda oculto"></div>
                         <div class="form-group col-md-6">
                             <div class="input-group">
                                 <input class="form-control " id="txt_buscar_visitante_san" value="" placeholder="Ingrese Nombre, Apellido o Identificacion">
@@ -1025,7 +1032,7 @@ $perfil = $_SESSION['perfil'];
 
         <!---------------------------------------------------------------------------------------------------------------------------------------->
         <div class="modal fade" id="participantesDepartamentos" role="dialog">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-lg">
 
                 <!-- Modal content-->
                 <div class="modal-content" >
@@ -1036,8 +1043,8 @@ $perfil = $_SESSION['perfil'];
 
                     <div class="modal-body" id="bodymodal" >
                         <div class="row row2 tablausup" >
-                            <div class="NuevoPartDepart btnAgregar"style="width: 100%;text-align: left" title="Nuevo Participante" data-toggle="popover" data-trigger="hover"> <span class=" glyphicon glyphicon-user">Nuevo</span></div>
-                            <div class="RegistrarParticipanteDepa">
+                            <div class="NuevoPartDepart btnAgregar text-right" title="Nuevo Participante" data-toggle="popover" data-trigger="hover"> <span class=" glyphicon glyphicon-user">Nuevo</span></div>
+                            <div class="RegistrarParticipanteDepa" style="width:70%;margin: 0 auto">
 
 
                                 <div class="panel panel-default active">
@@ -1108,13 +1115,24 @@ $perfil = $_SESSION['perfil'];
                             <div class="TablaDepaPar">
                           
                                 <div class="error"></div>
-                                <label style="color: #990000; font-size: 13px; "> <input type="checkbox"  class="vehiculo2 micheckbox" style="margin-right: 5px; margin-top: 5px;" >Visitante con Vehículo</label>
-                                <div class="oculto divplaca2"  style="width: 50%;margin:  0 auto">
+                                <label style="color: #990000; font-size: 13px;width:100%"> <input type="checkbox"  class="vehiculo2 micheckbox">Visitante con Vehículo</label>
+                                <div class="oculto divplaca2 col-md-6"  >
                                     <input type="text" name="placa" id="txtPlacaVehiculo2" maxlength="6" class="form-control placa2" placeholder="Número Placa del Vehículo">
                                     <input type="number" id="txTAcompanantes2" class="form-control acompanantes" placeholder="No. Acampañantes" name="acompanantes" required>
 
                                 </div>
-                                <div ><input  type="search" class="form-control buscarvisitante" placeholder="Buscar Visitante" style="width: 50%;float: right"><label style="width: 20%;float: right;padding: 3%">Buscar: </label></div>
+                              <br>
+                                <div class="col-md-6">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control buscarvisitante" placeholder="Buscar por Nombre, Apellido o #identificación" style="padding:0;margin:0;">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" id="buscar_para_dep"type="button">Buscar!</button>
+                                        </span>
+                                    </div><!-- /input-group -->
+                                </div>
+                                <br>
+
+
                                 <table class="table table-bordered table-hover  table-responsive" id="tablaParticipantesDepar"  cellspacing="0" width="100%" style="width: 100%">
                                     <thead class="ttitulo ">
                                         <tr class="filaprincipal"><td>No.</td><td class="" >Nombres</td><td class="">Apellidos</td><td class="">Identificacion</td></tr>
@@ -1279,7 +1297,7 @@ $perfil = $_SESSION['perfil'];
 
 
         <div class="modal fade" id="participantesDepartamentoInfo" role="dialog">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-lg" style="width:100%">
 
                 <!-- Modal content-->
                 <div class="modal-content" >
@@ -1296,7 +1314,7 @@ $perfil = $_SESSION['perfil'];
                             <div class="confirmarVisita" style="color: #990000">Esta Seguro que desea Cancelar la Visita..? <span id="retirarsiVisitante" class="btn btn-link">Si</span>-<span id="retirarnoVisitante" class="btn btn-link">No</span></div>
                             <table class="table table-bordered table-hover  table-responsive" id="tablaParticipantesDepartamentos"  cellspacing="0" width="100%" style="width: 100%">
                                 <thead class="ttitulo ">
-                                    <tr class="opcioenstabla"><td  id="retirarVisi"  title='Cancelar Visita' data-toggle='popover' data-trigger='hover' style='  color: #990000;' class='glyphicon glyphicon-remove btnElimina'></td><td id="SalidaVisi" title='Marcar Hora Salida' data-toggle='popover' data-trigger='hover' style='  color: #990000;' class='btnAgregar  glyphicon glyphicon-time'></td></tr>
+                                    <tr class="opcioenstabla"><td id="SalidaVisi" title='Marcar Salida' data-toggle='popover' data-trigger='hover' style='  color: #990000;' class='btnAgregar  glyphicon glyphicon-time'></td></tr>
                                     <tr><th class="filaprincipal" colspan="8" style="color: #990000; text-align: center"> Participantes </th></tr>
                                     <tr class="filaprincipal"><td>No.</td><td class="" >Nombres</td><td class="">Apellidos</td><td class="">Identificacion</td><td>Placa</td><td>Acompañantes</td><td>Hora Entrada</td><td>Hora Salida</td></tr>
 

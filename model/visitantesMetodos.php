@@ -528,9 +528,9 @@ function MostrarParticipantesDepartamentoVisita($departamento,$persona) {
     $visitantes = array();
     $i = 1;
     if ($persona!=-1) {
-        $query = "SELECT CONCAT(o.apellido, ' ', o.Segundo_apellido) apellidos,CONCAT(o.nombre, ' ', o.Segundo_nombre)nombres,o.identificacion,o.id,d.`HoraEntrada`,d.`HoraSalida`,d.Id,d.placa_visitante,d.Acompanantes FROM `visitantes_departamento` d INNER JOIN visitantes o on o.id=d.`Id_Visitantes` WHERE o.identificacion='$persona' AND DATE_FORMAT(`HoraEntrada`,'%Y-%m-%d')=DATE_FORMAT(NOW(),'%Y-%m-%d')";
+        $query = "SELECT  vp.valor departamento,CONCAT(o.nombre, ' ',apellido, ' ')nombres,o.identificacion,o.id,d.`HoraEntrada`,d.`HoraSalida`,d.Id,d.placa_visitante,d.Acompanantes FROM `visitantes_departamento` d INNER JOIN visitantes o on o.id=d.`Id_Visitantes` INNER JOIN valor_parametros vp on vp.id = d.Id_Departamento WHERE o.identificacion='$persona' AND DATE_FORMAT(`HoraEntrada`,'%Y-%m-%d')=DATE_FORMAT(NOW(),'%Y-%m-%d')";
     }else{
-        $query = "SELECT CONCAT(o.apellido, ' ', o.Segundo_apellido) apellidos,CONCAT(o.nombre, ' ', o.Segundo_nombre)nombres,o.identificacion,o.id,d.`HoraEntrada`,d.`HoraSalida`,d.Id,d.placa_visitante,d.Acompanantes FROM `visitantes_departamento` d INNER JOIN visitantes o on o.id=d.`Id_Visitantes` WHERE d.`Id_Departamento`='$departamento' AND DATE_FORMAT(`HoraEntrada`,'%Y-%m-%d')=DATE_FORMAT(NOW(),'%Y-%m-%d')";
+        $query = "SELECT vp.valor departamento,CONCAT(o.nombre, ' ',apellido, ' ')nombres,o.identificacion,o.id,d.`HoraEntrada`,d.`HoraSalida`,d.Id,d.placa_visitante,d.Acompanantes FROM `visitantes_departamento` d INNER JOIN visitantes o on o.id=d.`Id_Visitantes` INNER JOIN valor_parametros vp on vp.id = d.Id_Departamento WHERE d.`Id_Departamento`='$departamento' AND DATE_FORMAT(`HoraEntrada`,'%Y-%m-%d')=DATE_FORMAT(NOW(),'%Y-%m-%d')";
     }
    
     $resultado = mysqli_query($link, $query);

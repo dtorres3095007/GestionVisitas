@@ -5,6 +5,7 @@
  */
 
 ActiReti = 0;
+var identificacion_f = -1;
 var DepartaSeleccionado = 0;
 var modificapermisos = 1;
 var valorseleccionado = "";
@@ -1780,6 +1781,16 @@ function registrarPaticipanteDepartamento(participante, departamento, placa, aco
             $(".Visitantesfoto").hide("fast");
             $(".TablaDepaPar").show("slow");
             MensajeConClase("Visitante Agregado con exito", ".error");
+            $(".buscarvisitante").val("").focus();
+            participanteDepar = 0;
+            $("#tablaParticipantesDepartamentos").DataTable({
+                "destroy": true,
+                searching: false,
+                "language": idioma,
+                dom: 'Bfrtip',
+                "buttons": []
+
+            });
             return true;
         }
 
@@ -1788,7 +1799,7 @@ function registrarPaticipanteDepartamento(participante, departamento, placa, aco
 }
 
 function MostrarParticipantesDepartamentoEsp(evento, identificacion = "-1") {
-
+    identificacion_f = identificacion;
     $(".confirmarVisita").hide('fast');
     $('#tablaParticipantesDepartamentos tbody').off('click', 'tr');
     $('#tablaParticipantesDepartamentos tbody').off('dblclick', 'tr');
@@ -1806,13 +1817,10 @@ function MostrarParticipantesDepartamentoEsp(evento, identificacion = "-1") {
         "lengthMenu": [5, 25, 50, 75, 100],
         //  "processing": true,
         "columns": [{
-                "data": "indice"
-            },
-            {
                 "data": "nombres"
             },
             {
-                "data": "apellidos"
+                "data": "departamento"
             },
             {
                 "data": "identificacion"
@@ -1895,9 +1903,6 @@ function RetirarPaticipanteDepartamento(participante) {
 }
 
 function MarcarHoraSalida(participante) {
-
-
-
     //  Enviamos el formulario a nuestro archivo php con parametro guardar     
     $.ajax({
         url: "../model/Parametros.php?marcarsalida=si",
@@ -1907,15 +1912,15 @@ function MarcarHoraSalida(participante) {
         },
         type: "post",
     }).done(function (datos) {
-
         if (datos == 6) {
-            MostrarParticipantesDepartamentoEsp(DepartaSele);
-
+            if (identificacion_f != -1) {
+                MostrarParticipantesDepartamentoEsp(0, identificacion_f);
+            } else {
+                MostrarParticipantesDepartamentoEsp(DepartaSele);
+            }
             MensajeConClase("Hora de Salida Marcada con exito", ".error");
             return true;
         } else {
-
-
             MensajeConClase("Error al Marcar la hora de salida", ".error");
         }
     });

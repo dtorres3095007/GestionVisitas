@@ -92,7 +92,7 @@ $perfil = $_SESSION['perfil'];
             </div>
             <div class="tablausuevennto col-md-12" >
                 <div class="Mensaje nomostrar" id="MensajeEje"><p id="mensajeEvento"></p></div>
-
+                
                 <div class="table-responsive col-sm-12 col-md-12  tablauser" style="text-align: left;">
                     <table class="table table-bordered table-hover  table-responsive" id="tablaeventos"  cellspacing="0" width="100%" style="">
                         <thead class="ttitulo ">
@@ -115,13 +115,14 @@ $perfil = $_SESSION['perfil'];
                             <button type="button" class="close" data-dismiss="modal"> X</button>
                             <h4 class="modal-title"><span class="glyphicon glyphicon-user"></span> Informacion de la Persona</h4>
                         </div>
+                        <div class="error"></div>
                         <div id="body_modal_personas" class="modal-body">
 
                         </div>
-                        <div class="error"></div>
+                        
                         <div class="modal-footer">
-                            <button id="btnAsignarPersona" class="btn btn-danger">Registrar</button>
-                            <button class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button id="btnAsignarPersona" class="btn btn-danger">Agregar</button>
+                            <button class="btn btn-default" data-dismiss="modal">Cerrar</button>
                         </div>
                     </div>
 
@@ -130,7 +131,7 @@ $perfil = $_SESSION['perfil'];
             <!-- Modal -->
 
             <div class="tablausuDeparta col-md-12" >
-            <div class=" error_depar oculto"></div>
+            <div class="error_depar oculto"></div>
                 <div class="col-md-6">
                 <h5 class="text-left"><span class="glyphicon glyphicon-ok"></span> Marcar Entrada o salida</h5>
                     <div class="input-group">
@@ -1314,9 +1315,8 @@ $perfil = $_SESSION['perfil'];
                             <div class="confirmarVisita" style="color: #990000">Esta Seguro que desea Cancelar la Visita..? <span id="retirarsiVisitante" class="btn btn-link">Si</span>-<span id="retirarnoVisitante" class="btn btn-link">No</span></div>
                             <table class="table table-bordered table-hover  table-responsive" id="tablaParticipantesDepartamentos"  cellspacing="0" width="100%" style="width: 100%">
                                 <thead class="ttitulo ">
-                                    <tr class="opcioenstabla"><td id="SalidaVisi" title='Marcar Salida' data-toggle='popover' data-trigger='hover' style='  color: #990000;' class='btnAgregar  glyphicon glyphicon-time'></td></tr>
-                                    <tr><th class="filaprincipal" colspan="8" style="color: #990000; text-align: center"> Participantes </th></tr>
-                                    <tr class="filaprincipal"><td>No.</td><td class="" >Nombres</td><td class="">Apellidos</td><td class="">Identificacion</td><td>Placa</td><td>Acompañantes</td><td>Hora Entrada</td><td>Hora Salida</td></tr>
+                                    <tr class="filaprincipal"><th  colspan="6" style="color: #990000; text-align: center"> Participantes </th><td  class="text-center"><span id="SalidaVisi" style="color:black" class="btn btn-default"><span class=" glyphicon glyphicon-time"></span> Marcar Salida</span></td></tr>
+                                    <tr class="filaprincipal"><td class="" >Nombre</td><td class="">Departamento</td><td class="">Identificacion</td><td>Placa</td><td>Acompañantes</td><td>Hora Entrada</td><td>Hora Salida</td></tr>
 
 
                                 </thead>

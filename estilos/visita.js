@@ -67,29 +67,25 @@ $(document).ready(function () {
     $("#btn_buscar_visitante_san").click(function () {
         var dato = $("#txt_buscar_visitante_san").val().trim();
         if (dato.length > 5) {
-            $(".error_busqueda").hide('fast');
             listarVisitantesSanciones(dato);
         } else {
-            $(".error_busqueda").html("<p>Ingrese Dato de la persona a buscar con mas informacion.!</p>")
-            $(".error_busqueda").show('fast');
+            MensajeConClase("Ingrese Dato de la persona a buscar con mas informacion", ".error_busqueda");
         }
     });
 
     $("#btnBuscarPersona").click(function () {
         if ($("#txtBuscarPersona").val() != "") {
             buscarPersona($("#txtBuscarPersona").val());
-            $(".error_depar").hide('fast');
+
         } else {
-            $(".error_depar").html("Ingrese #identificación de la persona a buscar!")
-            $(".error_depar").show('fast');
+            MensajeConClase("Ingrese #identificación de la persona a buscar", ".error_depar");
         }
     });
     $("#btnBuscarentradas").click(function () {
         if ($("#txtBuscarPersona").val() != "") {
             MostrarParticipantesDepartamentoEsp("", $("#txtBuscarPersona").val())
         } else {
-            $(".error_depar").html("Ingrese #identificación de la persona a buscar!")
-            $(".error_depar").show('fast');
+            MensajeConClase("Ingrese #identificación de la persona a buscar", ".error_depar");
         }
     });
 
@@ -2386,6 +2382,7 @@ function existeVisitante(id) {
         success: function (datos) {
             if (datos != false) {
                 registrarPaticipanteDepartamento(datos.id, DepartaSeleccionado, "------", 0);
+                MensajeConClase("Persona Registrada exitosamente", ".error_depar");
             } else {
                 nombre = infVisitante['nombres'];
                 var myarr = nombre.split(" ");
@@ -2409,14 +2406,16 @@ function existeVisitante(id) {
                         xxx: 1
                     },
                     success: function (datos) {
-                        MensajeConClase("Persona Registrada exitosamente!", ".error");
+                        MensajeConClase("Persona Registrada exitosamente", ".error_depar");
                     },
                     error: function () {
-                        MensajeConClase("Error al registrar a la persona!", ".error");
+                        MensajeConClase("Error al registrar a la persona", ".error_depar");
                         console.log('Something went wrong', status, err);
                     }
                 });
             }
+            $("#txtBuscarPersona").val("").focus();
+            $("#modalPersona").modal("hide");
         },
         error: function () {
             console.log('Something went wrong', status, err);

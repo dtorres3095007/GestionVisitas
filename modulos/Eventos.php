@@ -215,7 +215,7 @@ and open the template in the editor.
 
 
         <div class="modal fade" id="participantes" role="dialog">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-lg">
 
                 <!-- Modal content-->
                 <div class="modal-content" >
@@ -349,7 +349,7 @@ and open the template in the editor.
         </div>
 
         <div class="modal fade" id="participantesevento" role="dialog" > 
-            <div class="modal-dialog" style="width: 60%">
+            <div class="modal-dialog" style="width: 80%">
 
                 <!-- Modal content-->
                 <div class="modal-content" >
@@ -381,8 +381,8 @@ and open the template in the editor.
                                     <tr class="opcioenstabla">
                                     <td id="marcarentrada"  title='Marcar Entrada' data-toggle='popover' data-trigger='hover' style='  color: #990000; ' class='glyphicon glyphicon-time btnAgregar'></td>
                                     <td id="retirar" title='Retirar del Evento' data-toggle='popover' data-trigger='hover' style='  color: #990000;' class=' glyphicon glyphicon-remove btnElimina'></td></tr>
-                                    <tr><th class="filaprincipal" colspan="6" style="color: #990000; text-align: center"> Participantes </th></tr>
-                                    <tr class="filaprincipal"><td>No.</td><td class="" >Nombres</td><td class="">Apellidos</td><td class="">Identificacion</td><td>Hora Entrada</td><td>Tipo</td></tr>
+                                    <tr><th class="filaprincipal" colspan="7" style="color: #990000; text-align: center"> Participantes </th></tr>
+                                    <tr class="filaprincipal"><td>No.</td><td class="" >Nombre</td><td class="">#Placas</td><td class="">Acompañantes</td><td class="">Identificacion</td><td>Hora Entrada</td><td>Tipo</td></tr>
 
 
                                 </thead>

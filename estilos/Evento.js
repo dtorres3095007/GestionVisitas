@@ -827,7 +827,10 @@ function MostrarParticipantesevento(evento) {
                 "data": "nombres"
             },
             {
-                "data": "apellidos"
+                "data": "placa_vehiculo"
+            },
+            {
+                "data": "acompanantes"
             },
             {
                 "data": "identificacion"

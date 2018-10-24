@@ -501,7 +501,7 @@ function MostrarParticipantesEvento($evento) {
 
     $visitantes = array();
     $i = 1;
-    $query = "SELECT CONCAT(o.apellido, ' ', o.Segundo_apellido) apellidos,CONCAT(o.nombre, ' ', o.Segundo_nombre)nombres,o.identificacion,o.id,`Hora_Ingreso`,P.id participanteid,vp.valor tipo_participante,p.`placa_vehiculo`,p.`acompanantes`  FROM `participantes` p INNER JOIN visitantes o INNER JOIN valor_parametros vp  WHERE p.`id_participante`=o.id AND p.`id_evento`='$evento' AND vp.id=p.`tipo_participante`";
+    $query = "SELECT CONCAT(o.nombre, ' ',o.apellido, ' ',o.segundo_apellido) nombres,o.segundo_apellido,o.identificacion,o.id,`Hora_Ingreso`,P.id participanteid,vp.valor tipo_participante,p.`placa_vehiculo`,p.`acompanantes`  FROM `participantes` p INNER JOIN visitantes o INNER JOIN valor_parametros vp  WHERE p.`id_participante`=o.id AND p.`id_evento`='$evento' AND vp.id=p.`tipo_participante`";
     $resultado = mysqli_query($link, $query);
 
     if (!$resultado) {

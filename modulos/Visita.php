@@ -896,7 +896,7 @@ $perfil = $_SESSION['perfil'];
 
 
         <div class="modal fade" id="participantes" role="dialog">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-lg">
 
                 <!-- Modal content-->
                 <div class="modal-content" >
@@ -908,7 +908,7 @@ $perfil = $_SESSION['perfil'];
                     <div class="modal-body" id="bodymodal" >
                         <div class="row row2 tablausup" >
                             <div class="NuevoPartEv btnAgregar"style="width: 100%;text-align: left" title="Nuevo Participante" data-toggle="popover" data-trigger="hover"> <span class=" glyphicon glyphicon-user">Nuevo</span></div>
-                            <div class="RegistrarParticipante">
+                            <div class="RegistrarParticipante" style="width:70%;margin: 0 auto">
                                 <div class="panel panel-default active">
                                     <form  id="form-ingresar-visitante3" enctype="multipart/form-data" method="post">
 
@@ -1224,7 +1224,7 @@ $perfil = $_SESSION['perfil'];
 </div>
 
         <div class="modal fade" id="participantesevento" role="dialog">
-            <div class="modal-dialog" style="width: 60%">
+            <div class="modal-dialog" style="width: 80%">
 
                 <!-- Modal content-->
                 <div class="modal-content" >
@@ -1254,8 +1254,8 @@ $perfil = $_SESSION['perfil'];
                             <table class="table table-bordered table-hover  table-responsive" id="tablaParticipantesevento"  cellspacing="0" width="100%" style="width: 100%">
                                 <thead class="ttitulo ">
                                     <tr class="opcioenstabla"><td id="marcarentrada"  title='Marcar Entrada' data-toggle='popover' data-trigger='hover' style='  color: #990000; ' class='glyphicon glyphicon-time btnAgregar'></td><td id="retirar" title='Retirar del Evento' data-toggle='popover' data-trigger='hover' style='  color: #990000;' class=' glyphicon glyphicon-remove btnElimina'></td></tr>
-                                    <tr><th class="filaprincipal" colspan="6" style="color: #990000; text-align: center"> Participantes </th></tr>
-                                    <tr class="filaprincipal"><td>No.</td><td class="" >Nombres</td><td class="">Apellidos</td><td class="">Identificacion</td><td>Hora Entrada</td><td>Tipo</td></tr>
+                                    <tr><th class="filaprincipal" colspan="7" style="color: #990000; text-align: center"> Participantes </th></tr>
+                                    <tr class="filaprincipal"><td>No.</td><td class="" >Nombre</td><td class="">#Placas</td><td class="">Acompañantes</td><td class="">Identificacion</td><td>Hora Entrada</td><td>Tipo</td></tr>
 
 
                                 </thead>

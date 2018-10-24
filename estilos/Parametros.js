@@ -1783,7 +1783,7 @@ function registrarPaticipanteDepartamento(participante, departamento, placa, aco
             MensajeConClase("Visitante Agregado con exito", ".error");
             $(".buscarvisitante").val("").focus();
             participanteDepar = 0;
-            $("#tablaParticipantesDepar tbody").html('<tr ><td class="dataTables_empty" valign="top" colspan="4">Ningún dato disponible en esta tabla...</td></tr>')
+            MostrarParticipantesDepartamentos("***####");
             return true;
         }
 

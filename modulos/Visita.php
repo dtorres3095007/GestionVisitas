@@ -1382,17 +1382,17 @@ $perfil = $_SESSION['perfil'];
                         "video": true,
                         "audio": false
                     }, function(stream) {
-                        video.src = window.URL.createObjectURL(stream);
+                        video.srcObject = stream;
                         video.play();
-                        video3.src = window.URL.createObjectURL(stream);
+                        video3.srcObject = stream;
                         video3.play();
-                        video2.src = window.URL.createObjectURL(stream);
+                        video2.srcObject = stream;
                         video2.play();
-                        videomodi.src = window.URL.createObjectURL(stream);
+                        videomodi.srcObject = stream;
                         videomodi.play();
-                        videof.src = window.URL.createObjectURL(stream);
+                        videof.srcObject = stream;
                         videof.play();
-                        videov.src = window.URL.createObjectURL(stream);
+                        videov.srcObject = stream;
                         videov.play();
                     }, function(err) {
                         console.log("Ocurrió el siguiente error: " + err);
